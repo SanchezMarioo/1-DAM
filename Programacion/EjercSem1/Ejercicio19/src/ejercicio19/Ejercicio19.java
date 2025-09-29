@@ -21,9 +21,8 @@ public class Ejercicio19 {
         int numeroEntero,resultado;
         System.out.print("Indica el numero entero: ");
         numeroEntero = sc.nextInt();
-        int resultadoDivi = numeroEntero / 7;
         resultado = numeroEntero % 7;
-        int resultadoSuma = 7 - resultado;
+        int resultadoSuma = (7-(resultado%7))%7;        
         System.out.println("Hasta llegar al multiplo de 7 es: " + resultadoSuma);
         
         

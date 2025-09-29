@@ -20,13 +20,13 @@ public class Ejercicio7 {
         Scanner input = new Scanner(System.in);
         float radio;
         final float PI;
-        float longitud;
-        float area;
-        PI = 3.14f;
+        double longitud;
+        double area;
+        // PI = 3.14f;
         System.out.print("Cual es el radio de la circunferencia: ");
         radio = input.nextFloat();
-        longitud = (2*PI)*radio;
-        area= PI*(radio*radio);
+        longitud = (2*Math.PI)*radio;
+        area= Math.PI*Math.pow(radio, 2);
         System.out.println("La longitud es: " + longitud);
         System.out.println("El area es: " + area);
         

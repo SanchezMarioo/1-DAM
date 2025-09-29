@@ -24,8 +24,9 @@ public class Ejercicio6 {
         notaPrimera = input.nextInt();
         System.out.print("Cual es la segunda nota: ");
         notaSegunda = input.nextInt();
-        int notaMedia;
-        notaMedia = (notaPrimera + notaSegunda) / 2;
+        double notaMedia;
+        notaMedia = (notaPrimera + notaSegunda) / 2.0; 
+        // Se pone 2.0 por que se esta tratando con numeros enteros entoces lo trataria como numero entero y con esto se fuerza a que sea un float
         System.out.println("Tu nota media es: " + notaMedia);
         
         

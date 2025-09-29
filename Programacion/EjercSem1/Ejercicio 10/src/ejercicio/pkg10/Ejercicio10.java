@@ -29,7 +29,7 @@ public class Ejercicio10 {
         hemosTerminadoTareas = input.nextBoolean();
         System.out.print("Tienes que entregar algun libro(true/false): ");
         entregarLibro = input.nextBoolean();
-        salirCalle = (estaLloviendo && hemosTerminadoTareas) || entregarLibro;
+        salirCalle = (!estaLloviendo && hemosTerminadoTareas) || entregarLibro;
         System.out.println("Puedes salir a la calle (true/false) " + salirCalle);
     }
     

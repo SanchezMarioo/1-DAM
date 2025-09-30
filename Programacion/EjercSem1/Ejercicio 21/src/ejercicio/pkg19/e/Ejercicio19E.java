@@ -18,12 +18,14 @@ public class Ejercicio19E {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner (System.in);
-        int numeroEntero,resultado;
+        int numeroEntero,resultado, multiplo;
         System.out.print("Indica el numero entero: ");
         numeroEntero = sc.nextInt();
-        resultado = numeroEntero % 7;
-        int resultadoSuma = (7-(resultado%7))%7;        
-        System.out.println("Hasta llegar al multiplo de 7 es: " + resultadoSuma);
+        System.out.print("Indica el multiplo sobre el calculo: ");
+        multiplo = sc.nextInt();
+        resultado = numeroEntero % multiplo;
+        int resultadoSuma = (multiplo-(resultado%multiplo))%multiplo;        
+        System.out.println("Hasta llegar al multiplo de " + multiplo + " es: "  + resultadoSuma);
         
     }
     

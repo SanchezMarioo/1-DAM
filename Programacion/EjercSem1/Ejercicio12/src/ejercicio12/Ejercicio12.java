@@ -17,16 +17,16 @@ public class Ejercicio12 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int horas,minutos,segundos;
+        int horas, minutos, segundos;
         int segundosUsuario;
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Indica los segundos: ");
         segundosUsuario = sc.nextInt();
         horas = (segundosUsuario / 3600);
         minutos = (segundosUsuario % 3600) / 60;
         segundos = (segundosUsuario % 60);
-        System.out.println(horas + " horas " +  minutos + " minutos "  + segundos + " segundos" );
-        
+        System.out.println(horas + " horas " + minutos + " minutos " + segundos + " segundos");
+
     }
-    
+
 }

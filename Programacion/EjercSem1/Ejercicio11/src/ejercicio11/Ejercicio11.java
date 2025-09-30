@@ -24,16 +24,21 @@ public class Ejercicio11 {
         PRECIOKGPERAS = 1.35f;
         float kgManzanas;
         float kgPeras;
-        System.out.print("�Cuantos KG has vendido de manzanas este semestre?: ");
+        System.out.print("¿Cuantos KG has vendido de manzanas este semestre?: ");
         kgManzanas = input.nextFloat();
-        System.out.print("�Cuantos KG has vendido de peras este semestre?: ");
+        System.out.print("¿Cuantos KG has vendido de peras este semestre?: ");
         kgPeras = input.nextFloat();
+        System.out.print("¿Cuantos KG has vendido de manzanas este segundo semestre?: ");
+        kgManzanas += input.nextFloat();
+        System.out.print("¿Cuantos KG has vendido de peras este segundo semestre?: ");
+        kgPeras += input.nextFloat();
         float ventasTotalManzanas;
         float ventasTotalPeras;
         
         ventasTotalManzanas = kgManzanas * PRECIOKGMANZANAS;
         ventasTotalPeras = kgPeras * PRECIOKGPERAS;
-        System.out.println("Durante este semestre has vendido " + ventasTotalManzanas + "$ en kg de manzanas " + ventasTotalPeras + " $ en kg de peras");
+        float ventasTotal = ventasTotalManzanas + ventasTotalPeras;
+        System.out.println("El importe total es de: " + ventasTotal + "€");
         
         
         

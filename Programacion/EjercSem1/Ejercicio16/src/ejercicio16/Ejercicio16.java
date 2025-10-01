@@ -27,7 +27,8 @@ public class Ejercicio16 {
         terceraMedida = input.nextInt();
         primeraMedida = primeraMedida / 10;
         terceraMedida = terceraMedida * 100;
-        System.out.println("La primera medida en cm son: " + primeraMedida + " La segunda medida en cm son: " + segundaMedida + " La tercera medida en cm son: " + terceraMedida);
+        resultado = primeraMedida + segundaMedida + terceraMedida;
+        System.out.println("Total medida: " + resultado);
         
     }
     

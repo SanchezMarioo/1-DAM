@@ -19,15 +19,17 @@ public class Ejercicio18 {
         // TODO code application logic here
         double entradasInfantiles, entradasAdultos,sumaTotal;
         Scanner sc = new Scanner (System.in);
+        final float PRECIO_INFANTIL = 15.50f;
+        final float PRECIO_ADULTO = 20f;
         System.out.print("¿Cuantas entradas infantiles quiere?: ");
         entradasInfantiles = sc.nextInt();
 
-        entradasInfantiles = entradasInfantiles * 15.5;
+        entradasInfantiles = entradasInfantiles * PRECIO_INFANTIL;
         
         System.out.print("¿Cuantas entradas adulto quiere?: ");
         entradasAdultos = sc.nextInt();
   
-        entradasAdultos = entradasAdultos * 20;
+        entradasAdultos = entradasAdultos * PRECIO_ADULTO;
         sumaTotal = entradasInfantiles + entradasAdultos;
         System.out.println("Las entradas en total son: " + sumaTotal);
         

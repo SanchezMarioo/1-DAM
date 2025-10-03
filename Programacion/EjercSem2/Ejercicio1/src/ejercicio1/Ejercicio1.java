@@ -22,7 +22,7 @@ public class Ejercicio1 {
         boolean numeroPositivo;
         System.out.print("Escribe un numero: ");
         numeroTeclado = sc.nextInt();
-        numeroPositivo = numeroTeclado < 0;
+        numeroPositivo = numeroTeclado > 0;
         System.out.println(numeroPositivo);
     }
     

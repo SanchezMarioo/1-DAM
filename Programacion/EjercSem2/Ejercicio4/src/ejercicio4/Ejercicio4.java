@@ -18,13 +18,13 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner (System.in);
-        int precioTicket;
+        float precioTicket;
         System.out.print("Precio compra total tienda: ");
-        precioTicket = sc.nextInt();
+        precioTicket = sc.nextFloat();
         if (precioTicket >=500){
             precioTicket *= 0.9;
         }
-        System.out.println("Precio ticket" + precioTicket);
+        System.out.println("Precio ticket: " + precioTicket + "?");
     }
     
 }

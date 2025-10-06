@@ -18,17 +18,16 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         // TODO code application logic here
         float numero;
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Introduce el numero casi/cero: ");
         numero = sc.nextFloat();
-        
+
         if (numero != 0 && numero < 1 && numero > -1) {
             System.out.println("Numero casi cero ");
         } else {
             System.out.println("No es numero casi cero");
         }
-        
-        
+
     }
-    
+
 }

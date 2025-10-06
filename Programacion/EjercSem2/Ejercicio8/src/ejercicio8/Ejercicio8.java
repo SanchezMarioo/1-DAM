@@ -21,13 +21,14 @@ public class Ejercicio8 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Que nota tienes en progamacion: ");
         notaProgramacion = sc.nextFloat();
-        if (notaProgramacion >= 5) {
+        if (notaProgramacion >= 5 && notaProgramacion <= 10) {
             System.out.println("¡Enhorabuena has aprobado!");
-        } else {
+        } else if ( notaProgramacion <= 5  && notaProgramacion >= 0 ) {
             System.out.println("Venga! Tienes que seguir intentándolo");
+        } else {
+            System.out.println("Nota invalida");
         }
-        
-        
+              
     }
     
 }

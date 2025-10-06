@@ -29,7 +29,7 @@ public class Ejercicio9 {
         
         
         
-        if ((edad >= 18 && entradaVIP) || hijoArtistaInvitado ){
+        if ((edad >= 18 && entradaVIP) || (edad <= 18 && hijoArtistaInvitado)){
             System.out.println("Puedes pasar");
         } else {
             System.out.println("No puedes pasar");

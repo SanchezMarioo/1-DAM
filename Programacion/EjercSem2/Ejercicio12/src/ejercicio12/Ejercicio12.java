@@ -26,15 +26,36 @@ public class Ejercicio12 {
         num2 = sc.nextInt();
         System.out.println("Dime cual es el tercer numero: ");
         num3 = sc.nextInt();
-        
-        if (num1 > num2 && num1 > num3){
+
+        if (num1 > num2 && num1 > num3) {
             numeroOrdenado1 = num1;
+            if (num2 > num3) {
+                numeroOrdenado2 = num2;
+                numeroOrdenado3 = num3;
+            } else {
+                numeroOrdenado2 = num3;
+                numeroOrdenado3 = num2;
+            }
         } else if (num2 > num1 && num2 > num3) {
-            numeroOrdenado2 = num2;
+            numeroOrdenado1 = num2;
+            if (num1 > num3) {
+                numeroOrdenado2 = num1;
+                numeroOrdenado3 = num3;
+            } else {
+                numeroOrdenado2 = num3;
+                numeroOrdenado3 = num1;
+            }
         } else if (num3 > num1 && num3 > num2) {
-            numeroOrdenado3 = num3; 
+            numeroOrdenado1 = num3;
+            if (num1 > num2) {
+                numeroOrdenado2 = num1;
+                numeroOrdenado3 = num2;
+            } else {
+                numeroOrdenado2 = num2;
+                numeroOrdenado3 = num1;
+            }
         }
-        System.out.println("El primer numero es : " + numeroOrdenado1 + "El segundo numero es : " + numeroOrdenado2 + "El tercer numero es : " + numeroOrdenado3);
+        System.out.println("Ordenados de mayor a menor: " + numeroOrdenado1 + "," + numeroOrdenado2 + "," + numeroOrdenado3 );
 
     }
 

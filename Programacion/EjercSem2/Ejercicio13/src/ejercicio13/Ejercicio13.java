@@ -29,15 +29,19 @@ public class Ejercicio13 {
         c = sc.nextInt();
         raizCuadrada = Math.pow(b, 2) - (4 * a * c);
         
-        if(c == 0 || raizCuadrada <= 0){
+        if((c == 0) || raizCuadrada < 0){
             System.out.println("No se puede hacer");
         }
         else{
             ecuacionPos = (-b + Math.sqrt(raizCuadrada)) / (2 * a);
             ecuacionNeg = (-b - Math.sqrt(raizCuadrada)) / (2 * a) ;
-            System.out.println(ecuacionPos + " " + raizCuadrada + " " + ecuacionNeg);
+            if (ecuacionPos == ecuacionNeg){
+                System.out.println("La ecuacion positiva y negativa son iguales: " + ecuacionPos);
+            } else{
+                System.out.println("X1 = " +ecuacionPos + " X2 = " + ecuacionNeg);
+            }
+            
         }
-        System.out.println(raizCuadrada);
         
         
     }

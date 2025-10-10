@@ -17,7 +17,7 @@ public class Ejercicio20B {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-                double numeroConversion, divisa,conversion;
+        double numeroConversion, divisa,conversion;
         int numeroMenu;
         Scanner sc = new Scanner(System.in);
         System.out.println("Cantidad en euros: ");

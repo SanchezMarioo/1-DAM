@@ -4,6 +4,8 @@
  */
 package ejercicio21;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mario.sanper.2
@@ -15,6 +17,12 @@ public class Ejercicio21 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int numeroTeclado,eleccion;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime un numero (1-12) : ");
+        numeroTeclado = sc.nextInt();
+       
+
     }
-    
+
 }

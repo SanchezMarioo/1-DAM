@@ -24,6 +24,8 @@ public class Ejercicio15 {
         if (numeroTeclado < -99999 || numeroTeclado > 99999) {
             System.out.println("No se encuentra en el rango");
         } else {
+            // Codigo innecesario debido a que lo puedes invertir el valor 
+            // Se puede hacer con ternarias 
             if (numeroTeclado <= 0 && numeroTeclado >= -10) {
                 System.out.println(1);
             } else if (numeroTeclado <= -10 && numeroTeclado >= -99) {

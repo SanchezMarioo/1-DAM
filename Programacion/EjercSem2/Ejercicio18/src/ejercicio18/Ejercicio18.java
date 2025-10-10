@@ -30,19 +30,19 @@ public class Ejercicio18 {
         System.out.print("Introduce un numero (1-4): ");
         numeroTeclado = sc.nextInt();
         switch (numeroTeclado){
-            case 1:
+            case 1: // Raiz cuadrada COMPROBAR si mayor que > 0 
                 numeroCalcular = (int) Math.sqrt(numeroCalcular);
                 System.out.println("La raiz cuadrada es: " + numeroTeclado);
                 break;
             case 2:
-                numeroCalcular = Math.round(numeroCalcular);
+                numeroCalcular = Math.round(numeroCalcular); // Metodo Math.ceil
                 System.out.println("El numero redondeado es: " + numeroCalcular);
                 break;
             case 3:
                 numeroCalcular = Math.floor(numeroCalcular);
                 System.out.println("El numero redondeado es: " + numeroCalcular);
                 break;
-            case 4:
+            case 4: // Logaritmo COMPROBAR si mayor que > 0 
                 numeroCalcular = Math.log(numeroCalcular);
                 System.out.println("El logaritmo es: " + numeroCalcular);
                 break;

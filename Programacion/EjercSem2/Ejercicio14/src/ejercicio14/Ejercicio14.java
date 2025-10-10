@@ -21,7 +21,8 @@ public class Ejercicio14 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dime un numero: ");
         numeroTeclado = sc.nextInt();
-        if (numeroTeclado < 0 || numeroTeclado >= 99999) {
+        // La doble comprobacion no sirve para nada con poner >100 y asi basta
+        if (numeroTeclado < 0 || numeroTeclado > 99999) {
             System.out.println("No se encuentra en el rango");
         } else {
             if (numeroTeclado < 10) {

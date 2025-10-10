@@ -17,19 +17,18 @@ public class Ejercicio13 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int a,b,c;
+        double a,b,c,raizCuadrada;
         double ecuacionPos,ecuacionNeg = 0;
-        double raizCuadrada;
         Scanner sc = new Scanner(System.in);
         System.out.println("Dime la letra A:");
-        a = sc.nextInt();
+        a = sc.nextDouble();
         System.out.println("Dime la letra B:");
-        b = sc.nextInt();
+        b = sc.nextDouble();
         System.out.println("Dime la letra C:");
-        c = sc.nextInt();
+        c = sc.nextDouble();
         raizCuadrada = Math.pow(b, 2) - (4 * a * c);
         
-        if((c == 0) || raizCuadrada < 0){
+        if((c == 0 ) || a == 0 || raizCuadrada < 0){
             System.out.println("No se puede hacer");
         }
         else{

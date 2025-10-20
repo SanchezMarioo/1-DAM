@@ -17,7 +17,7 @@ public class Ejercicio20B {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double numeroConversion, divisa,conversion;
+        double numeroConversion, divisa, conversion;
         int numeroMenu;
         Scanner sc = new Scanner(System.in);
         System.out.println("Cantidad en euros: ");
@@ -31,17 +31,22 @@ public class Ejercicio20B {
         System.out.print("Introduce un numero (1-5): ");
         numeroMenu = sc.nextInt();
         divisa = switch (numeroMenu) {
-            case 1 -> 1.1739;
-            case 2 ->  0.87315;
-            case 3 -> 173.79;
-            case 4 -> 21.64;
-            case 5 -> 0.9347;
-            default -> 1;
-            
-            
+            case 1 ->
+                1.1739;
+            case 2 ->
+                0.87315;
+            case 3 ->
+                173.79;
+            case 4 ->
+                21.64;
+            case 5 ->
+                0.9347;
+            default ->
+                1;
+
         };
         conversion = numeroConversion * divisa;
-        System.out.println("La conversion es " + conversion );
+        System.out.println("La conversion es " + conversion);
     }
-    
+
 }

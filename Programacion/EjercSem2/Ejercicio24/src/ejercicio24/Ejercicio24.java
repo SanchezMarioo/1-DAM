@@ -29,7 +29,7 @@ public class Ejercicio24 {
                 System.out.println("Es capicua, da igual como lo mires");
             } else if (numeroTeclado <= 99) {
                 num2 = numeroTeclado / 10;
-                num1 = num2 % 10;
+                num1 = numeroTeclado % 10;
                 if (num1 == num2) {
                     System.out.println("Es capicua");
                 }

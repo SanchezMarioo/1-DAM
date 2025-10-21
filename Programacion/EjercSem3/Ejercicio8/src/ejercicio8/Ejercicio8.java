@@ -17,34 +17,32 @@ public class Ejercicio8 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int eleccion = -1, suma = 0;
-        int respClienteRendir;
-        boolean salir = false;
+        int numeroRandom, eleccion, suma = 0, sumaUsuario = 0;
+        boolean rendirse = false;
         Scanner sc = new Scanner(System.in);
-        while (salir != true) {
-            double numeroRandom;
-            numeroRandom = (Math.random() * 100);
-            int numeroRandomT = (int) numeroRandom;
-            System.out.println("El numero random es: " + numeroRandomT);
-            System.out.println("Quieres otro numero pulsa 1");
-            System.out.println("Si quieres rendirte pulsa 0");
+        while (rendirse == false) {
+            numeroRandom = (int) (Math.random() * 100) + 1;
+            System.out.println("El numero es: " + numeroRandom);
+            System.out.println("Si quieres otro numero pulsa 0");
+            System.out.println("De lo contrario pulsa 1");
             eleccion = sc.nextInt();
-            System.out.println("Elige una opcion:");
-            suma += numeroRandomT;
-            switch (eleccion) {
-                case 0:
-                    System.out.println("¿Cuál crees que es la suma de los números?");
-                    respClienteRendir = sc.nextInt();
-                    if (respClienteRendir == suma) {
-                        System.out.println("Lo acertaste la suma es " + suma);
-                    } else {
-                        System.out.println("Lo siento fallaste" + suma);
-                    }
-                    salir = true;
-                    break;
-                default:
-                    System.out.println("No has introducido el numero correcto");
-
+            suma += numeroRandom;
+            if (eleccion != 0 && eleccion != 1) {
+                System.out.println(" \n Elige la opcion valida (0/1) \n");
+                System.out.println("Si quieres otro numero pulsa 0");
+                System.out.println("De lo contrario pulsa 1");
+                System.out.println("Elige una opcion: ");
+                eleccion = sc.nextInt();
+            }
+            if (eleccion == 1) {
+                System.out.println("? ¿Cuál crees que es la suma total de todos los números que te mostré: ");
+                sumaUsuario = sc.nextInt();
+                if (sumaUsuario == suma) {
+                    System.out.println("¡Enhorabuena! Eres un crack matemático ?");
+                } else {
+                    System.out.println("Fallaste, el resultado es: " + suma);
+                }
+                rendirse = true;
             }
         }
 

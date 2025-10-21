@@ -18,25 +18,34 @@ public class Ejercicio5 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        int numero, contador = 0, contadorEdad = 0;
-        int sumaEdad = 0;
-        float media = 0 ;
-        while (true) {
-            System.out.println("Dime la edad:");
-            numero = sc.nextInt();
-            if (numero <= -1) {
-                break;
-            }
-            contador++;
+        int numero, contador = 0, contadorEdad = 0, sumaEdad = 0;
+        float media = 0;
+        System.out.println("Dime la edad:");
+        numero = sc.nextInt();
+        if (numero <= 0) {
+            System.out.println("El primer numero es cero");
+        } else {
+            while (true) {
+                System.out.println("Dime la edad:");
+                numero = sc.nextInt();
+                if (numero <= 0) {
+                    break;
+                }
+                contador++;
 
-            sumaEdad += numero;
+                sumaEdad += numero;
+                if (numero >= 18) {
+                    contadorEdad++;
+                }
+
+            }
             media = sumaEdad / contador;
-            if (numero >= 18){
-                contadorEdad++;
+            if (contador == 0) {
+                System.out.println("No se han introducido numeros");
+            } else {
+                System.out.println("La media de edad de alumnos es: " + media + " la suma de los alumnos es: " + sumaEdad + " y los alumnos >= 18 son: " + contadorEdad);
             }
-
         }
-        System.out.println("La media de edad de alumnos es: " + media + " la suma de los alumnos es: " + sumaEdad + " y los alumnos >= 18 son: " + contadorEdad  );
-    }
 
+    }
 }

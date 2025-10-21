@@ -21,13 +21,17 @@ public class Ejercicio3 {
         int edad = 0;
         int edadMaxima = 0;
         int edadMinima = 0;
+        boolean esMayor = true;
         System.out.println("Dime la edad: ");
         edad = sc.nextInt();
-        edadMinima = edad;
-
-        while (edad != -1) {
-            edad = sc.nextInt();
+        if (edadMinima < 0 && edadMaxima < 0) {
+            esMayor = false;
+        } else {
+            edadMinima = edad;
+        }
+        while (edad != -1 && esMayor == true) {
             System.out.println("Dime la edad: ");
+            edad = sc.nextInt();
             if (edad > edadMaxima) {
                 edadMaxima = edad;
             }
@@ -35,7 +39,10 @@ public class Ejercicio3 {
                 edadMinima = edad;
             }
         }
-        System.out.println("La edad maxima es: " + edadMaxima + " y la edad minima es: " + edadMinima);
+        if (esMayor == true) {
+            System.out.println("La edad maxima es: " + edadMaxima + " y la edad minima es: " + edadMinima);
+        }
+
     }
 
 }

@@ -19,12 +19,14 @@ public class Ejercicio6 {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         double numeroRandom = 0;
-        numeroRandom =  Math.random() * 100;
+        int contador = 0;
+        numeroRandom =  Math.random() * 100 + 1; // Si en el +1  no saldra nunca el 100 y tambien te daria 0 
         int numeroRandomT = (int) numeroRandom;
         System.out.println(numeroRandomT);
         while (true) {
             System.out.println("Dime un numero random: ");
             int numero = sc.nextInt();
+            contador++;
             if (numero == -1){
                 break;
             }
@@ -33,7 +35,7 @@ public class Ejercicio6 {
             } else if (numero > numeroRandomT){
                 System.out.println("Es menor");
             } else {
-                System.out.println("Ese es el numero!");
+                System.out.println("Felicidades! Lo has adivinado en " + contador + " intentos");
                 break;
             }
         }

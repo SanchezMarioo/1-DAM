@@ -18,17 +18,20 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        int altura = 0, alturaMaxima = 0, contador = 0, contadorArbol = 0;
+        int altura = 0, alturaMaxima = 0, contador = 1, contadorArbol = 0;
         while (altura != -1) {
-            System.out.println("Dime la altura: ");
-            altura = sc.nextInt();
-            contador++;
-            if (altura > alturaMaxima) {
-                alturaMaxima = altura;
-                contadorArbol = contador;
+            if (altura != 1) {
+                if (altura < 0) {
+                    System.out.println("Dime la altura: ");
+                }
+                altura = sc.nextInt();
+                contador++;
+                if (altura > alturaMaxima) {
+                    alturaMaxima = altura;
+                    contadorArbol = contador;
+                }
             }
         }
         System.out.println("El arbol " + contadorArbol + " con mayor altura es: " + alturaMaxima);
     }
-
 }

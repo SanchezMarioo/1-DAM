@@ -59,6 +59,8 @@ public class Descuentos_Recargas {
                     break;
             }
             System.out.printf("El precio final %2f%n", precioFinal);
+        } else{
+            System.out.println("Precio invalido ");
         }
     }
 

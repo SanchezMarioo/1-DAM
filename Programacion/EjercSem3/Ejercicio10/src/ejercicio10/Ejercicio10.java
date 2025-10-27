@@ -32,12 +32,12 @@ public class Ejercicio10 {
                 System.out.println("No has llegado a la meta te falta " + faltaDinero + " $");
             } else if (sumaDeposito == metaAhorro) {
                 System.out.println("¡Objetivo cumplido!");
-                System.out.println("Para ello has necesitado hacer" + contador + " depositos");
             } else {
                 System.out.println("¡Te has pasado, ahorrador experto!");
-                System.out.println("Para ello has necesitado hacer " + contador + " depositos");
+                
             }
         } while (sumaDeposito < metaAhorro);
+        System.out.println("Para ello has necesitado hacer " + contador + " depositos");
     }
 
 }

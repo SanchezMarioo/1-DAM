@@ -1,28 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package ejercicio17;
-
 import java.util.Scanner;
 
-/**
- *
- * @author mario.sanper.2
- */
 public class Ejercicio17 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int numero;
         Scanner sc = new Scanner(System.in);
+        
+        int numeroUsuario = 0;
+        int potenciaDiez = 0;
+        int contadorPotencias = 0;
+        int numeroTemporal = 0;
+        int cantidadDigitos = 0;
+        int digitoActual = 0;
+        int base = 10;
+        System.out.print("Dime un número: ");
+        numeroUsuario = sc.nextInt();
+        numeroTemporal = numeroUsuario;
+        // Contar la cantidad de dígitos
         do {
-            System.out.println("Dime un numero: ");
-            numero = sc.nextInt();
-        } while (numero < 0);
-    }
+            numeroTemporal /= 10;
+            cantidadDigitos++;
+        } while (numeroTemporal != 0);
 
+        // Descomponer y mostrar los dígitos del número
+        do {
+            contadorPotencias++;
+            potenciaDiez = (int) Math.pow(base, contadorPotencias);
+            potenciaDiez /= 10;
+            digitoActual = numeroUsuario / potenciaDiez % 10;
+            System.out.println(digitoActual);
+        } while (contadorPotencias != cantidadDigitos);
+    }
 }

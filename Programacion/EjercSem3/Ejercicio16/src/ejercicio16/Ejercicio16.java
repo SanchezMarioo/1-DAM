@@ -20,12 +20,9 @@ public class Ejercicio16 {
         int numero, esImpar,suma = 0;
         final int IMPARES = 30;
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i <= 59; i++) {
-            if (i % 2 == 1) {
-                suma += i;
-            }
+        for (int i = 1; i < IMPARES * 2; i+=2) {
+            suma+=i;
         }
         System.out.println(suma);
     }
-
 }

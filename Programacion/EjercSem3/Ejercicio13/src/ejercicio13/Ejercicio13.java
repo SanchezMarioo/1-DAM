@@ -21,7 +21,7 @@ public class Ejercicio13 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Cuantos numeros quieres aprender: ");
         respCliente = sc.nextInt();
-        if (respCliente > 0) {
+        if (respCliente >= 0) {
             for (int i = 0; i <= respCliente; i++) {
                 System.out.println(i);
             }

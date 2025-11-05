@@ -19,8 +19,10 @@ public class Ejercicio12 {
         // TODO code application logic here
         int respCliente;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Cuantas palabras quieres mostrar: ");
-        respCliente = sc.nextInt();
+        do {
+            System.out.println("Cuantas palabras quieres mostrar: ");
+            respCliente = sc.nextInt();
+        } while (respCliente < 0);
         for (int i = 0; i < respCliente; i++) {
             System.out.println("Eco");
         }

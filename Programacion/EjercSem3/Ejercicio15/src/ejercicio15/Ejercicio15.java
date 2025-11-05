@@ -19,14 +19,15 @@ public class Ejercicio15 {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         int numero, suma = 0, sumaTotal = 0;
-        final int MEDIA = 8;
-        for (int i = 1; i <= MEDIA; i++) {
+        final int MAXIMOSENTEROS = 8;
+        for (int i = 1; i <= MAXIMOSENTEROS; i++) {
             System.out.println("Dime un numero: " + i);
             numero = sc.nextInt();
             suma += numero;
-            sumaTotal = suma / MEDIA;
+            
         }
-        System.out.println("La media de los primeros " + MEDIA + " numero es: " + sumaTotal);
+        sumaTotal = suma / MAXIMOSENTEROS;
+        System.out.println("La media de los primeros " + MAXIMOSENTEROS + " numero es: " + sumaTotal);
     }
 
 }

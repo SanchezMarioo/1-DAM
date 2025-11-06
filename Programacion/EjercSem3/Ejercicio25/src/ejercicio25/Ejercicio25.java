@@ -17,19 +17,34 @@ public class Ejercicio25 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String fraseAcertar,fraseEscribir;
-        char letraAcertar = 0,letraEscribir;
+        String fraseAcertar, fraseEscribir = "", palabraOculta = "";
+        char letraAcertar = 0, letraEscribir;
+        int numeroAcertar, numeroEscribir;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Jugador 1: Dime la contraseña: ");
+        System.out.println("\nJugador 1: Dime la contraseña: ");
         fraseAcertar = sc.nextLine();
-        System.out.println("Jugador 2: Dime la contraseña: ");
-        fraseEscribir = sc.nextLine();
-        for (int i = 0; i < fraseAcertar.length() ; i++) {
-            letraAcertar = fraseAcertar.charAt(i);
-            System.out.print("*");
-            System.out.println(letraAcertar);
-            
-        }
+        do {
+
+            System.out.println("Jugador 2: Dime la contraseña: ");
+            fraseEscribir = sc.nextLine();
+            if (fraseAcertar.equals(fraseEscribir)) {
+                System.out.println("Acertaste");
+                break;
+            } else {
+                for (int i = 0; i < Math.min(fraseAcertar.length(), fraseEscribir.length()); i++) {
+                    boolean igualLongitud = fraseAcertar.length() == fraseEscribir.length();
+                    letraAcertar = fraseAcertar.charAt(i);
+                    letraEscribir = fraseEscribir.charAt(i);
+
+                    if (igualLongitud && (letraAcertar == letraEscribir)) {
+                        palabraOculta += letraAcertar;
+                    } else {
+                        palabraOculta += "*";
+                    }
+                }
+                System.out.println("La palabra oculta es: " + palabraOculta);
+            }
+        } while (true);
     }
 
 }

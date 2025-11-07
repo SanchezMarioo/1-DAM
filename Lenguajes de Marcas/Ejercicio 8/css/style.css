@@ -6,13 +6,14 @@
 
 .rojo {
   background-color: red;
-  width: 48%;
+  width: 50%;
   text-align: center;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50vh;
   float: left;
+}
+img{
+  position: relative;
+  top: 10vw;
 }
 .bg-azul{
   background-color: blue;
@@ -45,35 +46,82 @@
 
 .azul {
   background-color: blue;
-  width: 48%;
+  width: 50%;
   text-align: center;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50vh;
   float: left;
 }
 .verde {
   background-color: greenyellow;
-  width: 48%;
+  width: 50%;
   text-align: center;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50vh;
   float: left;
 }
 .amarillo {
   background-color: yellow;
-  width: 48%;
+  width: 50%;
   text-align: center;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50vh;
   float: left;
 }
 main{
   width: 100vw;
   height: 100vh;
 }
+.disbabled {
+  background-color: transparent;
+  width: 50%;
+  text-align: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+.rojo-main{
+  background-color: red;
+  width: 70vw;
+  height: 75vh;
+  z-index: 4;
+  display: block;
+  position: absolute;
+  top: 5vw;
+  left: 15vw;
+
+}
+.verde-main{
+  background-color: greenyellow;
+  width: 70vw;
+  height: 75vh;
+  z-index: 4;
+  display: block;
+  position: absolute;
+  top: 5vw;
+  left: 15vw;
+
+}
+.azul-main{
+  background-color: blue;
+  width: 70vw;
+  height: 75vh;
+  z-index: 4;
+  display: block;
+  position: absolute;
+  top: 5vw;
+  left: 15vw;
+
+}
+.amarillo-main{
+  background-color: yellow;
+  width: 70vw;
+  height: 75vh;
+  z-index: 4;
+  display: block;
+  position: absolute;
+  top: 5vw;
+  left: 15vw;
+
+}
+
+

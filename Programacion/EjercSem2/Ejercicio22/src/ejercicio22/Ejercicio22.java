@@ -35,14 +35,18 @@ public class Ejercicio22 {
             default ->
                 0;
         };
-        if (dia == eleccion){
+        dia++;
+        if (dia > eleccion) {
             dia = 1;
-            mes+=1;
-        } else {
-            dia +=1;
+            mes += 1;
         }
+        if (mes > 12){
+            ano+=1;
+            mes = 1;
+        }
+
         System.out.println(dia + " " + mes + " " + " " + ano);
-        
+
     }
 
 }

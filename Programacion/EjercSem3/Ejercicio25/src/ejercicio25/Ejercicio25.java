@@ -31,7 +31,7 @@ public class Ejercicio25 {
                 System.out.println("Acertaste");
                 break;
             } else {
-                for (int i = 0; i < Math.min(fraseAcertar.length(), fraseEscribir.length()); i++) {
+                for (int i = 0; i < fraseAcertar.length(); i++) {
                     boolean igualLongitud = fraseAcertar.length() == fraseEscribir.length();
                     letraAcertar = fraseAcertar.charAt(i);
                     letraEscribir = fraseEscribir.charAt(i);

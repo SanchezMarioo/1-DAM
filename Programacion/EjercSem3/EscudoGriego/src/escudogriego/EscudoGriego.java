@@ -26,16 +26,16 @@ public class EscudoGriego {
         System.out.println("Introduce el caracter a imprimir:");
         caracter = sc.next().charAt(0);
         int ancho = numeroImpar;
-        if (numeroImpar % 2 != 0) {
+        if (numeroImpar % 2 != 0 && numeroImpar >= 5) {
             for (int i = 0; i <= numeroImpar; i++) {
-                for (int j = 0; j <= ancho; j++) {
-                    if (j == 0 || i == 0 || j == numeroImpar  || i == numeroImpar || j == i ) {
-                        System.out.print(caracter);
-                    } else{
-                        System.out.print(" .");
+                for (int j = 0; j <= numeroImpar; j++) {
+                    if (j == 0 || i == 0 || j == numeroImpar || i == numeroImpar || j == i) {
+                        System.out.print(caracter + " ");
+                    } else {
+                        System.out.print("  ");
                     }
                 }
-                System.out.println();              
+                System.out.println();
 
             }
         }

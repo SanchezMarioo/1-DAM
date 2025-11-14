@@ -35,7 +35,10 @@ public class Notas_Array {
         notas[6] = sc.nextInt();        
         System.out.println("Dime las notas de Sistemas ");
         notas[7] = sc.nextInt();
-        System.out.println(notas);
+        
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print(notas[i] + " ");
+        }
 
     }
     

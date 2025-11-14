@@ -1,0 +1,39 @@
+div{
+    width: 50vw;
+    height: 50vh;
+}
+.rojo {
+  background-color: red;
+}
+.azul{
+    background-color: blue;
+}
+.verde{
+    background-color: lawngreen;
+}
+.amarillo{
+    background-color: yellow;
+}
+
+#cAlante {
+  position: relative;
+  top: 10vw;
+  left: 25vw;
+  z-index: 4;
+  display: block;
+}
+.cAtras{
+    position: absolute;
+    top: 10vw;
+    left: 25vw;
+    display: block;
+}
+.uno{
+    z-index: 1;
+}
+.dos{
+    z-index: 2;
+}
+.tres{
+    z-index: 3;
+}

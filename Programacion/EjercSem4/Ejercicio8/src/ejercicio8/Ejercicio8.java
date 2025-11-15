@@ -19,12 +19,16 @@ public class Ejercicio8 {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         final int LONGITUD_ARRAY = 5;
-        int[] numeros = new int[LONGITUD_ARRAY];
+        char[] letras = new char[LONGITUD_ARRAY];
         for (int i = 0; i < LONGITUD_ARRAY; i++) {
             System.out.print("Dime el caracter para añadir al array: ");
             char caracter = sc.next().charAt(0);
-            
+            letras[i] = caracter;
+
+        }
+        for (int j = LONGITUD_ARRAY - 1; j >= 0; j--) {
+            System.out.print(letras[j] + " ");
         }
     }
-    
+
 }

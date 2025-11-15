@@ -1,39 +1,50 @@
-div{
-    width: 50vw;
-    height: 50vh;
+div {
+  width: 40vw;
+  height: 40vh;
 }
 .rojo {
   background-color: red;
 }
-.azul{
-    background-color: blue;
+.azul {
+  background-color: blue;
 }
-.verde{
-    background-color: lawngreen;
+.verde {
+  background-color: green;
 }
-.amarillo{
-    background-color: yellow;
+.amarillo {
+  background-color: yellow;
 }
-
-#cAlante {
-  position: relative;
-  top: 10vw;
-  left: 25vw;
-  z-index: 4;
+.uno {
+  z-index: 1;
+  position: absolute;
+  top: 8vw;
+  left: 52.5vw;
   display: block;
 }
-.cAtras{
-    position: absolute;
-    top: 10vw;
-    left: 25vw;
-    display: block;
+.dos {
+  z-index: 2;
+  position: absolute;
+  top: 6vw;
+  left: 54.5vw;
+  display: block;
 }
-.uno{
-    z-index: 1;
+.tres {
+  z-index: 3;
+  position: absolute;
+  top: 4vw;
+  left: 56.5vw;
+  display: block;
 }
-.dos{
-    z-index: 2;
+.cuatro {
+  z-index: 4;
+  position: absolute;
+  top: 2vw;
+  left: 57.5vw;
+  display: block;
 }
-.tres{
-    z-index: 3;
+a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+
 }

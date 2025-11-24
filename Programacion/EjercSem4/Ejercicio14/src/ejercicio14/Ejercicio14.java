@@ -25,11 +25,8 @@ public class Ejercicio14 {
         for (int i = 0; i < numeros.length; i++) {
             numeros2[i] = numeros[i];
 
-            if (i == numeroLongitud - 1) {
-                numerosUsuario = numeros2[i];
-            }
-
         }
+         numeros2[numeros2.length - 1] = numerosUsuario;
         for (int i = 0; i < numeros2.length; i++) {
             System.out.print(numeros2[i] + " ");
         }

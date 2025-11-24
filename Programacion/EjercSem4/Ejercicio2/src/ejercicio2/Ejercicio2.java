@@ -17,16 +17,21 @@ public class Ejercicio2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int [] numeros = new int [6];
-        Scanner sc = new Scanner (System.in);
+        int[] numeros = new int[6];
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Dime un numero: " + i);
             numeros[i] = sc.nextInt();
-            
+
         }
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print(numeros[i] + " * ");
+            System.out.print(numeros[i]);
+            if (i < numeros.length - 1) {
+                System.out.print(" * ");
+            }
+            
         }
+        System.out.println();
     }
-    
+
 }

@@ -1,50 +1,51 @@
 div {
-  width: 40vw;
-  height: 40vh;
-}
-.rojo {
-  background-color: red;
-}
-.azul {
-  background-color: blue;
-}
-.verde {
-  background-color: green;
-}
-.amarillo {
-  background-color: yellow;
-}
-.uno {
-  z-index: 1;
-  position: absolute;
-  top: 8vw;
-  left: 52.5vw;
-  display: block;
-}
-.dos {
-  z-index: 2;
-  position: absolute;
-  top: 6vw;
-  left: 54.5vw;
-  display: block;
-}
-.tres {
-  z-index: 3;
-  position: absolute;
-  top: 4vw;
-  left: 56.5vw;
-  display: block;
-}
-.cuatro {
-  z-index: 4;
-  position: absolute;
-  top: 2vw;
-  left: 57.5vw;
-  display: block;
-}
-a{
+    width: 40vw;
+    height: 40vh;
+  }
+  .rojo {
+    background-color: red;
+  }
+  .azul {
+    background-color: blue;
+  }
+  .verde {
+    background-color: green;
+  }
+  .amarillo {
+    background-color: yellow;
+  }
+  .uno {
+    z-index: 1;
+    position: absolute;
+    top: 8vw;
+    left: 52.5vw;
+    display: block;
+  }
+  .dos {
+    z-index: 2;
+    position: absolute;
+    top: 6vw;
+    left: 54.5vw;
+    display: block;
+  }
+  .tres {
+    z-index: 3;
+    position: absolute;
+    top: 4vw;
+    left: 56.5vw;
+    display: block;
+  }
+  .cuatro {
+    z-index: 4;
+    position: absolute;
+    top: 2vw;
+    left: 57.5vw;
+    display: block;
+  }
+  a{
+      color: black;
+  
+  }
+  p{
     text-align: center;
-    color: black;
-    text-decoration: none;
-
-}
+  }

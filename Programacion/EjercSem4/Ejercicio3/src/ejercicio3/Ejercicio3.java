@@ -20,12 +20,12 @@ public class Ejercicio3 {
         for (int i = 0; i < numeros.length; i++) {
             int numeroRandom = (int) (Math.random() * 100) + 1;
             numeros[i] = numeroRandom;
-
         }
         for (int i = 0; i < numeros.length; i++) {
             sumaNumerosRandom += numeros[i];
+            System.out.print(numeros[i] + " ");
         }
-        System.out.println("La suma de los " + numeros.length + " primeros numeros random es: " + sumaNumerosRandom);
+        System.out.println("\nLa suma de los " + numeros.length + " primeros numeros random es: " + sumaNumerosRandom);
     }
 
 }

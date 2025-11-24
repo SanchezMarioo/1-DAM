@@ -18,26 +18,31 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        int numero,numPositivo = 0,numCero = 0,numNegativo = 0;
+        int numero, numPositivo = 0, numCero = 0, numNegativo = 0;
+        int sumaPositivo = 0, sumaNumNegativo = 0;
         System.out.println("Dime el numero n de los numeros para mostrar: ");
         int tecladoNumero = sc.nextInt();
 
         int[] numeros = new int[tecladoNumero];
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.println("Teclea los numeros: ");
+        System.out.println("Teclea los " + tecladoNumero + " numeros: " );
+        for (int i = 0; i < numeros.length; i++) {  
             numero = sc.nextInt();
-            if(numero > 0){
+            if (numero > 0) {
+                sumaPositivo+= numero;
                 numPositivo++;
-            } else if (numero < 0){
+            } else if (numero < 0) {
+                sumaNumNegativo += numero;
                 numNegativo++;
             } else {
                 numCero++;
             }
             numeros[i] += numero;
         }
-        System.out.println("Numeros positivos: " + numPositivo);
+        sumaNumNegativo = (numNegativo > 0) ? sumaNumNegativo / numNegativo : 0;
+        sumaPositivo = (numPositivo > 0) ? sumaPositivo / numPositivo : 0;
+        System.out.println("Numeros positivos: " + sumaPositivo);
         System.out.println("Numeros ceros: " + numCero);
-        System.out.println("Numeros negativos: " + numNegativo);
+        System.out.println("Numeros negativos: " + sumaNumNegativo);
 
     }
 

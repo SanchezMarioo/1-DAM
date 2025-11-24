@@ -21,13 +21,13 @@ public class Ejercicio5 {
         int tecladoNumero = sc.nextInt();
 
         // Generar números aleatorios y contarlos
-        for (int i = 0; i < LONGITUD_ARRAY; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             int numero = (int) (Math.random() * 201) - 100; // rango -100 a 100
             numeros[i] = numero;
 
             if (numero > 0) {
                 numPositivo++;
-            } else if (numero < 0) {
+            } else if (numero == 0) {
                 numNegativo++;
             } else {
                 numCero++;

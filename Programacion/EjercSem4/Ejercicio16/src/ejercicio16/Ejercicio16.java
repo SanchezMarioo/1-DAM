@@ -21,7 +21,7 @@ public class Ejercicio16 {
 
         for (int i = 0; i < numeros.length; i++) {
             if (i == 0) {
-                numeros[0] = NUMERO_AÑADIR;
+                nuevo[0] = NUMERO_AÑADIR;
             }
             nuevo[i + 1] = numeros[i];
         }

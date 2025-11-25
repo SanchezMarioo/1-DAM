@@ -22,10 +22,14 @@ public class Ejercicio15 {
         int[] notas2 = new int[notas.length + 1];
 
         int numero = 0;
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print(notas[i] + " ");
+        }
         do {
-            System.out.print("Dime un numero: ");
+            System.out.print("\nDime un numero: ");
             numero = sc.nextInt();
         } while (numero <= 0 || numero > 10);
+        // COGER SIEMPRE EL CORTO Y SUMAR +1d
         for (int i = 0; i < notas2.length; i++) {
             if (i == 0 || i == 1) {
                 notas2[i] = notas[i];

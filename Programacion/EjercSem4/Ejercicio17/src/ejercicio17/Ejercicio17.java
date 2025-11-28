@@ -26,29 +26,31 @@ public class Ejercicio17 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Añade un numero: ");
         int numeroAñadir = sc.nextInt();
-        for (int i = 0; i < valores.length; i++) {
-            if (valores[i] >= numeroAñadir && !entraDeNuevo) {
-                posicionInsertar = i;
-                entraDeNuevo = true;
-                System.out.println("El numero " + i + " es mayor que " + numeroAñadir);
-            } else if(!entraDeNuevo){
-                posicionInsertar = valores.length;
+        while (numeroAñadir > 0) {
+            for (int i = 0; i < valores.length; i++) {
+                if (valores[i] >= numeroAñadir) {
+                    posicionInsertar = i;
+                    System.out.println("El numero " + i + " es mayor que " + numeroAñadir);
+                    break;
+                } else if (!entraDeNuevo) {
+                    posicionInsertar = valores.length;
+                }
             }
-        }
-        for (int i = 0; i < nuevo.length; i++) {
-            if (numeros < posicionInsertar) {
-                nuevo[numeros] = valores[i];
-            } else if (numeros == posicionInsertar && !esIgual) {
-                nuevo[posicionInsertar] = numeroAñadir;
-                esIgual = true;
-                continue;
-            } else {
-                nuevo[numeros + 1] = valores[numeros];
+            for (int i = 0; i < nuevo.length; i++) {
+                if (numeros < posicionInsertar) {
+                    nuevo[numeros] = valores[i];
+                } else if (numeros == posicionInsertar && !esIgual) {
+                    nuevo[posicionInsertar] = numeroAñadir;
+                    esIgual = true;
+                    continue;
+                } else {
+                    nuevo[numeros + 1] = valores[numeros];
+                }
+                numeros++;
             }
-            numeros++;
-        }
-        for (int i = 0; i < nuevo.length; i++) {
-            System.out.print(nuevo[i] + " ");
+            for (int i = 0; i < nuevo.length; i++) {
+                System.out.print(nuevo[i] + " ");
+            }
         }
     }
 

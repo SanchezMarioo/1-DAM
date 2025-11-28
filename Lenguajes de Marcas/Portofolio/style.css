@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+@layer base {
+    :root {
+        --color-blue-accent: #137fec;
+        --color-dark: #1A202C;
+    }
+}
+
+.color-blue-accent {
+    color: var(--color-blue-accent);
+}
+.bg-dark{
+    background-color: #1A202C;
+}

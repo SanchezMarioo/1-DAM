@@ -29,7 +29,6 @@ public class Ejercicio21 {
             for (int j = 0; j < FILAS; j++) {
                 if (i == j) {
                     matriz[i][j] = 1;
-                    continue;
 
                 } else {
                     matriz[i][j] = 0;

@@ -28,7 +28,7 @@ public class Ejercicio22 {
         do {
             System.out.println("Numero a encontrar (0-9): ");
             numero = sc.nextInt();
-        } while (numeroSacar < 0 || numeroSacar > 10);
+        } while (numero < 0 || numero > 10);
         for (int i = 0; i < COLUMNAS; i++) {
             for (int j = 0; j < FILAS; j++) {
                 numeroSacar = (int) (Math.random() * 10 + 1);

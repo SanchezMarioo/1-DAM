@@ -38,7 +38,7 @@ public class MatricesEjercicio {
             if (coordenadas.equals("FIN")) {
                 continue;
             }
-            if (coordenadas.length() == 3 || !formatoIncorrecto) {
+            if (coordenadas.length() == 3 && !formatoIncorrecto) {
                 for (int i = 0; i < coordenadas.length(); i++) {
                     int c = coordenadas.charAt(i);
                     if (i == 1) {

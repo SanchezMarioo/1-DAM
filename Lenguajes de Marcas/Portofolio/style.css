@@ -10,6 +10,12 @@
 .color-blue-accent {
     color: var(--color-blue-accent);
 }
+.bg-blue-accent{
+    background-color: var(--color-blue-accent);
+}
 .bg-dark{
     background-color: #1A202C;
+}
+.font-sans{
+    font-family: "Space Grotesk", sans-serif;
 }

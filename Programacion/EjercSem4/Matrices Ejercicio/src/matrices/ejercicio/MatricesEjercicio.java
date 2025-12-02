@@ -31,16 +31,19 @@ public class MatricesEjercicio {
             }
         }
         do {
-            valoresAumentar = 0;
             System.out.print("Dime las coordenadas con el siguente formato (X,Y): ");
             coordenadas = sc.next();
             formatoIncorrecto = false;
-            if (coordenadas.equals("FIN")) {
+            if (coordenadas.equalsIgnoreCase("FIN")) {
                 continue;
             }
             if (coordenadas.length() == 3 && !formatoIncorrecto) {
                 for (int i = 0; i < coordenadas.length(); i++) {
                     int c = coordenadas.charAt(i);
+                    if (c == ' '){
+                        formatoIncorrecto = true;
+                        break;
+                    }
                     if (i == 1) {
                         if (c != ',') {
                             formatoIncorrecto = true;
@@ -48,6 +51,7 @@ public class MatricesEjercicio {
                         }
                         continue;
                     }
+                    // Compruebo si esta entre 0 y 2 
                     if (c < 48 || c > 50) {
                         formatoIncorrecto = true;
                         continue;
@@ -62,6 +66,9 @@ public class MatricesEjercicio {
                             case 50:
                                 cTransformada = 2;
                                 break;
+                            default: 
+                                formatoIncorrecto = true;
+                                break;
                         }
                         if (i == 0) {
                             fila = cTransformada;
@@ -72,9 +79,7 @@ public class MatricesEjercicio {
                     }
                 }
                 if (!formatoIncorrecto) {
-                    valoresAumentar = valores[fila][columna]++;
-                    valoresAumentar++;
-                    valores[fila][columna] = valoresAumentar;
+                    valores[fila][columna]++;
                     for (int i = 0; i < valores.length; i++) {
                         for (int j = 0; j < valores.length; j++) {
                             System.out.print(valores[i][j] + "\t");
@@ -86,7 +91,7 @@ public class MatricesEjercicio {
                 }
 
             }
-        } while (!coordenadas.equals("FIN"));
+        } while (!coordenadas.equalsIgnoreCase("FIN"));
         for (int i = 0; i < valores.length; i++) {
             for (int j = 0; j < valores.length; j++) {
                 System.out.print(valores[i][j] + "\t");

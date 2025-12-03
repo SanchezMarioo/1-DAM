@@ -17,21 +17,6 @@ public class HundeLaFlota {
         // TODO code application logic here
         int[][] matrizUsuario = new int[8][8];
         int[][] matrizInterna = new int[8][8];
-        int[][] barcos = new int[3][2];
-        boolean noEntra = true;
-        for (int i = 0; i < barcos.length - 1; i++) {
-            for (int j = 0; j < barcos.length; j++) {
-                int numeroRandom = (int) (Math.random() * 8 + 1);
-                barcos[j][i] = numeroRandom;
-            }
-        }
-
-        for (int i = 0; i < barcos.length; i++) {
-            for (int j = 0; j < barcos.length - 1; j++) {
-                System.out.print(barcos[i][j] + " ");
-            }
-            System.out.println();
-        }
         for (int i = 4; i >= 2; i--) {
             int numeroRandom = 0;
             int numeroRandom2 = (int) (Math.random() * 8);

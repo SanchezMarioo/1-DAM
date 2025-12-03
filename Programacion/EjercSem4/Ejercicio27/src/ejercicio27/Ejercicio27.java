@@ -33,7 +33,7 @@ public class Ejercicio27 {
                 columnas = 0;
                 filas++;
             }
-            numeroRandom = (int) (Math.random() * 100 + 1);
+            numeroRandom = (int) (Math.random() * 101 );
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz.length; j++) {
                     if (matriz[i][j] == numeroRandom) {
@@ -51,7 +51,7 @@ public class Ejercicio27 {
                 columnas--;
             }
 
-        } while (contador < 35);
+        } while (true);
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {

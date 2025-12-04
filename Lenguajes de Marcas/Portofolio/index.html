@@ -1,68 +1,181 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Mario Sanchez</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Portfolio - Alex Gómez | Desarrollador Multiplataforma</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-start": "var(--retro-highlight-green)",
+            "primary-end": "var(--retro-highlight-green)",
+            "background-light": "var(--retro-grey-bg)",
+            "background-dark": "var(--retro-grey-bg)",
+            "card-dark": "var(--retro-dark-grey)",
+            "border-dark": "var(--retro-border)",
+            "text-muted-dark": "var(--retro-text)",
+            "text-main": "var(--retro-text)",
+          },
+          fontFamily: {
+            "display": ["Arial", "sans-serif"],
+            "mono": ["Courier New", "monospace"]
+          },
+          borderRadius: {
+            "DEFAULT": "0", "lg": "0",
+            "xl": "0",
+            "full": "0"
+          },
+          boxShadow: {
+            'glow': 'none',
+          }
+        },
+      },
+    }
+  </script>
 </head>
 
-<body class="bg-dark text-white font-sans">
-  <nav class="flex justify-around mt-4 gap-8 p-8 items-center border-b border-solid border-white/10">
-    <div class="flex gap-5 items-center">
-      <!-- SVG sacado de https://mynaui.com/icons -->
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-        stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"
-        class="text-[#137fec] font-bold">
-        <path d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2H9z" />
-        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
-      </svg>
-      <h3 class="text-2xl font-bold">Portfolio de Estudiante</h3>
+<body class="bg-background-dark font-display text-main">
+  <nav class="flex h-16 w-full items-center justify-around border-b-2 border-border-dark bg-background-dark">
+    <div>
+      <p class="font-mono text-xl text-retro-accent-blue font-bold">&gt;C:\ Mario.dev</p>
     </div>
-    <div class="flex gap-10 px-5">
-      <a href="#">Inicio</a>
-      <a href="#sobre-mi">Sobre mi</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+    <div class="hidden items-center gap-8 md:flex">
+      <a class="text-sm font-medium  text-main retro-link" href="#inicio">INICIO</a>
+      <a class="text-sm font-medium  text-main  retro-link" href="#sobre-mi">SOBRE_MI</a>
+      <a class="text-sm font-medium  text-main  retro-link" href="#habilidades">HABILIDADES</a>
+      <a class="text-sm font-medium  text-main  retro-link" href="#proyectos">PROYECTOS</a>
+      <a class="text-sm font-medium  text-main  retro-link" href="#contacto">CONTACTO</a>
     </div>
     <div>
-      <a href="#contacto" class="bg-blue-400 px-4 py-3 rounded-lg font-bold">Contactar</a>
+      <a class="flex cursor-pointer items-center justify-center overflow-hidden h-9 px-5 text-sm font-bold retro-button"
+        href="#contacto">
+        CONTACTAR
+      </a>
     </div>
   </nav>
-  <main>
-    <!-- Hero section -->
-    <section class="flex items-center py-20 sm:py-24">
-      <div class="w-2/4 flex p-5 pl-12 flex-col justify-around gap-5">
-        <h1 class="text-4xl font-bold text-white sm:text-5xl md:text-6xl leading-tight">
-          Mario Sánchez <br />Desarrollador <br />
-          Multiplataforma
-        </h1>
-        <p class="text-base text-[#A0AEC0] sm:text-lg ">
-          Desarrollador en formación con interés en el desarrollo web, y
-          sistemas. Trabajo con tecnologías como Next.js, React, Tailwind y
-          Astro, creando proyectos claros y funcionales. Me motiva aprender,
-          mejorar cada detalle y desarrollar soluciones útiles y bien
-          diseñadas.
-        </p>
-        <div class="flex gap-5">
-          <a href="#proyectos" class="bg-blue-400 px-4 py-3 rounded-lg font-bold w-36 text-center">Ver Proyectos</a>
-          <a href="#contacto" class="text-white text-base font-bold bg-[#2D3748] w-28 rounded-lg flex items-center justify-center">Contactar</a>
-        </div>
+  <main class="flex w-full flex-1 flex-col items-center">
+    <div class="w-full flex-1 px-6 py-12 sm:py-16">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <section class="flex flex-col gap-6 retro-border retro-card-bg p-6 lg:col-span-2 lg:row-span-2">
+          <div class="flex items-center gap-4">
+            <div
+              class="h-24 w-24 border-2 border-retro-border bg-cover bg-center bg-no-repeat sm:h-32 sm:w-32 transition-transform hover:scale-110"
+              style="background-image: url('img/foto-portfolio.jpg');">
+            </div>
+            <div class="flex flex-col gap-1">
+              <h1 class="flex items-center text-3xl font-extrabold text-main sm:text-4xl md:text-5xl">
+                <p>MARIO SÁNCHEZ</p>
+              </h1>
+              <p class="text-base sm:text-lg text-retro-accent-blue font-bold">DESARROLLADOR MULTIPLATAFORMA</p>
+            </div>
+          </div>
+          <p class="text-base text-text-main">Estudiante de desarrollo de aplicaciones con un enfoque práctico y en
+            constante aprendizaje. Me gusta convertir ideas en proyectos reales, desde webs con Next.js o Astro hasta
+            sistemas más técnicos como servidores, redes o integraciones con Stripe. Busco siempre que mis aplicaciones
+            sean claras, útiles y fáciles de usar, incluso cuando detrás haya procesos complejos.</p>
+          <div class="mt-auto flex flex-wrap gap-4 pt-4">
+            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden h-11 px-5 text-base font-bold retro-button"
+              href="#proyectos">
+              VER_PROYECTOS
+            </a>
+            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden border-2 border-retro-border h-11 px-5 bg-transparent text-text-main text-base font-bold  hover:text-white"
+              href="#contacto">
+              CONTACTAR
+            </a>
+          </div>
+        </section>
+        <section class="flex flex-col retro-border retro-card-bg p-6 lg:col-span-2 lg:row-span-1" id="sobre-mi">
+          <h2 class="text-2xl font-bold  text-text-main">SOBRE_MÍ.EXE</h2>
+          <p class="mt-4 text-sm text-text-main sm:text-base">Desarrollador multiplataforma en formación, con interés en
+            la tecnología, la administración de sistemas y la creación de soluciones que funcionen bien en la práctica.
+            Me mantengo en evolución constante: pruebo frameworks, diseño interfaces, configuro servidores y exploro
+            nuevas herramientas para mejorar cada proyecto que hago. Mi objetivo es aprender construyendo.</p>
+          <div class="mt-auto pt-4">
+            <h3 class="text-base font-bold text-text-main sm:text-lg">TRAYECTORIA_ACADEMICA</h3>
+            <div class="mt-4 border-l-2 border-retro-border pl-6">
+              <div class="relative mb-6">
+                <p class="font-bold text-text-main text-sm">GRADO SUPERIOR DESARROLLO DE APLICACIONES MULTIPLATAFORMA
+                </p>
+                <p class="text-xs text-text-main">IES VENANCIO BLANCO | 2025 - AHORA</p>
+              </div>
+              <div>
+                <p class="font-bold text-text-main text-sm">SISTEMAS MICROINFORMATICOS Y REDES</p>
+                <p class="text-xs text-text-main">IES VENANCIO BLANCO | 2022 - 2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col retro-border retro-card-bg p-6 lg:col-span-4 lg:row-span-1">
+          <h2 class="text-2xl font-bold  text-text-main">MI_STACK_TECNOLOGICO.TXT</h2>
+          <p class="mt-2 text-text-main">HERRAMIENTAS CON LAS QUE DESARROLLO Y PROGRAMO.</p>
+        </section>
+        <section class="flex flex-col retro-border retro-card-bg p-6 lg:col-span-2 lg:row-span-2" id="habilidades">
+          <h2 class="text-2xl font-bold  text-text-main">TECNOLOGIAS_APRENDIDAS</h2>
+          <div class="mt-4 grid flex-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/nextjs_icon_dark.svg" alt="Logotipo de Next.js - Framework de React" width="80px"
+                height="80px" class="bg-cover">
+              <p class="text-sm font-bold text-main">NEXT.JS</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/astro-icon-dark.svg" alt="Logotipo de Astro - Generador de sitios estáticos" width="50px"
+                height="50px" class="bg-cover">
+              <p class="text-sm font-bold text-text-main">ASTRO</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/supabase.svg" alt="Logotipo de Supabase - Base de datos PostgreSQL" width="50px"
+                height="50px" class="bg-cover">
+              <p class="text-sm font-bold text-text-main">SUPABASE</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/strapi.svg" alt="Logotipo de Strapi - CMS Headless" width="50px" height="50px"
+                class="bg-cover">
+              <p class="text-sm font-bold text-text-main">STRAPI</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/payload_dark.svg" alt="Logotipo de Payload CMS - Sistema de gestión de contenidos"
+                width="50px" height="50px" class="bg-cover">
+              <p class="text-sm font-bold text-text-main">PAYLOAD CMS</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/tailwindcss.svg" alt="Logotipo de Tailwind CSS - Framework de estilos" width="50px"
+                height="50px" class="bg-cover">
+              <p class="text-sm font-bold text-text-main">TAILWIND CSS</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/java.svg" alt="Logotipo de Java - Lenguaje de programación" width="50px" height="50px"
+                class="bg-cover">
+              <p class="text-sm font-bold text-text-main">JAVA</p>
+            </div>
+            <div
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
+              <img src="img/git.svg" alt="Logotipo de Git - Sistema de control de versiones" width="50px" height="50px"
+                class="bg-cover">
+              <p class="text-sm font-bold text-text-main">GIT</p>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="w-2/4 flex items-center justify-center">
-        <img src="img/foto-portfolio.jpg" alt="Foto de perfil de Mario Sánchez" class="w-[400px] rounded-full" />
-      </div>
-    </section>
-    <section>
-      <div class="flex items-center py-20 sm:py-24 justify-center w-2/5 ">
-        <h2 class="text-4xl font-bold ml">Sobre mí</h2>
-      </div>
-    </section>
+    </div>
   </main>
 </body>
+
 </html>

@@ -1,21 +1,67 @@
 @import "tailwindcss";
-
-@layer base {
-    :root {
-        --color-blue-accent: #137fec;
-        --color-dark: #1A202C;
-    }
+:root {
+  --retro-grey-bg: #e0e0e0;
+  --retro-dark-grey: #c0c0c0;
+  --retro-border: #666666;
+  --retro-text: #000000;
+  --retro-accent-red: #ff0000;
+  --retro-accent-blue: #0000ff;
+  --retro-accent-yellow: #ffff00;
+  --retro-highlight-green: #008000;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--retro-grey-bg);
+  color: var(--retro-text);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--retro-text);
+}
+.retro-border {
+  border: 2px solid var(--retro-border);
+}
+.retro-card-bg {
+  background-color: var(--retro-dark-grey);
+}
+.retro-button {
+  background-color: var(--retro-accent-blue);
+  color: var(--retro-text);
+  border: 2px outset #ffffff;
+  box-shadow: 2px 2px 0px var(--retro-border);
+  transition: all 0.1s ease-in-out;
+}
+.retro-button:hover {
+  background-color: var(--retro-accent-red);
+  border: 2px inset #ffffff;
+  box-shadow: 1px 1px 0px var(--retro-border);
+}
+.retro-link {
+  color: var(--retro-accent-blue);
+  text-decoration: underline;
+}
+.retro-link:hover {
+  color: var(--retro-highlight-green);
+}
+.retro-tag {
+  background-color: var(--retro-accent-yellow);
+  color: var(--retro-text);
+  border: 1px solid var(--retro-border);
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.browser-chrome {
+  position: relative;
+  border: 2px solid var(--retro-border);
+  background-color: var(--retro-dark-grey);
+  padding-top: 25px;
+  overflow: hidden;
 }
 
-.color-blue-accent {
-    color: var(--color-blue-accent);
-}
-.bg-blue-accent{
-    background-color: var(--color-blue-accent);
-}
-.bg-dark{
-    background-color: #1A202C;
-}
-.font-sans{
-    font-family: "Space Grotesk", sans-serif;
-}

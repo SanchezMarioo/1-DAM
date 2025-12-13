@@ -1,4 +1,3 @@
-@import "tailwindcss";
 :root {
   --retro-grey-bg: #e0e0e0;
   --retro-dark-grey: #c0c0c0;
@@ -30,23 +29,25 @@ h6 {
   background-color: var(--retro-dark-grey);
 }
 .retro-button {
-  background-color: var(--retro-accent-blue);
+  background-color: var(--retro-accent-yellow);
   color: var(--retro-text);
   border: 2px outset #ffffff;
   box-shadow: 2px 2px 0px var(--retro-border);
   transition: all 0.1s ease-in-out;
 }
 .retro-button:hover {
-  background-color: var(--retro-accent-red);
   border: 2px inset #ffffff;
   box-shadow: 1px 1px 0px var(--retro-border);
 }
 .retro-link {
-  color: var(--retro-accent-blue);
-  text-decoration: underline;
+  color: var(--retro-text);
+  text-decoration: none;
+  transition: 0.2 all ease;
 }
 .retro-link:hover {
-  color: var(--retro-highlight-green);
+  opacity: 0.85;
+  letter-spacing: 0.1px;
+  scale: 1.01;
 }
 .retro-tag {
   background-color: var(--retro-accent-yellow);
@@ -61,7 +62,52 @@ h6 {
   position: relative;
   border: 2px solid var(--retro-border);
   background-color: var(--retro-dark-grey);
-  padding-top: 25px;
+  padding-top: 36px;
   overflow: hidden;
 }
+/* Barra de URL dentro del marco del navegador */
+.browser-url {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  right: 6px;
+  height: 22px;
+  background: #ffffff;
+  border: 2px  solid #bbbbbb;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px;
+}
 
+.browser-url a {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #333333;
+}
+/* Hover sutil para tarjetas de proyectos */
+
+
+/* Se coloca estos estilos en vez en tailwind debido a que se repite muchas veces */
+.tech-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.tech-icon {
+  color: var(--retro-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.15);
+  color: #000000b8;
+}
+#the-byte{
+  background-image: url(img/thebyte-hero.png);
+}
+#aroma-coffee{
+  background-image: url(img/cafe-aroma-hero.png);
+}
+#lumiere{
+  background-image: url(img/lumiere-hero.png);
+}

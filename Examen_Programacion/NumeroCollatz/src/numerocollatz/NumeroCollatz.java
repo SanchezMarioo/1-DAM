@@ -35,13 +35,9 @@ public class NumeroCollatz {
                 pasos++;
                 
             }
-            if (maxPasos > pasos) {
+            if (pasos > maxPasos) {
                 maxPasos = pasos;
                 iNum = i;
-            } else {
-                maxPasos = pasos;
-                iNum = i;
-
             }
         }
         System.out.println(maxPasos);

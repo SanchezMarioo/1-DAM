@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Portfolio - Alex Gómez | Desarrollador Multiplataforma</title>
+  <title>Portfolio - Mario Sanchez | Desarrollador Multiplataforma</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -46,7 +46,8 @@
 </head>
 
 <body class="bg-background-dark font-display text-main">
-  <nav class="flex h-16 w-full items-center justify-around border-b-2 border-border-dark bg-background-dark">
+  <nav
+    class=" fixed z-10 flex h-16 w-full items-center justify-around border-b-2 border-border-dark bg-background-dark">
     <div>
       <p class="font-mono text-xl text-retro-accent-blue font-bold">&gt;C:\ Mario.dev</p>
     </div>
@@ -64,38 +65,32 @@
       </a>
     </div>
   </nav>
-  <main class="flex w-full flex-1 flex-col items-center">
+  <main class="flex w-full flex-1 flex-col items-center mb-5">
     <div class="w-full flex-1 px-6 py-12 sm:py-16">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <section class="flex flex-col gap-6 retro-border retro-card-bg p-6 lg:col-span-2 lg:row-span-2">
-          <div class="flex items-center gap-4">
-            <div
-              class="h-24 w-24 border-2 border-retro-border bg-cover bg-center bg-no-repeat sm:h-32 sm:w-32 transition-transform hover:scale-110"
-              style="background-image: url('img/foto-portfolio.jpg');">
-            </div>
-            <div class="flex flex-col gap-1">
-              <h1 class="flex items-center text-3xl font-extrabold text-main sm:text-4xl md:text-5xl">
-                <p>MARIO SÁNCHEZ</p>
-              </h1>
-              <p class="text-base sm:text-lg text-retro-accent-blue font-bold">DESARROLLADOR MULTIPLATAFORMA</p>
-            </div>
+          <div class="flex flex-col items-start gap-2">
+            <h1 class="text-3xl font-extrabold text-main sm:text-4xl md:text-5xl">MARIO SÁNCHEZ</h1>
+            <p class="text-base sm:text-lg text-retro-accent-blue font-bold">DESARROLLADOR MULTIPLATAFORMA</p>
           </div>
           <p class="text-base text-text-main">Estudiante de desarrollo de aplicaciones con un enfoque práctico y en
             constante aprendizaje. Me gusta convertir ideas en proyectos reales, desde webs con Next.js o Astro hasta
             sistemas más técnicos como servidores, redes o integraciones con Stripe. Busco siempre que mis aplicaciones
             sean claras, útiles y fáciles de usar, incluso cuando detrás haya procesos complejos.</p>
           <div class="mt-auto flex flex-wrap gap-4 pt-4">
-            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden h-11 px-5 text-base font-bold retro-button"
+            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden h-11 px-5 font-bold retro-button"
               href="#proyectos">
-              VER_PROYECTOS
+              <span class="text-base md:text-lg lg:text-xl">
+                VER_PROYECTOS
+              </span>
             </a>
-            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden border-2 border-retro-border h-11 px-5 bg-transparent text-text-main text-base font-bold  hover:text-white"
+            <a class="flex flex-1 cursor-pointer items-center justify-center overflow-hidden border-2 border-retro-border h-11 px-5 bg-transparent text-text-main text-base font-bold"
               href="#contacto">
               CONTACTAR
             </a>
           </div>
         </section>
-        <section class="flex flex-col retro-border retro-card-bg p-6 lg:col-span-2 lg:row-span-1" id="sobre-mi">
+        <section class="flex flex-col retro-border retro-card-bg p-8 lg:col-span-2 lg:row-span-1" id="sobre-mi">
           <h2 class="text-2xl font-bold  text-text-main">SOBRE_MÍ.EXE</h2>
           <p class="mt-4 text-sm text-text-main sm:text-base">Desarrollador multiplataforma en formación, con interés en
             la tecnología, la administración de sistemas y la creación de soluciones que funcionen bien en la práctica.
@@ -124,58 +119,189 @@
           <h2 class="text-2xl font-bold  text-text-main">TECNOLOGIAS_APRENDIDAS</h2>
           <div class="mt-4 grid flex-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/nextjs_icon_dark.svg" alt="Logotipo de Next.js - Framework de React" width="80px"
-                height="80px" class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">code</span>
               <p class="text-sm font-bold text-main">NEXT.JS</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/astro-icon-dark.svg" alt="Logotipo de Astro - Generador de sitios estáticos" width="50px"
-                height="50px" class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">language</span>
               <p class="text-sm font-bold text-text-main">ASTRO</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/supabase.svg" alt="Logotipo de Supabase - Base de datos PostgreSQL" width="50px"
-                height="50px" class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">database</span>
               <p class="text-sm font-bold text-text-main">SUPABASE</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/strapi.svg" alt="Logotipo de Strapi - CMS Headless" width="50px" height="50px"
-                class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">settings</span>
               <p class="text-sm font-bold text-text-main">STRAPI</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/payload_dark.svg" alt="Logotipo de Payload CMS - Sistema de gestión de contenidos"
-                width="50px" height="50px" class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">manage_accounts</span>
               <p class="text-sm font-bold text-text-main">PAYLOAD CMS</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/tailwindcss.svg" alt="Logotipo de Tailwind CSS - Framework de estilos" width="50px"
-                height="50px" class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">palette</span>
               <p class="text-sm font-bold text-text-main">TAILWIND CSS</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/java.svg" alt="Logotipo de Java - Lenguaje de programación" width="50px" height="50px"
-                class="bg-cover">
-              <p class="text-sm font-bold text-text-main">JAVA</p>
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">javascript</span>
+              <p class="text-sm font-bold text-text-main">JAVASCRIPT</p>
             </div>
             <div
-              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center ">
-              <img src="img/git.svg" alt="Logotipo de Git - Sistema de control de versiones" width="50px" height="50px"
-                class="bg-cover">
+              class="w-full h-auto min-h-[150px] flex flex-col items-center justify-center gap-2 retro-border retro-card-bg p-3 text-center tech-card">
+              <span class="material-symbols-outlined text-7xl tech-icon">hub</span>
               <p class="text-sm font-bold text-text-main">GIT</p>
             </div>
           </div>
         </section>
       </div>
     </div>
+    <section class="lg:col-span-4 p-4" id="proyectos">
+      <h2 class="mb-6 text-3xl font-bold leading-tight tracking-tighter text-text-main sm:text-4xl">PROYECTOS_DESTACADOS
+      </h2>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="group flex flex-col overflow-hidden retro-border retro-card-bg transition-all duration-300 hover:border-retro-accent-red">
+          <div class="aspect-video w-full overflow-hidden browser-chrome">
+            <div class="browser-url"><a
+                href="https://newspaper.mariosanchez.store/">https://newspaper.mariosanchez.store/</a></div>
+            <div
+              class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105 pixelate-effect"
+              id="the-byte">
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="text-xl font-bold text-text-main">THE_BYTE.APP</h3>
+            <p class="mt-2 flex-1 text-sm text-text-main">Proyecto de blog tecnológico enfocado en noticias y artículos
+              sobre desarrollo web y tecnología, con una estructura clara y contenido actualizado para desarrolladores y
+              entusiastas tech. </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="retro-tag">NEXT JS</span>
+              <span class="retro-tag">REACT</span>
+              <span class="retro-tag">PAYLOAD CMS</span>
+            </div>
+            <a class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-retro-accent-blue retro-link transition-all duration-200 group-hover:gap-2"
+              href="https://github.com/SanchezMarioo/the-byte-newspaper"><span
+                class="bg-clip-text">VER_EN_GITHUB</span></a>
+          </div>
+        </div>
+        <div
+          class="group flex flex-col overflow-hidden retro-border retro-card-bg transition-all duration-300 hover:border-retro-accent-red">
+          <div class="aspect-video w-full overflow-hidden browser-chrome mb-4-">
+            <div class="browser-url"><a
+                href="https://product.mariosanchez.store/">https://product.mariosanchez.store/</a></div>
+            <div
+              class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105 pixelate-effect"
+              id="aroma-coffee">
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="text-xl font-bold text-text-main">AROMA_COFFEE.WEB</h3>
+            <p class="mt-2 flex-1 text-sm text-text-main">Cafe Aroma es una página web que transmite una experiencia
+              cercana y acogedora alrededor del café, con un diseño sencillo y textos claros que invitan a conocer la
+              marca y su esencia.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="retro-tag">ASTRO</span>
+              <span class="retro-tag">TAILWIND CSS</span>
+            </div>
+            <a class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-retro-accent-blue retro-link transition-all duration-200 group-hover:gap-2"
+              href="https://github.com/SanchezMarioo/landing-product"><span
+                class="bg-clip-text">VER_EN_GITHUB</span></a>
+          </div>
+        </div>
+        <div
+          class="group flex flex-col overflow-hidden retro-border retro-card-bg transition-all duration-300 hover:border-retro-accent-red">
+          <div class="aspect-video w-full overflow-hidden browser-chrome">
+            <div class="browser-url"><a
+                href="https://lumiere.mariosanchez.store/">https://lumiere.mariosanchez.store/</a></div>
+            <div
+              class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105 pixelate-effect"
+              id="lumiere">
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="text-xl font-bold text-text-main">LUMIERE_RESTAURANT.COM</h3>
+            <p class="mt-2 flex-1 text-sm text-text-main">Lumiere es una web de restaurante gastronómico con una carta
+              digital que se
+              actualiza dinámicamente desde un panel de administración.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="retro-tag">NEXT.JS</span>
+              <span class="retro-tag">TAILWIND CSS</span>
+              <span class="retro-tag">PAYLOAD CMS</span>
+            </div>
+            <a class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-retro-accent-blue retro-link transition-all duration-200 group-hover:gap-2"
+              href=""><span class="bg-clip-text">VER_EN_GITHUB</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="retro-border retro-card-bg p-6 sm:p-8 lg:col-span-4 mt-5" id="contacto">
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="flex flex-col justify-center w-full md:w-1/2">
+          <h2 class="text-3xl font-bold leading-tight tracking-tighter text-text-main sm:text-4xl">HABLA_CONMIGO.BAT
+          </h2>
+          <p class="mt-4 text-base text-text-main">Estoy disponible para nuevas oportunidades y colaboraciones. Si
+            tienes un proyecto o quieres conectar, envíame un mensaje.</p>
+          <div class="mt-6 flex flex-col gap-4">
+            <a class="flex items-center gap-3 text-text-main no-underline retro-link"
+              href="mailto:mario.sanper.2@educa.jcyl.es">
+              <span class="material-symbols-outlined">mail</span>
+              <span>mario.sanper.2@educa.jcyl.es</span>
+            </a>
+            <a class="flex items-center gap-3 text-text-main no-underline retro-link" href="tel:600123456">
+              <span class="material-symbols-outlined">call</span>
+              <span>+34 600 123 456</span>
+            </a>
+          </div>
+        </div>
+        <form class="flex flex-col gap-4 w-full md:w-1/2">
+          <div>
+            <label class="mb-2 block text-sm font-bold text-text-main" for="name">NOMBRE</label>
+            <input
+              class="w-full border-2 border-retro-border bg-background-dark px-3 py-2 text-text-main placeholder-text-muted-dark focus:border-retro-accent-blue focus:outline-none focus:ring-0"
+              id="name" name="name" placeholder="Tu nombre aquí" type="text" />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold text-text-main" for="email">EMAIL</label>
+            <input
+              class="w-full border-2 border-retro-border bg-background-dark px-3 py-2 text-text-main placeholder-text-muted-dark focus:border-retro-accent-blue focus:outline-none focus:ring-0"
+              id="email" name="email" placeholder="tu@email.com" type="email" />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold text-text-main" for="message">MENSAJE</label>
+            <textarea
+              class="w-full border-2 border-retro-border bg-background-dark px-3 py-2 text-text-main placeholder-text-muted-dark focus:border-retro-accent-blue focus:outline-none focus:ring-0"
+              id="message" name="message" placeholder="Escribe tu mensaje..." rows="4"></textarea>
+          </div>
+          <button
+            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden h-11 px-5 text-base font-bold leading-normal tracking-wide retro-button"
+            type="submit">
+            <span class="truncate">ENVIAR_MENSAJE</span>
+          </button>
+        </form>
+      </div>
+    </section>
   </main>
+  <footer class="flex w-full justify-center border-t-2 border-retro-border bg-background-dark">
+    <div class="flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
+      <p class="text-sm text-text-main">© 2025 MARIO SANCHEZ. TODOS LOS DERECHOS RESERVADOS.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/SanchezMarioo" aria-label="GitHub" class="text-text-main retro-link">
+          <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10z"
+              fill-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

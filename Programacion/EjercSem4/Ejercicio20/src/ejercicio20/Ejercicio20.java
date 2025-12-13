@@ -20,6 +20,8 @@ public class Ejercicio20 {
         final int FILAS = 4;
         final int COLUMNAS = 4;
         int numeroSacar = 0;
+        int sumaFilas = 0;
+        int sumaColumnas = 0;
         Scanner sc = new Scanner(System.in);
         int[][] matriz = new int[FILAS][COLUMNAS];
 
@@ -33,8 +35,21 @@ public class Ejercicio20 {
         for (int i = 0; i < COLUMNAS; i++) {
             for (int j = 0; j < FILAS; j++) {
                 System.out.print(matriz[i][j] + "\t");
+                sumaFilas += matriz[i][j];
             }
+            System.out.print(sumaFilas);
             System.out.println();
+            sumaFilas = 0;
+
         }
+        for (int i = 0; i < COLUMNAS; i++) {
+            for (int j = 0; j < FILAS; j++) {
+                sumaColumnas += matriz[j][i];
+            }
+            System.out.print(sumaColumnas + "\t");
+            sumaColumnas = 0;
+        }
+        System.out.println();
+
     }
 }

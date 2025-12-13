@@ -26,31 +26,30 @@ public class Ejercicio17 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Añade un numero: ");
         int numeroAñadir = sc.nextInt();
-        while (numeroAñadir > 0) {
-            for (int i = 0; i < valores.length; i++) {
-                if (valores[i] >= numeroAñadir) {
-                    posicionInsertar = i;
-                    System.out.println("El numero " + i + " es mayor que " + numeroAñadir);
-                    break;
-                } else if (!entraDeNuevo) {
-                    posicionInsertar = valores.length;
-                }
+        while (numeroAñadir < 0) {
+            System.out.println("Añade un numero: ");
+            numeroAñadir = sc.nextInt();
+            if (numeroAñadir < 0) {
+                continue;
             }
-            for (int i = 0; i < nuevo.length; i++) {
-                if (numeros < posicionInsertar) {
-                    nuevo[numeros] = valores[i];
-                } else if (numeros == posicionInsertar && !esIgual) {
-                    nuevo[posicionInsertar] = numeroAñadir;
-                    esIgual = true;
-                    continue;
-                } else {
-                    nuevo[numeros + 1] = valores[numeros];
-                }
-                numeros++;
+        }
+        for (int i = 0; i < valores.length; i++) {
+            if (valores[i] >= numeroAñadir) {
+                posicionInsertar = i;
+                break;
+            } else if (!entraDeNuevo) {
+                posicionInsertar = valores.length;
             }
-            for (int i = 0; i < nuevo.length; i++) {
-                System.out.print(nuevo[i] + " ");
-            }
+        }
+        for (int i = 0; i < posicionInsertar; i++) {
+            nuevo[i] = valores[i];
+        }
+        nuevo[posicionInsertar] = numeroAñadir;
+        for (int i = posicionInsertar; i < valores.length; i++) {
+            nuevo[i + 1] = valores[i];
+        }
+        for (int i = 0; i < nuevo.length; i++) {
+            System.out.print(nuevo[i] + " ");
         }
     }
 

@@ -27,8 +27,10 @@ public class Ejercicio2 {
     }
 
     static void transformarFormato(int segundos) {
-        int minutos = segundos * 60;
-        System.out.println("");
+        int horas = segundos / 3600;
+        int minutos = (segundos % 3600) / 60;
+        int segundosResto = segundos % 60;
+        System.out.printf("%02d:%02d:%02d", horas, minutos, segundosResto);
     }
 
 }

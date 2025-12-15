@@ -17,57 +17,52 @@ public class HundirLaFlotaRefactor {
         // TODO code application logic here
         int[][] matrizUsuario = new int[8][8];
         int[] barcos = {4, 3, 2};
-        char[][] matrizInterna = new char[12][12];
-        int maximo = 5;
-        int minimo = 4;
-        int numeroRandom2 = 0;
-        int numeroRandom = 0;
-
-        for (int i = 0; i < barcos.length; i++) {
-            boolean esRep = false;
+        char[][] matrizInterna = new char[8][8];
+        int columna = 0;
+        int fila = 0;
+        boolean esRep = false;
+        int barcoPosicion = 0;
+        while (barcoPosicion < barcos.length) {
+            esRep = false;
             boolean esVertical = (int) (Math.random() * 2) == 0 ? true : false;
             if (!esVertical) {
-                numeroRandom = (int) (Math.random() * (maximo - minimo) + 1);
-                numeroRandom2 = (int) (Math.random() * 8);
+                fila = (int) (Math.random() * 8);
+                columna = (int) (Math.random() * 8);
             } else {
-                numeroRandom2 = (int) (Math.random() * (maximo - minimo) + 1);
-                numeroRandom = (int) (Math.random() * 8);
+                columna = (int) (Math.random() * 8);
+                fila = (int) (Math.random() * 8);
             }
-
-            maximo++;
-            minimo--;
-            for (int j = barcos[i]; j > 0; j--) {
-                int numeroRandomSup = numeroRandom;
-                int numeroRandom2Sup = numeroRandom2;
-
-                if (matrizInterna[numeroRandomSup][numeroRandom2Sup] == '#') {
-                    System.out.println("Encontro un conflicto " + numeroRandomSup + numeroRandom2Sup);
-                    i--;
+            int numeroRandomSup = fila;
+            int numeroRandom2Sup = columna;
+            for (int j = barcos[barcoPosicion]; j > 0; j--) {
+                esRep = false;
+                if (matrizInterna[numeroRandomSup][numeroRandom2Sup] == '#' || numeroRandom2Sup >= 7 || numeroRandomSup >= 7) {
                     esRep = true;
-                    continue;
+                    break;
                 }
 
                 if (!esVertical) {
-                    numeroRandomSup++;
+                    numeroRandom2Sup++;
                 } else {
                     numeroRandomSup++;
                 }
             }
             if (!esRep) {
-                for (int k = barcos[i]; k > 0; k--) {
+                for (int k = barcos[barcoPosicion]; k > 0; k--) {
+                    matrizInterna[fila][columna] = '#';
                     if (!esVertical) {
-                        numeroRandom++;
+                        fila++;
                     } else {
-                        numeroRandom2++;
+                        columna++;
                     }
-                    System.out.println(numeroRandom + numeroRandom2);
-                    matrizInterna[numeroRandom][numeroRandom2] = '#';
+
                 }
+                barcoPosicion++;
             }
         }
         for (int i = 0; i < matrizInterna.length; i++) {
             for (int j = 0; j < matrizInterna.length; j++) {
-                System.out.print(matrizInterna[i][j] + "\t");
+                System.out.print(matrizInterna[i][j] + " ");
             }
             System.out.println("");
         }

@@ -24,7 +24,7 @@ public class Ejercicio27 {
         do {
             esRep = false;
             contador++;
-            if (columnas == 5 && filas == 5){
+            if (columnas == 5 && filas == 5) {
                 break;
             }
             if (columnas < 5) {
@@ -33,7 +33,7 @@ public class Ejercicio27 {
                 columnas = 0;
                 filas++;
             }
-            numeroRandom = (int) (Math.random() * 101 );
+            numeroRandom = (int) (Math.random() * 101);
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz.length; j++) {
                     if (matriz[i][j] == numeroRandom) {
@@ -45,8 +45,8 @@ public class Ejercicio27 {
             }
             if (!esRep) {
                 matriz[filas][columnas] = numeroRandom;
-                
-            } else{
+
+            } else {
                 contador--;
                 columnas--;
             }

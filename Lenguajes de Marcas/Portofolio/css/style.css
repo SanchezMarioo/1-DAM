@@ -102,11 +102,11 @@ h6 {
   color: #000000b8;
 }
 #the-byte{
-  background-image: url(img/thebyte-hero.png);
+  background-image: url(../img/thebyte-hero.png);
 }
 #aroma-coffee{
-  background-image: url(img/cafe-aroma-hero.png);
+  background-image: url(../img/cafe-aroma-hero.png);
 }
 #lumiere{
-  background-image: url(img/lumiere-hero.png);
+  background-image: url(../img/lumiere-hero.png);
 }

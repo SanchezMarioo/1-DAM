@@ -27,7 +27,7 @@ public class Ejercicio26 {
         int[][] matriz = new int[FILAS][COLUMNAS];
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                System.out.print("Dime un numero: ");
+                System.out.print("Posicion" + "[" + i + "]" + "[" + j + "] " + ":");
                 numero = sc.nextInt();
                 matriz[i][j] = numero;
 
@@ -45,12 +45,12 @@ public class Ejercicio26 {
         }
 
         for (int i = 0; i < sumasColumnas.length; i++) {
-           if (sumasColumnas[indiceMenor] > sumasColumnas[i] ){
-               indiceMenor = i;
-           }
+            if (sumasColumnas[indiceMenor] > sumasColumnas[i]) {
+                indiceMenor = i;
+            }
         }
         System.out.println();
-        for (int i = 0; i < matriz.length ; i++) {
+        for (int i = 0; i < matriz.length; i++) {
             System.out.println(matriz[i][indiceMenor] + "\t");
         }
     }

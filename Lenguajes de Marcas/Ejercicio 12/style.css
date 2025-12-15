@@ -47,10 +47,16 @@
   padding: 10px;
   text-align: center;
   font-size: 20px;
+  width: 500px;
 }
 .nav-vertical ul li .active{
-  color: yellow;
+  color: red;
 }
 .nav-vertical ul li a:hover {
+  color: beige;
+  margin-left: 10px;
+}
+.nav-vertical ul li a:active {
+  color: yellow;
   margin-left: 10px;
 }

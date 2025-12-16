@@ -23,14 +23,19 @@ public class Ejercicio6 {
         double y1 = sc.nextDouble();
         double x2 = sc.nextDouble();
         double y2 = sc.nextDouble();;
-        
-        distancia(x1, y1, x2, y2);
+
+        double resultado = distancia2(x1, y1, x2, y2);
+        System.out.println(resultado);
     }
 
     static void distancia(double x1, double y1, double x2, double y2) {
-        double total = (Math.pow((x2 - x1), 2)) + (Math.pow((y2 - y1), 2));
-        total = Math.sqrt(total);
-        System.out.println(total);
-        
+        double total = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+    }
+
+    static double distancia2(double x1, double y1, double x2, double y2) {
+        double total = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        return total;
+
     }
 }

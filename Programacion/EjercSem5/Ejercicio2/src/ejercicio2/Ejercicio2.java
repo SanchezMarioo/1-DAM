@@ -22,7 +22,10 @@ public class Ejercicio2 {
             System.out.println("No es un numero");
             sc.next();
         }
-        int segundos = sc.nextInt();
+        int segundos = 0;
+        do {
+            segundos = sc.nextInt();
+        } while (segundos < 0);
         transformarFormato(segundos);
     }
 

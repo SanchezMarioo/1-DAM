@@ -21,41 +21,68 @@ public class HundirLaFlotaRefactor {
         int columna = 0;
         int fila = 0;
         boolean esRep = false;
+        final int TAMAÑO = 8;
+        final char BARCO = '#';
+        final char VACIO = '.';
+        for (int i = 0; i < TAMAÑO; i++) {
+            for (int j = 0; j < TAMAÑO; j++) {
+                matrizInterna[i][j] = VACIO;
+            }
+        }
         int barcoPosicion = 0;
         while (barcoPosicion < barcos.length) {
             esRep = false;
             boolean esVertical = (int) (Math.random() * 2) == 0 ? true : false;
-            if (!esVertical) {
-                fila = (int) (Math.random() * 8);
-                columna = (int) (Math.random() * 8);
-            } else {
-                columna = (int) (Math.random() * 8);
-                fila = (int) (Math.random() * 8);
-            }
-            int numeroRandomSup = fila;
-            int numeroRandom2Sup = columna;
-            for (int j = barcos[barcoPosicion]; j > 0; j--) {
-                esRep = false;
-                if (matrizInterna[numeroRandomSup][numeroRandom2Sup] == '#' || numeroRandom2Sup >= 7 || numeroRandomSup >= 7) {
+            columna = (int) (Math.random() * 8);
+            fila = (int) (Math.random() * 8);
+            int filaTemp = fila;
+            int colTemp = columna;
+
+            for (int i = 0; i < barcos[barcoPosicion]; i++) {
+                // Límites
+                if (filaTemp < 0 || filaTemp >= TAMAÑO || colTemp < 0 || colTemp >= TAMAÑO) {
                     esRep = true;
                     break;
                 }
-
-                if (!esVertical) {
-                    numeroRandom2Sup++;
+                // Casilla actual
+                if (matrizInterna[filaTemp][colTemp] == BARCO) {
+                    esRep = true;
+                    break;
+                }
+                // Arriba
+                if (filaTemp > 0 && matrizInterna[filaTemp - 1][colTemp] == BARCO) {
+                    esRep = true;
+                    break;
+                }
+                // Abajo
+                if (filaTemp < TAMAÑO - 1 && matrizInterna[filaTemp + 1][colTemp] == BARCO) {
+                    esRep = true;
+                    break;
+                }
+                // Izquierda
+                if (colTemp > 0 && matrizInterna[filaTemp][colTemp - 1] == BARCO) {
+                    esRep = true;
+                    break;
+                }
+                // Derecha
+                if (colTemp < TAMAÑO - 1 && matrizInterna[filaTemp][colTemp + 1] == BARCO) {
+                    esRep = true;
+                    break;
+                }
+                if (esVertical) {
+                    filaTemp++;
                 } else {
-                    numeroRandomSup++;
+                    colTemp++;
                 }
             }
             if (!esRep) {
-                for (int k = barcos[barcoPosicion]; k > 0; k--) {
-                    matrizInterna[fila][columna] = '#';
-                    if (!esVertical) {
+                for (int i = 0; i < barcos[barcoPosicion]; i++) {
+                    matrizInterna[fila][columna] = BARCO;
+                    if (esVertical) {
                         fila++;
                     } else {
                         columna++;
                     }
-
                 }
                 barcoPosicion++;
             }
@@ -67,5 +94,4 @@ public class HundirLaFlotaRefactor {
             System.out.println("");
         }
     }
-
 }

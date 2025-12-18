@@ -294,6 +294,7 @@
 /Programacion/EjercSem5/Ejercicio6/build/
 /Programacion/EjercSem5/Ejercicio7/nbproject/private/
 /Programacion/EjercSem5/Ejercicio7/build/
+<<<<<<< HEAD
 /Examen_Programacion/Insercion_Notas/nbproject/private/
 /Examen_Programacion/Insercion_Notas/build/
 /Examen_Programacion/Temperaturas/nbproject/private/
@@ -316,3 +317,13 @@
 /Examen_Programacion/Matriz_SinRep/build/
 /Examen_Programacion/Gestion_Inventario/nbproject/private/
 /Examen_Programacion/Gestion_Inventario/build/
+=======
+/Examen_Programacion/Insercion_Manteniendo/nbproject/private/
+/Examen_Programacion/Insercion_Manteniendo/build/
+/Examen_Programacion/Insercion_Manteniendo/dist/
+/Examen_Programacion/Insertar_Posiciones/nbproject/private/
+/Examen_Programacion/Insertar_Posiciones/build/
+/Examen_Programacion/Par_Impar/nbproject/private/
+/Examen_Programacion/Par_Impar/build/
+/Examen_Programacion/Par_Impar/dist/
+>>>>>>> 307cb1a0c6b7fb20d46bb5ea528cdeb850a49eed

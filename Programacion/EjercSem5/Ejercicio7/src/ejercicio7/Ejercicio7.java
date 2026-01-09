@@ -15,14 +15,14 @@ public class Ejercicio7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int n =(int) (Math.random() * 100 + 1);
-        System.out.println("n = " + n); 
+        int n = (int) (Math.random() * 100 + 1);
+        System.out.println("n = " + n);
         muestraPares(n);
     }
 
     static void muestraPares(int n) {
         for (int i = 0; i <= n; i++) {
-            if(i % 2 == 0){
+            if (i % 2 == 0) {
                 System.out.println(i);
             }
         }

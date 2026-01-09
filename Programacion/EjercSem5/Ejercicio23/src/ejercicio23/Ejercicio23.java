@@ -44,11 +44,12 @@ public class Ejercicio23 {
     }
 
     static int mostrarMenu(Scanner sc) {
-        System.out.println("===== GESTIÓN DEL PARKING =====");
+        System.out.println("\n===== GESTIÓN DEL PARKING =====");
         System.out.println("1. Aparcar un coche");
         System.out.println("2. Sacar un coche");
         System.out.println("3. Mostrar estado del parking");
         System.out.println("4. Salir del programa");
+        System.out.println("5. Mostrar de forma visual el estado");
         System.out.print("Selecciona una opción: ");
         int opcion = sc.nextInt();
         return opcion;
@@ -135,6 +136,19 @@ public class Ejercicio23 {
                 }
             }
         }
+    }
 
+    static void mostrarVisual(boolean[][] parking) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (!noEntre) {
+                    if (parking[i][j] == false) {
+                        noEntre = true;
+                        System.out.println("Primera plaza libre disponible en planta " + (i) + ", plaza " + (j));
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

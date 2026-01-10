@@ -36,6 +36,9 @@ public class Ejercicio23 {
                 case 3 -> {
                     estadoParking(parking);
                 }
+                case 5 -> {
+                    mostrarVisual(parking);
+                }
                 default -> {
                     System.out.println("Opcion no valida.");
                 }
@@ -140,15 +143,15 @@ public class Ejercicio23 {
 
     static void mostrarVisual(boolean[][] parking) {
         for (int i = 0; i < 3; i++) {
+            System.out.println("");
             for (int j = 0; j < 5; j++) {
-                if (!noEntre) {
                     if (parking[i][j] == false) {
-                        noEntre = true;
-                        System.out.println("Primera plaza libre disponible en planta " + (i) + ", plaza " + (j));
-                        break;
+                        System.out.print("X" + " ");
+                    } else{
+                        System.out.print("O" + " ");
                     }
                 }
             }
+        System.out.println("");
         }
     }
-}

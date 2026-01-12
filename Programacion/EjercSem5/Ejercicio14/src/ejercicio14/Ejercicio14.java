@@ -28,7 +28,7 @@ public class Ejercicio14 {
                 System.out.println("Programa terminado.");
                 break;
             }
-
+            
             if (esVocal(caracter)) {
                 System.out.println("El carácter es una vocal.");
             } else {
@@ -37,7 +37,7 @@ public class Ejercicio14 {
         } while (caracter != 'Z');
     }
 
-    public static boolean esVocal(char c) {
+    static boolean esVocal(char c) {
         c = Character.toLowerCase(c); // Convertir a minúscula para simplificar la comparación
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }

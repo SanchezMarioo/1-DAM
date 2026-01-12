@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+  <trabajador>
+    <nombre>Pepe</nombre>
+    <apellidos>Perez</apellidos>
+    <puesto categoria="construccion">Albañil</puesto>
+    <antiguedad tiempo="2"  unidad="años"/>
+      <proyectos >
+      <nombre tipo="casa">Obra1</nombre>
+      <nombre tipo="casa">Obra2</nombre>
+    </proyectos>
+  </trabajador>
+    <trabajador>
+    <nombre>Alfonso</nombre>
+    <apellidos>Lopez</apellidos>
+    <puesto categoria="construccion">Jefe de Obra</puesto>
+    <antiguedad tiempo="2"  unidad="años"/>
+    <proyectos>
+    </proyectos>
+  </trabajador>
+</empleados>

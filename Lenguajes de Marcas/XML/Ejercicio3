@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empresaPedidos>
+  <ordenPedido href="https://">
+  <id>1</id>
+  <fecha>1/1/2021</fecha>
+  <idCliente>1</idCliente>
+    <factura id="1">
+      <nombreEmpresa>Lopez S.L</nombreEmpresa>
+      <direccion>Calle Prueba,123</direccion>
+      <codPostal>37003</codPostal>
+    </factura>
+    <pedido>
+      <descripcion>Prueba 1</descripcion>
+    </pedido>
+      <pedido>
+      <descripcion>Prueba 2</descripcion>
+    </pedido>
+    </ordenPedido>
+</empresaPedidos>

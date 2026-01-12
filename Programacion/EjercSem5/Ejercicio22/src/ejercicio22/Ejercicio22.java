@@ -38,7 +38,7 @@ public class Ejercicio22 {
             }
             switch (opcion) {
                 case 1 -> {
-                    numeroAdivinar = lvl1();
+                    numeroAdivinar = nivelPrimero();
                     System.out.println(numeroAdivinar);
                     do {
                         numeroUsuario = sc.nextInt();
@@ -55,7 +55,7 @@ public class Ejercicio22 {
                     } while (true);
                 }
                 case 2 -> {
-                    numeroAdivinar = lvl2();
+                    numeroAdivinar = nivelSegundo();
                     System.out.println(numeroAdivinar);
                     do {
                         numeroUsuario = sc.nextInt();
@@ -72,7 +72,7 @@ public class Ejercicio22 {
                     } while (true);
                 }
                 case 3 -> {
-                    numeroAdivinar = lvl3();
+                    numeroAdivinar = nivelTercero();
                     System.out.println(numeroAdivinar);
                     do {
                         numeroUsuario = sc.nextInt();
@@ -98,17 +98,17 @@ public class Ejercicio22 {
         } while (true);
     }
 
-    static int lvl1() {
+    static int nivelPrimero() {
         int numeroRandom = (int) (Math.random() * 20) + 1;
         return numeroRandom;
     }
 
-    static int lvl2() {
+    static int nivelSegundo() {
         int numeroRandom = (int) (Math.random() * 100) + 1;
         return numeroRandom;
     }
 
-    static int lvl3() {
+    static int nivelTercero() {
         int numeroRandom = (int) (Math.random() * 500) + 1;
         return numeroRandom;
     }

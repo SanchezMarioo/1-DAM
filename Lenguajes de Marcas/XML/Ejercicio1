@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libro>
+    <capitulo>
+      <titulo>Prueba</titulo>
+    </capitulo>
+    
+      <capitulo>
+      <titulo>Prueba 2</titulo>
+        <subcaptilo>
+          <titulo>SubCapitulo1</titulo> 
+        </subcaptilo>
+          <subcaptilo>
+          <titulo>SubCapitulo2</titulo> 
+        </subcaptilo>
+    </capitulo>
+    
+    <capitulo>
+      <titulo>Capitulo 3</titulo>
+    </capitulo>
+</libro>

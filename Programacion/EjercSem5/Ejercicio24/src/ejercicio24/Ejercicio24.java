@@ -134,7 +134,7 @@ public class Ejercicio24 {
         } else {
             System.out.println("===== HISTORIAL DE COMPRAS =====");
             for (int i = 0; i < contador; i++) {
-                System.out.println(i + "." + historial[i]);
+                System.out.println((i + 1) + ". " + historial[i]);
             }
         }
     }

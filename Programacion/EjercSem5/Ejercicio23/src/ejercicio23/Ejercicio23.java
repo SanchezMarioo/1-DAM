@@ -63,18 +63,18 @@ public class Ejercicio23 {
         System.out.print("Introduce la planta (0-2): ");
         int planta = sc.nextInt();
         System.out.print("Introduce el número de plaza (0-4): ");
-        int numeroPlanta = sc.nextInt();
+        int plaza = sc.nextInt();
         int numeroPlaza = 3 * 5;
         if (contadorOcupados == numeroPlaza) {
             System.out.println("El parking está completo. No se pueden aparcar más coches.");
         }
-        if ((planta < 0 || planta > 3) || (numeroPlanta < 0 || numeroPlanta > 5)) {
+        if ((planta < 0 || planta > 3) || (plaza < 0 || plaza > 5)) {
             System.out.println("Datos incorrectos. Planta o plaza no válida.");
         }
-        if (parking[planta][numeroPlanta] == true) {
+        if (parking[planta][plaza] == true) {
             System.out.println("No es posible aparcar: la plaza está ocupada.");
         } else {
-            parking[planta][numeroPlanta] = true;
+            parking[planta][plaza] = true;
             System.out.println("Coche aparcado correctamente.");
         }
         return contadorOcupados;
@@ -84,12 +84,12 @@ public class Ejercicio23 {
         System.out.print("Introduce la planta (0-2): ");
         int planta = sc.nextInt();
         System.out.print("Introduce el número de plaza (0-4): ");
-        int numeroPlanta = sc.nextInt();
-        if ((planta < 0 || planta > 2) || (numeroPlanta < 0 || numeroPlanta > 4)) {
+        int plaza = sc.nextInt();
+        if ((planta < 0 || planta > 2) || (plaza < 0 || plaza > 4)) {
             System.out.println("Datos incorrectos. Planta o plaza no válida.");
         }
-        if (parking[planta][numeroPlanta] == true) {
-            parking[planta][numeroPlanta] = false;
+        if (parking[planta][plaza]) {
+            parking[planta][plaza] = false;
             System.out.println("Coche retirado correctamente.");
         } else {
             System.out.println("No hay ningún coche en esa plaza.");
@@ -97,17 +97,21 @@ public class Ejercicio23 {
     }
 
     static void estadoParking(boolean[][] parking) {
-        System.out.println("===== ESTADO DEL PARKING =====");
+        System.out.println("========== ESTADO DEL PARKING ==========");
         for (int i = 0; i < 3; i++) {
-            System.out.println("\nPlanta" + (i) + "\n");
+            System.out.println("---------------------------------------");
+            System.out.println("Planta " + i);
+            System.out.println("---------------------------------------");
             for (int j = 0; j < 5; j++) {
-                if (parking[i][j] == true) {
-                    System.out.println("Plaza " + (j) + " ocupada");
+                if (parking[i][j]) {
+                    System.out.println("Planta " + i + " | Plaza " + j + " -> OCUPADA");
                 } else {
-                    System.out.println("Plaza " + (j) + " libre");
+                    System.out.println("Planta " + i + " | Plaza " + j + " -> LIBRE");
                 }
             }
         }
+        System.out.println("=======================================");
+
     }
 
     static void estadoPlazas(boolean[][] parking) {
@@ -145,13 +149,13 @@ public class Ejercicio23 {
         for (int i = 0; i < 3; i++) {
             System.out.println("");
             for (int j = 0; j < 5; j++) {
-                    if (parking[i][j] == false) {
-                        System.out.print("X" + " ");
-                    } else{
-                        System.out.print("O" + " ");
-                    }
+                if (parking[i][j] == false) {
+                    System.out.print("X" + " ");
+                } else {
+                    System.out.print("O" + " ");
                 }
             }
-        System.out.println("");
         }
+        System.out.println("");
     }
+}

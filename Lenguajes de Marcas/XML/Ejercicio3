@@ -1,18 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <empresaPedidos>
-  <ordenPedido href="https://">
-  <id>1</id>
-  <fecha>1/1/2021</fecha>
-  <idCliente>1</idCliente>
-    <factura id="1">
+  <ordenPedido  id="1" fecha="15/1/2026" idCliente="c123">
+    <factura id="F001">
       <nombreEmpresa>Lopez S.L</nombreEmpresa>
       <direccion>Calle Prueba,123</direccion>
+      <ciudad>Salamanca</ciudad>
       <codPostal>37003</codPostal>
     </factura>
-    <pedido>
+    <envio href="F001"/>
+    <pedido ref="1" cantidad="2">
       <descripcion>Prueba 1</descripcion>
     </pedido>
-      <pedido>
+    <pedido ref="2" cantidad="10">
       <descripcion>Prueba 2</descripcion>
     </pedido>
     </ordenPedido>

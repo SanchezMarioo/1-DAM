@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE source [
+ <!ELEMENT source (AAA+)>
+ <!ELEMENT AAA ((BBB+) | (BBB+, CCC, BBB))>
+ <!ATTLIST AAA
+ id CDATA #REQUIRED
+ pos CDATA #IMPLIED>
+ <!ELEMENT BBB (CCC*)>
+ <!ATTLIST BBB
+ id CDATA #REQUIRED>
+ <!ELEMENT CCC (DDD*)>
+ <!ATTLIST CCC
+ id CDATA #REQUIRED>
+ <!ELEMENT DDD EMPTY>
+ <!ATTLIST DDD
+ id CDATA #REQUIRED>]>
+ <source>
+<AAA id="a1" pos="start">
+ <BBB id="b1"/>
+ <BBB id="b2"/>
+</AAA>
+<AAA id="a2">
+ <BBB id="b3"/>
+ <BBB id="b4"/>
+ <CCC id="c1">
+ <DDD id="d1"/>
+ </CCC>
+ <BBB id="b5">
+ <CCC id="c2"/>
+ </BBB>
+</AAA>
+</source>

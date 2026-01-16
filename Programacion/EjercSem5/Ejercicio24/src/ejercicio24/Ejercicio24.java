@@ -3,7 +3,7 @@ package ejercicio24;
 import java.util.Scanner;
 
 public class Ejercicio24 {
-
+    static int contador = 0;
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class Ejercicio24 {
                     dinero += introducirDinero(sc);
 
                 case 2 ->
-                    contadorHistorial = compraProducto(sc, historial, contadorHistorial, dinero);
+                    dinero = compraProducto(sc, historial, dinero);
 
                 case 3 ->
                     System.out.printf("Saldo disponible: %.2f €%n", dinero);
@@ -63,7 +63,7 @@ public class Ejercicio24 {
         return cantidad;
     }
 
-    static int compraProducto(Scanner sc, String[] historial, int contador, double dinero) {
+    static double compraProducto(Scanner sc, String[] historial, double dinero) {
 
         double producto = 0;
         String codProducto = "";
@@ -125,7 +125,7 @@ public class Ejercicio24 {
 
         } while (true);
 
-        return contador;
+        return dinero;
     }
 
     static void historialProductos(String[] historial, int contador) {

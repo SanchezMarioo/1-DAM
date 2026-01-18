@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<msg:mensaje
+    xmlns:msg="http://example.org/msg"
+    xmlns:po="http://example.org/po">
+
+    <msg:emisor>ventas@empresa.com</msg:emisor>
+    <msg:fechaEnvio>2026-01-18</msg:fechaEnvio>
+    <msg:destino>cliente@correo.com</msg:destino>
+
+    <msg:texto>
+        Se adjunta la orden de pedido correspondiente.
+    </msg:texto>
+
+    <msg:adjuntos>
+        <msg:descripcion>Orden de pedido del cliente</msg:descripcion>
+
+        <msg:item>
+            <po:ordenPedido>
+                <po:numero>OP-1234</po:numero>
+                <po:fecha>2026-01-18</po:fecha>
+
+                <po:cliente>
+                    <po:nombre>Juan Pérez</po:nombre>
+                    <po:direccion>Av. Principal 123</po:direccion>
+                </po:cliente>
+
+                <po:lineas>
+                    <po:linea>
+                        <po:producto>Portátil</po:producto>
+                        <po:cantidad>1</po:cantidad>
+                        <po:precio>950</po:precio>
+                    </po:linea>
+                </po:lineas>
+            </po:ordenPedido>
+        </msg:item>
+    </msg:adjuntos>
+
+</msg:mensaje>

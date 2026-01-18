@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empresa>
+  <direccion>
+  <calle>Avd. de Murcia</calle>
+  <ciudad>Alicante</ciudad>
+  <provincia>Alicante</provincia>
+  </direccion>
+    <servidor>
+      <url>http://localhost</url>
+      <ip>127.0.0.1</ip>
+  </servidor>
+</empresa>

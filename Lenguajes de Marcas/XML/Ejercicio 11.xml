@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<l:aaa xmlns:ll="http://prueba/lowercase" xmlns:u="http://prueba/uppercase"  xmlns:x="http://prueba/xnumber">
+   <bbb l:zz="11" >
+   <ccc u:WW="22"/>
+   </bbb>
+   <u:BBB l:sss="***"  x:S111="???" />
+    <x:x111 />
+ </l:aaa>

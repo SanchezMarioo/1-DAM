@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog RSS</title>
+    <link>https://www.google.com/</link>
+    <description>Descripcion del blog </description>
+    <item>
+      <title>Noticia 1 </title>
+      <link>https://www.google.com/</link>
+      <description>Noticia 1 </description>
+      <pubDate>Sun, 25 Jan 2026 00:00:01 GMT</pubDate>
+      <source url="https://www.google.com">Mario</source>
+    </item>
+    <item>
+      <title>Noticia 2 </title>
+      <link>https://www.google.com/</link>
+      <description>Noticia 2 </description>
+      <pubDate>Sun, 25 Jan 2026 00:00:01 GMT</pubDate>
+       <source url="https://www.google.com">Mario</source>
+    </item>
+  </channel>
+</rss>

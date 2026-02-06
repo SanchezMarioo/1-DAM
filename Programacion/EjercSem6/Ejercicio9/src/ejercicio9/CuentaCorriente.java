@@ -1,8 +1,8 @@
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio4;
+package ejercicio9;
 
 /**
  *
@@ -11,9 +11,8 @@ package ejercicio4;
 public class CuentaCorriente {
 
     String dni;
-    String nombreTitular;
-    double dinero;
-
+    public String nombreTitular;
+    private double dinero;
     /**
      *
      * @param dni DNI
@@ -23,15 +22,15 @@ public class CuentaCorriente {
     CuentaCorriente(String dni, String nombreTitular, double dinero) {
         this.dni = dni;
         this.nombreTitular = nombreTitular;
-        this.dinero = 0.0;
+        this.dinero = dinero;
     }
 
-    CuentaCorriente(String titular) {
-        this(titular, "Titular cuenta", 0.0);
+    CuentaCorriente(String dni, double dinero) {
+        this(dni, "Sin nombre", dinero);
     }
 
-    CuentaCorriente(String titular,double dinero) {
-        this(titular, "Titular conocido", dinero);
+    void cambiarTitular(String titular) {
+        nombreTitular = titular;
     }
 
     /**
@@ -67,6 +66,6 @@ public class CuentaCorriente {
      * Muestra la informacion al usuario
      */
     void mostrarInformacion() {
-        System.out.println("Titular " + nombreTitular + " con DNI " + dni + " saldo " + dinero + "€.");
+        System.out.println("Titular " + nombreTitular + " con DNI " + dni + " saldo " + dinero + "?.");
     }
 }

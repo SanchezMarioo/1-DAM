@@ -15,6 +15,13 @@ public class Ejercicio12 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SerieTV serie1 = new SerieTV();
+        SerieTV serie2 = new SerieTV("Separacion",2);
+        serie1.setTemporadas(-1);
+        serie2.finalizarSerie();
+        serie2.sumarTemporadas(32);
+        System.out.println("Serie 1: " +  serie1.toString());
+        System.out.println("Serie 2: " +  serie2.toString());
     }
     
 }

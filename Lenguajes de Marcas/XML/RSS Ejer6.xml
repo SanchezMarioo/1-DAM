@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:mbp="http://www.misblogs.com/blogprueba">
+  <channel>
+    <title>Blog RSS</title>
+    <link>https://www.google.com/</link>
+    <description>Descripcion del blog</description>
+    <language>es-es</language>
+
+    <skipDays>
+      <day>Monday</day>
+      <day>Tuesday</day>
+    </skipDays>
+
+    <textInput>
+      <title>Buscar en Google</title>
+      <description>Campo de búsqueda del blog</description>
+      <name>buscarText</name>
+      <link>http://www.google.no/search?</link>
+    </textInput>
+
+    <item>
+      <title>Noticia 1</title>
+      <link>https://www.google.com/</link>
+      <description>Noticia 1</description>
+      <guid>http://www.noticias.com/rss/item001/</guid>
+      <comments>http://www.noticias.com/rss/comentarios.php</comments>
+      <pubDate>Sun, 25 Jan 2026 00:00:01 GMT</pubDate>
+      <author>autor2@ejemplo.com (Mario)</author>
+
+      <mbp:misblogs>
+        <mbp:blog>
+          <mbp:description>Blog personal sobre tecnología y desarrollo web</mbp:description>
+        </mbp:blog>
+      </mbp:misblogs>
+    </item>
+
+    <item>
+      <title>Noticia 2</title>
+      <link>https://www.google.com/</link>
+      <description>Noticia 2</description>
+      <pubDate>Sun, 25 Jan 2026 00:00:01 GMT</pubDate>
+      <author>autor1@ejemplo.com (Mario)</author>
+
+      <enclosure
+        url="http://www.youtube.com/v/DQ_UL-5rYXQ?version=3"
+        length="3440"
+        type="application/x-shockwave-flash" />
+
+      <mbp:misblogs>
+        <mbp:blog>
+          <mbp:description>Blog de noticias y actualidad digital</mbp:description>
+        </mbp:blog>
+        <mbp:blog>
+          <mbp:description>Blog de tutoriales y guías prácticas</mbp:description>
+        </mbp:blog>
+      </mbp:misblogs>
+    </item>
+  </channel>
+</rss>

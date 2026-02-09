@@ -16,9 +16,9 @@ public class Ejercicio24B {
      * @param args the command line arguments
      */
     static int contador = 0;
-
+    // Cambiar a un switch para los productos y el precio
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
         double dinero = 0;
 
@@ -36,12 +36,14 @@ public class Ejercicio24B {
 
             switch (opcion) {
                 case 1 ->
+                    // Añadir saldo y incrementar dentro de la funcion 
                     dinero += introducirDinero(sc);
 
                 case 2 ->
                     dinero = compraProducto(sc, historial, dinero);
 
                 case 3 ->
+                    // Hacer en una funcion 
                     System.out.printf("Saldo disponible: %.2f ?%n", dinero);
 
                 case 4 ->
@@ -75,11 +77,9 @@ public class Ejercicio24B {
         return cantidad;
     }
 
-    static double compraProducto(Scanner sc, String[] historial, double dinero) {
-
+    static double compraProducto(Scanner sc, String[] historial, double dinero) { 
         double producto = 0;
         String codProducto = "";
-
         do {
             System.out.println("===== PRODUCTOS DISPONIBLES =====");
             System.out.println("1. Agua - 1,00 ?");

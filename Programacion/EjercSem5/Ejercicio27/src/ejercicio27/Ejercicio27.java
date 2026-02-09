@@ -28,11 +28,11 @@ public class Ejercicio27 {
             palabraCodificada += letraCodificada;
         }
         System.out.println("La palabra codificada es: " + palabraCodificada);
+        sc.close();
     }
 
     static char codifica(char[] conjuntol, char[] conjunto2, char c) {
         char letraCodificada = ' ';
-        boolean noEsta = false;
         for (int i = 0; i < conjuntol.length; i++) {
             if (c == conjuntol[i]) {
                 return conjunto2[i];

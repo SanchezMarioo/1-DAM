@@ -19,10 +19,8 @@ public class Fibbonaci {
         for (int i = 1; i < 15; i++) {
             System.out.println(fibb);
             fibb = num1 + num2;
-            
             num1 = num2;
             num2 = fibb;
-
         }
     }
 

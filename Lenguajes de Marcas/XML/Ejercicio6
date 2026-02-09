@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<empresa>
-  <direccion>
+<empresa >
+  <fis:direccion xmlns:fis="prueba2">
   <calle>Avd. de Murcia</calle>
   <ciudad>Alicante</ciudad>
   <provincia>Alicante</provincia>
-  </direccion>
-    <servidor>
+  </fis:direccion>
+    <sv:servidor xmlns:sv="prueba">
       <url>http://localhost</url>
-      <ip>127.0.0.1</ip>
-  </servidor>
+      <direccion>127.0.0.1</direccion>
+  </sv:servidor>
 </empresa>

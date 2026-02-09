@@ -23,7 +23,11 @@ public class Ejercicio28 {
 
         char[] letras = {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+<<<<<<< HEAD
             'n','ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+=======
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+>>>>>>> 9acba2a98c6fa66f04cea7663482c926b7ee90a3
         };
 
         int[] contador = new int[letras.length];
@@ -40,6 +44,7 @@ public class Ejercicio28 {
                 }
             }
         }
+<<<<<<< HEAD
 
         System.out.println("Repeticiones de letras:");
         for (int i = 0; i < contador.length; i++) {
@@ -48,6 +53,15 @@ public class Ejercicio28 {
             }
         }
 
+=======
+        System.out.println("Repeticiones de letras:");
+        for (int i = 0; i < contador.length; i++) {
+            if (contador[i] > 0) {
+                System.out.println(letras[i] + ": " + contador[i]);
+            }
+        }
+
+>>>>>>> 9acba2a98c6fa66f04cea7663482c926b7ee90a3
         sc.close();
     }
 }

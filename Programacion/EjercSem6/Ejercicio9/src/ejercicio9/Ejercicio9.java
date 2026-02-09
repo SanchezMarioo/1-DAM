@@ -16,6 +16,8 @@ public class Ejercicio9 {
     public static void main(String[] args) {
         // TODO code application logic here
         CuentaCorriente cuentacorriente = new CuentaCorriente("71070399P", "Mario", 300);
+        // NO se puede modificar el dinero 
+        //cuentacorriente.dinero = 200;
         cuentacorriente.ingresarDinero(1000);
         cuentacorriente.retirarDinero(350);
         cuentacorriente.mostrarInformacion();

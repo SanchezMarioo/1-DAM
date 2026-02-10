@@ -1,0 +1,13 @@
+<!ELEMENT Pedido (Destino,Ordenante,Observaciones,Contenido)>
+<!ATTLIST Pedido fecha NMTOKEN #REQUIERED>
+<!ELEMENT Destino (Nombre,Direccion,Ciudad,CodPostal)>
+<!ELEMENT Nombre (#PCDATE)>
+<!ELEMENT Direccion (#PCDATE)>
+<!ELEMENT Ciudad (#PCDATE)>
+<!ELEMENT CodPostal (#PCDATE)>
+<!ELEMENT Ordenante (Nombre,Direccion,Ciudad,CodPostal)>
+<!ELEMENT Nombre (#PCDATE)>
+<!ELEMENT Direccion (#PCDATE)>
+<!ELEMENT Ciudad (#PCDATE)>
+<!ELEMENT CodPostal (#PCDATE)>
+<!ELEMENT Observaciones (#PCDATE)>

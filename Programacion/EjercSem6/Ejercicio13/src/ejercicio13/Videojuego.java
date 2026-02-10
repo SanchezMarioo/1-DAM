@@ -38,11 +38,10 @@ public class Videojuego {
     }
 
     public void setPrecio(double precio) {
-        if (precio >= 0) {
+        if (precio > 0) {
             this.precio = precio;
-
         } else {
-            System.err.println("NO has introducido una cantidad mayor a 0 ");
+            System.err.println("ERROR: No has introducido una cantidad mayor a 0 ");
         }
     }
 
@@ -67,7 +66,12 @@ public class Videojuego {
     }
 
     public void aplicarDescuento(double porcentaje) {
-        this.precio = precio - (precio * porcentaje / 100);
+        if(porcentaje > 0 && porcentaje < 100 && precio > 0 ){
+            this.precio = precio - (precio * porcentaje / 100.0);
+        } else{
+            System.err.println("El precio debe de ser mayor a 0");
+        }
+        
     }
 
     @Override

@@ -11,7 +11,7 @@ package ejercicio4;
 public class Gestor {
 
     public String nombre;
-    private final int telefono;
+    public final int telefono;
     double maximoAutorizado;
 
     public Gestor(String nombre, int telefono) {

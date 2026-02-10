@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+  <empleado>
+    <nombre>Alejandro</nombre>
+    <apellidos>Martín Ledesma</apellidos>
+    <puesto categoria="senior">programador</puesto>
+    <permanencia tiempo="10"/>
+    <proyectos>
+      <proyecto tipo="curso">Curso XML</proyecto>
+      <proyecto tipo="web">GPM</proyecto>
+    </proyectos>
+  </empleado>
+<empleado>
+  <nombre>Marta</nombre>
+  <apellidos>Marcos Lasa</apellidos>
+  <puesto categoria="auxiliar">programador</puesto>
+  <permanencia tiempo="0"/>
+</empleado>
+</empleados>

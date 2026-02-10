@@ -51,14 +51,18 @@ public class CuentaCorriente {
     }
 
     static void setBanco(String banco) {
-        if (banco != null || !banco.isEmpty()) {
+        if (banco != null || !banco.trim().isEmpty()) {
             CuentaCorriente.banco = banco;
         } else {
             System.out.println("El campo esta vacio o es nulo.");
         }
     }
 
-    void asignarGestor(Gestor gestor) {
+    public static String getBanco() {
+        return banco;
+    }
+
+    public void asignarGestor(Gestor gestor) {
         this.gestor = gestor;
     }
 
@@ -89,6 +93,7 @@ public class CuentaCorriente {
         if (gestor != null) {
             System.out.println("Gestor: " + gestor.nombre);
             System.out.println("Teléfono gestor: " + gestor.getTelefono());
+            System.out.println("Importe maximo autorizado " + gestor.maximoAutorizado);
         } else {
             System.out.println("Gestor: No asignado");
         }

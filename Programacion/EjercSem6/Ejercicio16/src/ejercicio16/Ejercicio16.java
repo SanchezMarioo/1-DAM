@@ -16,9 +16,9 @@ public class Ejercicio16 {
     public static void main(String[] args) {
         // TODO code application logic here
         Semaforo semaforo1 = new Semaforo(ColorSemaforo.ROJO);
-        semaforo1.mostrarColor();
+        semaforo1.mostrarEstado();
         semaforo1.setColor(ColorSemaforo.VERDE);
-        semaforo1.mostrarColor();
+        semaforo1.mostrarEstado();
     }
     
 }

@@ -4,7 +4,6 @@ package ejercicio15;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author MARIO
@@ -20,7 +19,6 @@ public class Hora {
         this.minuto = minuto;
         this.segundo = segundo;
     }
-    
 
     public int getHora() {
         return hora;
@@ -58,12 +56,11 @@ public class Hora {
                 minuto = 0;
                 hora++;
             }
-            if (hora == 24){
+            if (hora == 24) {
                 hora = 0;
             }
-            
+            System.out.printf("%02d:%02d:%02d %n", hora, minuto, segundo);
         }
-        System.out.printf("%-2d:%-2d:%-2d",hora,minuto,segundo);
 
     }
 }

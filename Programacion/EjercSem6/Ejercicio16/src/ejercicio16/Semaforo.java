@@ -22,7 +22,7 @@ public class Semaforo {
     public void setColor(ColorSemaforo color) {
         this.color = color;
     }
-    public void mostrarColor(){
-        System.out.println("El semaforo esta de color " + color);
+    public void mostrarEstado(){
+        System.out.println("El semaforo esta de color: " + color);
     }
 }

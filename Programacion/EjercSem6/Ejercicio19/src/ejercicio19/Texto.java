@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ejercicio19;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -10,54 +11,90 @@ package ejercicio19;
  */
 public class Texto {
 
-    private int caracteres;
+    private int longitudMaxima;
     private String cadena = "";
-    private int minusculas;
-    private int mayusuculas;
-    public Texto(int caracteres) {
-        this.caracteres = caracteres;
+    private LocalDateTime fechaCreada;
+    private LocalDateTime fechaUltimaModificacion;
+
+    public Texto(int longitudMaxima) {
+        this.longitudMaxima = longitudMaxima;
+        this.fechaCreada = LocalDateTime.now();
     }
 
-    public void añadirCaracteresPrincipio(int n, String cadenaAñadir) {
-        System.out.println(cadena.length());
-        if (n < cadena.length()) {
-            String nuevaCadena = "";
-            for (int i = 0; i < cadena.length(); i++) {
-                if (i < n) {
-                    nuevaCadena += " ";
-                } else {
-                    nuevaCadena += cadena;
-                }
-            }
-            for (int i = 0; i < n; i++) {
-                nuevaCadena += cadenaAñadir;
-            }
-            nuevaCadena = cadena;
+    public String getCadena() {
+        return cadena;
+    }
+
+    public int getLongitudMaxima() {
+        return longitudMaxima;
+    }
+
+    public void setLongitudMaxima(int longitudMaxima) {
+        this.longitudMaxima = longitudMaxima;
+    }
+
+    public void añadirCaracteresPrincipio(String cadenaAñadir) {
+        if ((cadena.length() + cadenaAñadir.length()) > longitudMaxima) {
+            System.out.println("No puedes añadir eso ");
         } else {
-            System.out.println("No puedes añadir una nueva cadena.");
+            cadena = cadenaAñadir + cadena;
+            modificarFecha();
+
         }
     }
 
-    public void añadirCaracteresFinal(int n, String cadenaAñadir) {
-        if (n < cadena.length()) {
+    public void añadirCaracteresFinal(String cadenaAñadir) {
+        if ((cadena.length() + cadenaAñadir.length()) > longitudMaxima) {
+            System.out.println("No puedes añadir una nueva cadena.");
+
+        } else {
             cadena += cadenaAñadir;
-        } else {
-            System.out.println("No puedes añadir una nueva cadena.");
+            System.out.println(cadena);
+            modificarFecha();
         }
-
     }
-    public void contarMayusMinus(){
-        for (int i = 0; i < cadena.length(); i++) {
-            char c = cadena.charAt(i);
-            if(Character.isLowerCase(c)){
-                minusculas++;
-            } 
-            if(Character.isUpperCase(c)){
-                mayusuculas++;
+    private void modificarFecha(){
+        fechaUltimaModificacion = LocalDateTime.now();
+    }
+
+    public void añadirCaracteresPrincipio(char cadenaAñadir) {
+        if ((cadena.length() + 1) > longitudMaxima) {
+            System.out.println("No puedes añadir eso ");
+        } else {
+            cadena = cadenaAñadir + cadena;
+            modificarFecha();
+        }
+    }
+
+    public void añadirCaracteresFinal(char cadenaAñadir) {
+        if ((cadena.length() + 1) > longitudMaxima) {
+            System.out.println("No puedes añadir una nueva cadena.");
+
+        } else {
+            cadena += cadenaAñadir;
+            System.out.println(cadena);
+            modificarFecha();
+        }
+    }
+
+    public int contarVocales() {
+        String cadenaMinusculas = cadena.toLowerCase();
+        int vocales = 0;
+        for (int i = 0; i < cadenaMinusculas.length(); i++) {
+            char c = cadenaMinusculas.charAt(i);
+            switch (c) {
+                case 'a', 'e', 'i', 'o', 'u':
+                    vocales++;
+                    break;
             }
         }
+        return vocales;
     }
-    public void mostrarInformacion(){
-        System.out.println("Cadena " + cadena);
+
+    public void mostrarInformacion() {
+        System.out.println("Fecha creacion del objeto: " + fechaCreada);
+        System.out.println("Ultima modificacion del objeto: " + fechaUltimaModificacion);
+        System.out.println("Cadena: ");
+        System.out.println(cadena);
     }
 }

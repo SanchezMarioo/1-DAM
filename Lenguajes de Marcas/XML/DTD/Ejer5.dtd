@@ -1,13 +1,18 @@
 <!ELEMENT Pedido (Destino,Ordenante,Observaciones,Contenido)>
-<!ATTLIST Pedido fecha NMTOKEN #REQUIERED>
+<!ATTLIST Pedido fecha NMTOKEN #REQUIRED xmlns CDATA #REQUIRED>
 <!ELEMENT Destino (Nombre,Direccion,Ciudad,CodPostal)>
-<!ELEMENT Nombre (#PCDATE)>
-<!ELEMENT Direccion (#PCDATE)>
-<!ELEMENT Ciudad (#PCDATE)>
-<!ELEMENT CodPostal (#PCDATE)>
 <!ELEMENT Ordenante (Nombre,Direccion,Ciudad,CodPostal)>
-<!ELEMENT Nombre (#PCDATE)>
-<!ELEMENT Direccion (#PCDATE)>
-<!ELEMENT Ciudad (#PCDATE)>
-<!ELEMENT CodPostal (#PCDATE)>
-<!ELEMENT Observaciones (#PCDATE)>
+
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Direccion (#PCDATA)>
+<!ELEMENT Ciudad (#PCDATA)>
+<!ELEMENT CodPostal (#PCDATA)>
+<!ELEMENT Observaciones (#PCDATA)>
+
+<!ELEMENT Contenido (Producto+)>
+
+<!ELEMENT Producto (Nombre,Cantidad,Precio,Observaciones?)>
+<!ATTLIST Producto codigo CDATA #REQUIRED>
+
+<!ELEMENT Cantidad (#PCDATA)>
+<!ELEMENT Precio (#PCDATA)>

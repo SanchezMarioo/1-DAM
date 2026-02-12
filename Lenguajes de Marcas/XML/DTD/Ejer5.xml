@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Pedido SYSTEM "Ejer5.dtd">
 <Pedido xmlns="http://www.miempresa.org/pedidos"
  fecha="2008-10-20">
  <Destino>

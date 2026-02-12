@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tribunaltesis SYSTEM "Ejer7.dtd">
+<tribunaltesis>
+  <tesis titulo="Doctoral" nota="8.5" id="5" observaciones="Muy buen trabajao">
+    <ponente dni="710643W">
+      <nombre>Pepe</nombre>
+      <titulacion grado="Ingeneria Informatica">Ingeneria Informatica</titulacion>
+          <temas>
+            <tema anexos="1">
+              <titulo>Arquitectura del sistema</titulo>
+              <anexo multimedia="mp4"></anexo>
+            </tema>
+          </temas>
+    </ponente>
+  </tesis>
+    <tesis titulo="Doctoral" nota="8.5" id="57" >
+      <ponente dni="414567W">
+          <nombre>Alberto</nombre>
+          <titulacion grado="Medicina">Medico</titulacion>
+          <temas>
+            <tema anexos="1">
+              <titulo>Arquitectura del sistema</titulo>
+              <anexo></anexo>
+            </tema>
+          </temas>
+        </ponente>
+      </tesis>
+      
+</tribunaltesis>

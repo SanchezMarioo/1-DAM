@@ -1,0 +1,25 @@
+<!ELEMENT tribunaltesis (tesis+)>
+<!ENTITY ing "Ingeniería">
+<!ELEMENT tesis (ponente+)>
+<!ATTLIST tesis
+  titulo CDATA #REQUIRED
+  nota CDATA #REQUIRED
+  id CDATA #REQUIRED
+  observaciones CDATA #IMPLIED>
+<!ELEMENT ponente (nombre, titulacion, temas)>
+<!ATTLIST ponente
+  dni CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT titulacion (#PCDATA)>
+<!ATTLIST titulacion
+  grado CDATA #IMPLIED>
+<!ELEMENT temas (tema+)>
+<!ELEMENT tema (titulo+, anexo*)>
+<!ATTLIST tema
+  anexos CDATA #REQUIRED>
+<!ELEMENT anexo EMPTY>
+<!ELEMENT titulo (#PCDATA)>
+<!ATTLIST anexo
+  multimedia CDATA #IMPLIED
+  bibliográfico CDATA #IMPLIED
+  material CDATA #IMPLIED>

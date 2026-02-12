@@ -16,13 +16,13 @@ public class Ejercicio19 {
      * @param args the command line arguments
      */
     static final int OBJETOS_TEXTOS = 5;
+    static Texto[] textos = new Texto[OBJETOS_TEXTOS];
 
     public static void main(String[] args) {
         // TODO code application logic here
         int opcion;
         Scanner sc = new Scanner(System.in);
 
-        Texto[] textos = new Texto[OBJETOS_TEXTOS];
         do {
             mostrarMenu();
             opcion = sc.nextInt();
@@ -36,17 +36,15 @@ public class Ejercicio19 {
                 break;
             }
             int indice = opcion - 1;
-            if (textos[indice] == null) {
-                System.out.println("Cual es el maximo de caracteres: ");
-                int max = sc.nextInt();
-                textos[indice] = new Texto(max);
-            }
+
             do {
                 mostrarMenuTexto();
                 opcion = sc.nextInt();
                 if (opcion == 0) {
                     break;
                 }
+                crearTextoSiNoExiste(indice);
+
                 switch (opcion) {
                     case 1 -> {
                         System.out.println("1.Añadir el caracter al principio: ");
@@ -54,24 +52,7 @@ public class Ejercicio19 {
                         System.out.println("Opcion: ");
                         int opcion2 = sc.nextInt();
                         sc.nextLine();
-                        switch (opcion2) {
-                            case 1 -> {
-                                System.out.println("Dime el caracter a añadir: ");
-                                char caracterAñadir = sc.next().charAt(0);
-                                sc.nextLine();
-                                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
 
-                            }
-                            case 2 -> {
-                                System.out.println("Dime el caracter a añadir: ");
-                                char caracterAñadir = sc.next().charAt(0);
-                                sc.nextLine();
-                                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
-                            }
-                            default -> {
-                                System.out.println("Opcion no valida.");
-                            }
-                        }
                     }
                     case 2 -> {
                         System.out.println("1.Añadir una cadena al principio: ");
@@ -116,6 +97,36 @@ public class Ejercicio19 {
         System.out.print("¿Con qué texto quieres trabajar? (1-" + OBJETOS_TEXTOS + "): ");
         System.out.println("0. Salir");
         System.out.print("Elige opción: ");
+    }
+
+    static void crearTextoSiNoExiste(int indice) {
+        if (textos[indice] == null) {
+            System.out.println("Cual es el maximo de caracteres: ");
+            int max = sc.nextInt();
+            textos[indice] = new Texto(max);
+        }
+    }
+
+    static void procesarCaracter(Scanner sc) {
+        int opcion = sc.nextInt();
+        switch (opcion2) {
+            case 1 -> {
+                System.out.println("Dime el caracter a añadir: ");
+                char caracterAñadir = sc.next().charAt(0);
+                sc.nextLine();
+                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
+
+            }
+            case 2 -> {
+                System.out.println("Dime el caracter a añadir: ");
+                char caracterAñadir = sc.next().charAt(0);
+                sc.nextLine();
+                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
+            }
+            default -> {
+                System.out.println("Opcion no valida.");
+            }
+        }
     }
 
     static void mostrarMenuTexto() {

@@ -19,7 +19,7 @@ public class Texto {
     public Texto(int longitudMaxima) {
         this.longitudMaxima = longitudMaxima;
         this.fechaCreada = LocalDateTime.now();
-    }
+    } 
 
     public String getCadena() {
         return cadena;

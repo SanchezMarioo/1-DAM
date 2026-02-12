@@ -38,44 +38,20 @@ public class Ejercicio19 {
             int indice = opcion - 1;
 
             do {
+                crearTextoSiNoExiste(indice, sc);
                 mostrarMenuTexto();
                 opcion = sc.nextInt();
                 if (opcion == 0) {
                     break;
                 }
-                crearTextoSiNoExiste(indice);
 
                 switch (opcion) {
+                    // Añadir caracteres 
                     case 1 -> {
-                        System.out.println("1.Añadir el caracter al principio: ");
-                        System.out.println("2.Añadir el caracter al final: ");
-                        System.out.println("Opcion: ");
-                        int opcion2 = sc.nextInt();
-                        sc.nextLine();
-
+                        procesarCaracter(sc, indice);
                     }
                     case 2 -> {
-                        System.out.println("1.Añadir una cadena al principio: ");
-                        System.out.println("2.Añadir una cadena al final: ");
-                        System.out.println("Opcion: ");
-                        int opcion2 = sc.nextInt();
-                        sc.nextLine();
-                        switch (opcion2) {
-                            case 1 -> {
-                                System.out.println("Dime el cadena a añadir: ");
-                                String cadenaAñadir = sc.nextLine();
-                                textos[indice].añadirCaracteresPrincipio(cadenaAñadir);
-
-                            }
-                            case 2 -> {
-                                System.out.println("Dime el cadena a añadir: ");
-                                String cadenaAñadir = sc.nextLine();
-                                textos[indice].añadirCaracteresFinal(cadenaAñadir);
-                            }
-                            default -> {
-                                System.out.println("Opcion no valida.");
-                            }
-                        }
+                        procesarTexto(sc,indice);
                     }
                     case 3 -> {
                         System.out.println("Vocales: " + textos[indice].contarVocales());
@@ -99,7 +75,7 @@ public class Ejercicio19 {
         System.out.print("Elige opción: ");
     }
 
-    static void crearTextoSiNoExiste(int indice) {
+    static void crearTextoSiNoExiste(int indice, Scanner sc) {
         if (textos[indice] == null) {
             System.out.println("Cual es el maximo de caracteres: ");
             int max = sc.nextInt();
@@ -107,9 +83,12 @@ public class Ejercicio19 {
         }
     }
 
-    static void procesarCaracter(Scanner sc) {
+    static void procesarCaracter(Scanner sc, int indice) {
+        System.out.println("1.Añadir el caracter al principio: ");
+        System.out.println("2.Añadir el caracter al final: ");
+        System.out.println("Opcion: ");
         int opcion = sc.nextInt();
-        switch (opcion2) {
+        switch (opcion) {
             case 1 -> {
                 System.out.println("Dime el caracter a añadir: ");
                 char caracterAñadir = sc.next().charAt(0);
@@ -122,6 +101,31 @@ public class Ejercicio19 {
                 char caracterAñadir = sc.next().charAt(0);
                 sc.nextLine();
                 textos[indice].añadirCaracteresPrincipio(caracterAñadir);
+            }
+            default -> {
+                System.out.println("Opcion no valida.");
+            }
+        }
+    }
+
+    static void procesarTexto(Scanner sc, int indice) {
+        System.out.println("1.Añadir una cadena al principio: ");
+        System.out.println("2.Añadir una cadena al final: ");
+        System.out.println("Opcion: ");
+        int opcion2 = sc.nextInt();
+        sc.nextLine();
+        switch (opcion2) {
+            case 1 -> {
+                System.out.println("Dime el cadena a añadir: ");
+                String cadenaAñadir = sc.nextLine();
+                textos[indice].añadirCaracteresPrincipio(cadenaAñadir);
+
+            }
+            case 2 -> {
+                System.out.println("Dime el cadena a añadir: ");
+                String cadenaAñadir = sc.nextLine();
+                textos[indice].añadirCaracteresFinal(cadenaAñadir);
+                procesarCaracter(sc, indice);
             }
             default -> {
                 System.out.println("Opcion no valida.");

@@ -56,12 +56,11 @@ public class Texto {
 
     public String añadirCaracteresPrincipio(String cadenaAñadir) {
         if ((cadena.length() + cadenaAñadir.length()) > longitudMaxima) {
-            System.out.println("No puedes añadir eso ");
+            return("No puedes añadir eso ");
         } else {
             cadena = cadenaAñadir + cadena;
             modificarFecha();
             return ("Se ha añadido correctamente");
-
         }
     }
 

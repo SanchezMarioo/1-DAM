@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ejercicio19;
+
 import java.time.LocalDateTime;
 
 /**
@@ -21,10 +22,6 @@ public class Texto {
         this.fechaCreada = LocalDateTime.now();
     }
 
-    public String getCadena() {
-        return cadena;
-    }
-
     public int getLongitudMaxima() {
         return longitudMaxima;
     }
@@ -33,47 +30,75 @@ public class Texto {
         this.longitudMaxima = longitudMaxima;
     }
 
-    public void añadirCaracteresPrincipio(String cadenaAñadir) {
+    public String getCadena() {
+        return cadena;
+    }
+
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+
+    public LocalDateTime getFechaCreada() {
+        return fechaCreada;
+    }
+
+    public void setFechaCreada(LocalDateTime fechaCreada) {
+        this.fechaCreada = fechaCreada;
+    }
+
+    public LocalDateTime getFechaUltimaModificacion() {
+        return fechaUltimaModificacion;
+    }
+
+    public void setFechaUltimaModificacion(LocalDateTime fechaUltimaModificacion) {
+        this.fechaUltimaModificacion = fechaUltimaModificacion;
+    }
+
+    public String añadirCaracteresPrincipio(String cadenaAñadir) {
         if ((cadena.length() + cadenaAñadir.length()) > longitudMaxima) {
             System.out.println("No puedes añadir eso ");
         } else {
             cadena = cadenaAñadir + cadena;
             modificarFecha();
+            return ("Se ha añadido correctamente");
 
         }
     }
 
-    public void añadirCaracteresFinal(String cadenaAñadir) {
+    public String añadirCaracteresFinal(String cadenaAñadir) {
         if ((cadena.length() + cadenaAñadir.length()) > longitudMaxima) {
-            System.out.println("No puedes añadir una nueva cadena.");
-
+            return ("No puedes añadir eso ");
         } else {
             cadena += cadenaAñadir;
-            System.out.println(cadena);
             modificarFecha();
+            return ("Se ha añadido correctamente");
+
         }
     }
-    private void modificarFecha(){
+
+    private void modificarFecha() {
         fechaUltimaModificacion = LocalDateTime.now();
     }
 
-    public void añadirCaracteresPrincipio(char cadenaAñadir) {
+    public String añadirCaracteresPrincipio(char cadenaAñadir) {
         if ((cadena.length() + 1) > longitudMaxima) {
-            System.out.println("No puedes añadir eso ");
+            return ("No puedes añadir eso ");
         } else {
             cadena = cadenaAñadir + cadena;
             modificarFecha();
+            return ("Se ha añadido correctamente");
+
         }
     }
 
-    public void añadirCaracteresFinal(char cadenaAñadir) {
+    public String añadirCaracteresFinal(char cadenaAñadir) {
         if ((cadena.length() + 1) > longitudMaxima) {
-            System.out.println("No puedes añadir una nueva cadena.");
-
+            return ("No puedes añadir eso.");
         } else {
             cadena += cadenaAñadir;
             System.out.println(cadena);
             modificarFecha();
+            return ("Se ha añadido correctamente");
         }
     }
 
@@ -91,10 +116,9 @@ public class Texto {
         return vocales;
     }
 
-    public void mostrarInformacion() {
-        System.out.println("Fecha creacion del objeto: " + fechaCreada);
-        System.out.println("Ultima modificacion del objeto: " + fechaUltimaModificacion);
-        System.out.println("Cadena: ");
-        System.out.println(cadena);
+    public String mostrarInformacion() {
+        return ("Fecha creacion: " + fechaCreada
+                + "\nUltima modificacion: " + fechaUltimaModificacion
+                + "\nCadena:\n" + cadena);
     }
 }

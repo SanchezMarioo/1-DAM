@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author mario.sanper.2
  */
-public class Ejercicio19 {
+public class Ejercicio19B {
 
     /**
      * @param args the command line arguments
@@ -51,13 +51,13 @@ public class Ejercicio19 {
                         procesarCaracter(sc, indice);
                     }
                     case 2 -> {
-                        procesarTexto(sc,indice);
+                        procesarTexto(sc, indice);
                     }
                     case 3 -> {
                         System.out.println("Vocales: " + textos[indice].contarVocales());
                     }
                     case 4 -> {
-                        System.out.println(textos[indice].mostrarInformacion());
+                        textos[indice].mostrarInformacion();
                     }
                     default -> {
                         System.out.println("No has introducido un texto.");
@@ -93,14 +93,14 @@ public class Ejercicio19 {
                 System.out.println("Dime el caracter a añadir: ");
                 char caracterAñadir = sc.next().charAt(0);
                 sc.nextLine();
-                System.out.println(textos[indice].añadirCaracteresPrincipio(caracterAñadir));
+                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
 
             }
             case 2 -> {
                 System.out.println("Dime el caracter a añadir: ");
                 char caracterAñadir = sc.next().charAt(0);
                 sc.nextLine();
-                System.out.println(textos[indice].añadirCaracteresPrincipio(caracterAñadir));
+                textos[indice].añadirCaracteresPrincipio(caracterAñadir);
             }
             default -> {
                 System.out.println("Opcion no valida.");
@@ -118,13 +118,13 @@ public class Ejercicio19 {
             case 1 -> {
                 System.out.println("Dime el cadena a añadir: ");
                 String cadenaAñadir = sc.nextLine();
-                System.out.println(textos[indice].añadirCaracteresPrincipio(cadenaAñadir));
+                textos[indice].añadirCaracteresPrincipio(cadenaAñadir);
 
             }
             case 2 -> {
                 System.out.println("Dime el cadena a añadir: ");
                 String cadenaAñadir = sc.nextLine();
-                System.out.println(textos[indice].añadirCaracteresFinal(cadenaAñadir));
+                textos[indice].añadirCaracteresFinal(cadenaAñadir);
                 procesarCaracter(sc, indice);
             }
             default -> {

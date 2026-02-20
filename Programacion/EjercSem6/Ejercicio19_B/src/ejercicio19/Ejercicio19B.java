@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author mario.sanper.2
  */
-public class Ejercicio19 {
+public class Ejercicio19B {
 
     /**
      * @param args the command line arguments
@@ -51,7 +51,7 @@ public class Ejercicio19 {
                         procesarCaracter(sc, indice);
                     }
                     case 2 -> {
-                        procesarTexto(sc,indice);
+                        procesarTexto(sc, indice);
                     }
                     case 3 -> {
                         System.out.println("Vocales: " + textos[indice].contarVocales());

@@ -9,31 +9,66 @@ package cliente_servidor;
  * @author mario.sanper.2
  */
 public class Cliente {
+
     private String ip;
     private String ip_servidor;
     private Servidor servidor;
-    
-    public Cliente(String ip){
+
+    public Cliente(String ip_servidor) {
+        setIp_servidor(ip_servidor);
         
+
     }
+
+    public boolean ping() {
+        if(servidor !=null){
+            
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        if (ValidarIP.comprobarIP(ip)) {
+            this.ip = ip;
+        } else {
+            this.ip = "0.0.0.0";
+        }
+    }
+
+    public String getIp_servidor() {
+        return ip_servidor;
+    }
+
+    public void setIp_servidor(String ip_servidor) {
+        if (ValidarIP.comprobarIP(ip_servidor)) {
+            this.ip_servidor = ip_servidor;
+        } else {
+            this.ip_servidor = "127.0.0.1";
+        }
+
+    }
+
+    public Servidor getServidor() {
+        return servidor;
+    }
+
+    public void setServidor(Servidor servidor) {
+        this.servidor = servidor;
+    }
+
     /**
-     * Comprueba si es una IP es valida 
-     * @param ip ip que va a comprobar 
-     * @return true si es correcta, false si es contraria 
+     * Metodo que ejecuta el servidor para enlazarse con el cliente
+     *
+     * @param servidor
      */
-    private boolean comprobarIP(String ip){
-        
+    public void establecerServidor(Servidor servidor) {
+        servidor.enlazarCliente(this);
     }
-    private void ping(){
-        
-    }
-    /**
-     * Metodo que ejecuta el servidor para enlazarse con el cliente 
-     * @param servidor 
-     */
-    public void establecerServidor(Servidor servidor){
-        // Obtiene la IP del servidor 
-        // Almacena la referencia del servidor 
-    }
-    
+
 }

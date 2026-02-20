@@ -15,41 +15,34 @@ public class Cliente_Servidor {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Cliente[] cliente = new Cliente[10];
-        // Creara varios clientes (unos con IP invalida y con valida)
-        // Crea un servidor con IP invalida
+        // 1. Crear varios clientes (IPs válidas e inválidas)
+        Cliente c1 = new Cliente("192.168.1.1");
+        c1.setIp("192.168.1.2");  // válida
 
-        // Crea un servidor con IP valida
-        //Crea otro cliente
-        //Enlazamos todos los clientes con el servidor 
-        // Lanzamos el metodo init del servidor -> produce un metodo en bucle 
-        comprobarIP("127.1.1.1");
-    }
+        Cliente c2 = new Cliente("192.168.1.1");
+        c2.setIp("999.999.999.999");  // inválida, se pondrá 0.0.0.0
 
-    static private boolean comprobarIP(String ip) {
-        String[] obtetos = ip.split("\\.");
-        if (ip.trim().isEmpty()) {
-            return false;
-        }
-        // Se comprueba si hay 4 . 
-        if (obtetos.length != 4) {
-            return false;
-        }
-        for (int i = 0; i < obtetos.length; i++) {
-            char c = obtetos[i].charAt(i);
-            if(c)
-        }
+        Cliente c3 = new Cliente("192.168.1.1");
+        c3.setIp("192.168.1.4");  // válida
 
-        int obtetosNumeros[] = new int[obtetos.length];
-        for (int i = 0; i < obtetos.length; i++) {
-            obtetosNumeros[i] = Integer.parseInt(obtetos[i]);
-        }
-        for (int i = 0; i < obtetosNumeros.length; i++) {
-            if (obtetosNumeros[i] < 0 || obtetosNumeros[i] > 254) {
-                return false;
-            }
-        }
-        return true;
+        // 2. Crear un servidor con IP inválida
+        Servidor servidor1 = new Servidor("999.999.999.999"); // se pondrá 127.0.0.1
+
+        // 3. Crear un servidor con IP válida
+        Servidor servidor2 = new Servidor("192.168.1.1");
+
+        // 4. Crear otro cliente
+        Cliente c4 = new Cliente("192.168.1.1");
+        c4.setIp("192.168.1.5");
+
+        // 5. Enlazar todos los clientes con el servidor válido
+        c1.establecerServidor(servidor2);
+        c2.establecerServidor(servidor2);
+        c3.establecerServidor(servidor2);
+        c4.establecerServidor(servidor2);
+
+        // 6. Lanzar el menú del servidor
+        servidor2.iniciarMenu();  // Esto produce el bucle interactivo
     }
 
 }

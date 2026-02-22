@@ -11,5 +11,5 @@ package bolos_historico;
 public enum TipoTiro {
     NORMAL,
     EFECTO,
-    POTENTE
+    POTENTE;
 }

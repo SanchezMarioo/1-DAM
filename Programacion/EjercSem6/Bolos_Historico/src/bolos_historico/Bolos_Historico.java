@@ -20,13 +20,12 @@ public class Bolos_Historico {
 
         do {
             // 1. Configuración inicial
-            String n1 = Lectura.leerCadena("Nombre Jugador 1: ");
-            int p1 = Lectura.validarNumero("Precisión J1 (1-10): ", 1, 10);
-            Jugador j1 = new Jugador(n1, p1);
-
-            String n2 = Lectura.leerCadena("Nombre Jugador 2: ");
-            int p2 = Lectura.validarNumero("Precisión J2 (1-10): ", 1, 10);
-            Jugador j2 = new Jugador(n2, p2);
+            String nombreJugador1 = Lectura.leerCadena("Nombre Jugador 1: ");
+            int pr1 = Lectura.validarNumero("Precisión J1 (1-10): ", 1, 10);
+            Jugador j1 = new Jugador(nombreJugador1, pr1);
+            String nombreJugador2 = Lectura.leerCadena("Nombre Jugador 2: ");
+            int pr2 = Lectura.validarNumero("Precisión J2 (1-10): ", 1, 10);
+            Jugador j2 = new Jugador(nombreJugador2, pr2);
 
             int rondas = Lectura.validarNumero("¿A cuántas rondas jugamos?: ", 1, 10);
 
@@ -35,23 +34,22 @@ public class Bolos_Historico {
             gestionarPartida(partidaActual);
 
             // 3. Al terminar la partida, preguntar si otra
-            jugarDeNuevo = Lector.leerEntero("\n¿Deseas jugar otra partida? (1: Sí / 0: Salir): ", 0, 1);
-
+            jugarDeNuevo = Lectura.validarNumero("\n¿Deseas jugar otra partida? (1: Sí / 0: Salir): ", 0, 1);
         } while (jugarDeNuevo == 1);
 
         // 4. Estadísticas finales al salir del programa
         System.out.println("\n=== ESTADÍSTICAS GLOBALES ===");
         System.out.println("Total partidas jugadas: " + Partida.getPartidasTotales());
-        System.out.println("Total tiradas realizadas: " + Partida.getRondasTotales());
+        System.out.println("Total tiradas realizadas: " + Partida.getRondasGlobal());
         System.out.println("¡Gracias por jugar!");
     }
 
-    private static void gestionarPartida(Partida p) {
+    private static void gestionarPartida(Partida partida) {
         int opcion;
 
         do {
-            System.out.println("\n--- ESTADO: Ronda " + p.getRondaActual() + " ---");
-            System.out.println("Turno de: " + p.obtenerNombreTurnoActual());
+            System.out.println("\n------ MENU PARTIDA -----");
+            System.out.println("Turno de: " + partida.obtenerNombreJugador());
             System.out.println("1. Realizar Tirada");
             System.out.println("2. Ver Puntuaciones");
             System.out.println("3. Ver Tiradas Globales");
@@ -62,23 +60,23 @@ public class Bolos_Historico {
                 case 1 -> {
                     System.out.println("Elije tiro: 1.Normal | 2.Efecto | 3.Potente");
                     int t = Lectura.validarNumero("Selección: ", 1, 3);
-
                     // Convertimos el 1, 2 o 3 al valor del Enum
-                    TipoTiro tipo = TipoTiro.values()[t - 1];
-                    p.ejecutarTirada(tipo);
+                    TipoTiro tipo = (t == 2) ? TipoTiro.EFECTO : (t == 3) ? TipoTiro.POTENTE : TipoTiro.NORMAL;
+                    
+                    System.out.println("¡Has derribado " +  partida.ejecutarTirada(tipo) + " bolos!");
                 }
                 case 2 ->
-                    return;
+                    partida.mostrarInformacion();
                 case 3 ->
-                    System.out.println("Tiradas totales en el sistema: " + Partida.getTotalTiradasGlobales());
+                    System.out.println("Tiradas totales en el sistema: " + Partida.getRondasGlobal());
                 case 4 ->
                     System.out.println("Has abandonado la partida.");
             }
 
             // Si la partida termina por rondas, salimos del menú
-            if (p.isFinalizada()) {
+            if (partida.isFinalizada()) {
                 System.out.println("\n🏆 ¡FIN DE LA PARTIDA! 🏆");
-                p.mostrarResultadoFinal(); // Método para decir quién ganó
+                partida.mostrarGanadorFinal(); // Método para decir quién ganó
                 break;
             }
 

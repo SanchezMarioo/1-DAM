@@ -16,6 +16,8 @@ public class Jugador {
     // ni a cambiar el nombre ni la precision
     private final String nombre;
     private final int precision;
+    
+    private int tiradas;
 
     // Constante de configuracion del juego 
     private static final int MAX_BOLOS = 10;
@@ -27,6 +29,8 @@ public class Jugador {
     public Jugador(String nombre, int precision) {
         this.nombre = nombre;
         this.precision = precision;
+        this.random = new Random();
+        this.tiradas = 0;
     }
 
     public String getNombre() {
@@ -40,6 +44,11 @@ public class Jugador {
     public static int getMAX_BOLOS() {
         return MAX_BOLOS;
     }
+
+    public int getTiradas() {
+        return tiradas;
+    }
+    
 
     /**
      * Este método devolverá los bolos derribados en cada ronda. Pero esto
@@ -77,6 +86,7 @@ public class Jugador {
                 }
             }
         }
+        tiradas++;
         return bolos;
     }
 

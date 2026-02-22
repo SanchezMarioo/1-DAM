@@ -29,8 +29,9 @@ public class Lectura {
             // Comprueba si es un numero
             if (sc.hasNextInt()) {
                 numero = sc.nextInt();
+                sc.nextLine();
                 if (numero >= minimo && numero <= maximo) {
-                    // Salida esperada del bucle 
+                    // Salida esperada del bucle
                     return numero;
                 } else {
                     System.err.println("Introduce un número entre " + minimo + " y " + maximo);
@@ -40,6 +41,7 @@ public class Lectura {
                 sc.next(); // Limpiamos el buffer para evitar bucle infinito
             }
         } while (true);
+        
     }
      /**
       * Metodo encargada de recoger mensajes 
@@ -48,7 +50,7 @@ public class Lectura {
       */
    static public String leerCadena(String mensaje){
        System.out.print(mensaje);
-       String respuesta = sc.nextLine();
+       String respuesta = sc.nextLine().trim();
        return respuesta;
    }
 }

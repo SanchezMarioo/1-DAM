@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <!-- Elemento raíz -->
   <xs:element name="empleados">
     <xs:complexType>
       <xs:sequence>
@@ -9,8 +8,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
-  <!-- Elementos globales -->
 
   <xs:element name="empleado">
     <xs:complexType>

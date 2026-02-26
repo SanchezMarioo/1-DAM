@@ -96,6 +96,7 @@ public class Partida {
         System.out.println("========= RESULTADO FINAL ========");
         System.out.println(j1.getNombre() + " -> " + marcadorJ1.getBolosDerribados() + " puntos");
         System.out.println(j2.getNombre() + " -> " + marcadorJ2.getBolosDerribados() + " puntos");
+        System.out.println((marcadorJ1.getBolosDerribados() > marcadorJ2.getBolosDerribados()) ? "El jugador 1 ha ganado " + marcadorJ1.getBolosDerribados() : "El jugador 2 ha ganado " + marcadorJ2.getBolosDerribados()   );
     }
     public void mostrarInformacion(){
         System.out.println("====== ESTADO PARTIDA ====");

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Elemento raíz -->
+  <xs:element name="empleados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="empleado" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Elementos globales -->
+
+  <xs:element name="empleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+        <xs:element ref="apellidos"/>
+        <xs:element ref="puesto"/>
+        <xs:element ref="permanencia"/>
+        <xs:element ref="proyectos" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="nombre" type="xs:string"/>
+
+  <xs:element name="apellidos" type="xs:string"/>
+
+  <xs:element name="puesto">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="categoria" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="permanencia">
+    <xs:complexType>
+      <xs:attribute name="tiempo" type="xs:integer" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="proyectos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="proyecto" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="proyecto">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="tipo" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

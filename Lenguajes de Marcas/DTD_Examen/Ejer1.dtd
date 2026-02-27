@@ -1,0 +1,10 @@
+<!ELEMENT empleados (empleado+)>
+<!ELEMENT empleado (nombre,apellidos,puesto,permanencia,proyectos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT puesto (#PCDATA)>
+<!ATTLIST puesto tiempo CDATA #REQUIRED>
+<!ELEMENT permanencia (#PCDATA)>
+<!ELEMENT proyectos (proyecto+)>
+<!ELEMENT proyecto (#PCDATA)>
+<!ATTLIST proyecto tipo CDATA #REQUIRED>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="matricula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="personal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="personal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DNI"  type="xs:string"/>
+        <xs:element ref="nombre"/>
+        <xs:element name="titulacion" type="xs:string"/>
+        <xs:element name="curso_academico" type="xs:string"/>
+        <xs:element ref="domicilios" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="nombre" type="xs:string"/>
+  
+  
+  <xs:element name="domicilios"/>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="domicilio"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="domicilio"/>
+  <xs:complexType>
+      <xs:simpleType>
+        <xs:extension base="xs:string"/>
+        <xs:attribute name="tipo" type="xs:string" use="requiered"/>
+      </xs:simpleType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

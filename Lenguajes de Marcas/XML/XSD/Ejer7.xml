@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<matricula>
+ <personal>
+ <dni>52945813C</dni>
+ <nombre>Ricardo Borillo Domenech</nombre>
+ <titulacion>Enginyeria Informàtica (Pla 2001)</titulacion>
+ <curso_academico>2002/2003</curso_academico>
+<domicilios>
+ <domicilio tipo="familiar">
+   <nombre>C/ Principal nº1</nombre>
+ </domicilio>
+ <domicilio tipo="habitual">
+  <nombre>C/ Secundaria nº2</nombre>
+ </domicilio>
+ </domicilios>
+ </personal>
+ <pago>
+ <tipo_matricula>Matrícula ordinària</tipo_matricula>
+ </pago>
+ </matricula>

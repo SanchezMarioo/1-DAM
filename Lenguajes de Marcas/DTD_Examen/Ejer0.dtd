@@ -1,0 +1,4 @@
+<!ELEMENT libro (capitulo+)>
+<!ELEMENT capitulo (titulo,subcapitulo*)>
+<!ELEMENT subcapitulo (titulo)>
+<!ELEMENT titulo (#PCDATA)>

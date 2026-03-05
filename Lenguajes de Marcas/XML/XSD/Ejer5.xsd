@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Pedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Destino"/>
+        <xs:element ref="Ordenante"/>
+        <xs:element ref="Observaciones"/>
+        <xs:element ref="Contenido"/>
+      </xs:sequence>
+      <xs:attribute name="fecha" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Destino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Nombre"/>
+        <xs:element ref="Direccion"/>
+        <xs:element ref="Ciudad"/>
+        <xs:element ref="CodPostal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ordenante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Nombre"/>
+        <xs:element ref="Direccion"/>
+        <xs:element ref="Ciudad"/>
+        <xs:element ref="CodPostal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contenido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Producto" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Producto" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Nombre"/>
+        <xs:element ref="Cantidad"/>
+        <xs:element ref="Precio"/>
+        <xs:element ref="Observaciones" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="codigo" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nombre" type="xs:string"/>
+  <xs:element name="Direccion" type="xs:string"/>
+  <xs:element name="Cantidad" type="xs:string"/>
+  <xs:element name="Ciudad" type="xs:string"/>
+  <xs:element name="Precio" type="xs:decimal"/>
+  <xs:element name="CodPostal" type="xs:integer"/>
+  <xs:element name="Observaciones" type="xs:string"/>
+</xs:schema>

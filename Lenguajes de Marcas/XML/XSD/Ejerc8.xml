@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empleados xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/XML/XSD/Ejer8.xsd">
+  <empleado id="e-001">
+    <nombre>Alberto </nombre>
+    <apellido1>Lopez</apellido1>
+    <apellido2>Sanchez</apellido2>
+    <edad>18</edad>
+    <puesto antiguedad="2" tipo="Ingeniero">Informatico</puesto>
+    <salario tipo="Extra" periodicidad="30 dias" plus="NO">1800</salario>
+  </empleado>
+  <empleado id="e-001">
+    <nombre>Mario </nombre>
+    <apellido1>Sanchez</apellido1>
+    <apellido2>Sanchez</apellido2>
+    <edad>25</edad>
+    <puesto tipo="Ingeniero">Informatico</puesto>
+    <salario tipo="Extra" periodicidad="30 dias">1800</salario>
+  </empleado>
+</empleados>

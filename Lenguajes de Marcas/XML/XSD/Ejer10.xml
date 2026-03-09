@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Libro>
+
+<Libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/XML/XSD/Ejer10.xsd">
   <Titulo>Pepe</Titulo>
   <Contenido>
     <Capitulo materia="XML">

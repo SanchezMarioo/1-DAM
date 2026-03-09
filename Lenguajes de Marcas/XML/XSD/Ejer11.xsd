@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+  <xs:element name="envio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="poliza" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="poliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numero"/>
+        <xs:element name="tomador" type="xs:string"/>
+        <xs:element ref="asegurado" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="externa" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="numero">
+    <xs:simpleType>
+      <xs:restriction base="xs:long">
+        <xs:minInclusive value="900000000"/>
+        <xs:maxInclusive value="999999999"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  
+  <xs:element name="asegurado" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="garantia" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="nombre" type="xs:string" use="required"/>
+      <xs:attribute name="apellidos" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="garantia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tipo"/>
+        <xs:element name="capital" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute ref="vigor"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="tipo">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Vida"/>
+        <xs:enumeration value="Accidentes"/>
+        <xs:enumeration value="Dental"/>
+        <xs:enumeration value="Viaje"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  
+  <xs:attribute name="vigor" default="N">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="S"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+</xs:schema>

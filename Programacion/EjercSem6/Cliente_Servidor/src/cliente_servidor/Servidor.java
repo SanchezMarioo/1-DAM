@@ -14,15 +14,16 @@ public class Servidor {
 
     private String ip;
     private final int MAX_CLIENTES = 10;
+    private final String IP_DEFECTO = "127.0.0.1";
     private Cliente[] lista_cliente;
-    private int contador;
+    private int contadorClientes;
 
     public Servidor(String ip) {
         // Comprobar si la IP es correcta
         // Incializar el array de clientes 
         lista_cliente = new Cliente[MAX_CLIENTES];
         setIp(ip);
-        contador = 0;
+        contadorClientes = 0;
     }
 
     /**
@@ -36,8 +37,8 @@ public class Servidor {
     }
 
     public void respuesta(int numeroCliente) {
-        if (numeroCliente < 0 || numeroCliente >= contador) {
-            System.out.println("El número debe estar entre 0 y " + (contador - 1));
+        if (numeroCliente < 0 || numeroCliente >= contadorClientes) {
+            System.out.println("El número debe estar entre 0 y " + (contadorClientes - 1));
             return;
         }
 
@@ -49,7 +50,7 @@ public class Servidor {
     }
 
     public void respuestaTodos() {
-        for (int i = 0; i < contador; i++) {
+        for (int i = 0; i < contadorClientes; i++) {
             if (lista_cliente[i].ping()) {
                 System.out.println("El ping desde el ordenador " + (i + 1) + "es correcto");
             } else {
@@ -66,19 +67,19 @@ public class Servidor {
         if (ValidarIP.comprobarIP(ip)) {
             this.ip = ip;
         } else {
-            this.ip = "127.0.0.1";
+            this.ip = IP_DEFECTO;
         }
     }
 
     public void enlazarCliente(Cliente cliente) {
         // Comprobar si tiene espacio 
-        if (contador >= MAX_CLIENTES) {
+        if (contadorClientes >= MAX_CLIENTES) {
             System.err.println("No puedes establecer mas clientes del maximo ");
             return;
         }
 
         // Comprobar que la IP de el cliente no esta repetida
-        for (int i = 0; i < contador; i++) {
+        for (int i = 0; i < contadorClientes; i++) {
             if (lista_cliente[i] != null && lista_cliente[i].getIp().equals(cliente.getIp())) {
                 // Ya existe esa IP
                 System.err.println("La IP del cliente ya está registrada");
@@ -87,10 +88,10 @@ public class Servidor {
         }
         // -> ok -> Asigna a su listado de clientes el nuevo cliente y le notifica que es su servidor 
         cliente.setServidor(this);
-        lista_cliente[contador] = cliente;
+        lista_cliente[contadorClientes] = cliente;
         System.out.println("El cliente se ha unido el servidor");
         // -> Error -> rehusa del cliente => no hacer nada. Muestra un mensaje de error 
-        contador++;
+        contadorClientes++;
     }
 
     public void iniciarMenu() {
@@ -106,11 +107,11 @@ public class Servidor {
             switch (opcion) {
                 case 1:
                     // Mostrar lista de clientes
-                    if (contador == 0) {
+                    if (contadorClientes == 0) {
                         System.out.println("No hay clientes conectados.");
                     } else {
                         System.out.println("Clientes conectados:");
-                        for (int i = 0; i < contador; i++) {
+                        for (int i = 0; i < contadorClientes; i++) {
                             System.out.println((i + 1) + ". " + lista_cliente[i].getIp());
                         }
                     }
@@ -118,11 +119,11 @@ public class Servidor {
 
                 case 2:
                     // Ping a un cliente concreto
-                    if (contador == 0) {
+                    if (contadorClientes == 0) {
                         System.out.println("No hay clientes conectados.");
                         break;
                     }
-                    System.out.print("Introduce el número del cliente (1-" + contador + "): ");
+                    System.out.print("Introduce el número del cliente (1-" + contadorClientes + "): ");
                     int numCliente = sc.nextInt();
                     respuesta(numCliente);
                     break;
@@ -130,7 +131,7 @@ public class Servidor {
 
                 case 3:
                     // Ping a todos
-                    if (contador == 0) {
+                    if (contadorClientes == 0) {
                         System.out.println("No hay clientes conectados.");
                         break;
                     }

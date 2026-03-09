@@ -13,20 +13,19 @@ public class Cliente {
     private String ip;
     private String ip_servidor;
     private Servidor servidor;
+    private final String IP_DEFECTO = "0.0.0.0";
 
     public Cliente(String ip_servidor) {
         setIp_servidor(ip_servidor);
-        
-
     }
 
     public boolean ping() {
         if(servidor !=null){
-            
             return true;
         } else{
             return false;
         }
+        
     }
 
     public String getIp() {
@@ -37,7 +36,7 @@ public class Cliente {
         if (ValidarIP.comprobarIP(ip)) {
             this.ip = ip;
         } else {
-            this.ip = "0.0.0.0";
+            this.ip = IP_DEFECTO;
         }
     }
 

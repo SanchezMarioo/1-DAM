@@ -56,7 +56,7 @@ public class GestorCapitales {
             System.out.println("El array esta vacio");
             return;
         }
-        ordenarLista();
+
         for (Capital capital : listaCapitales) {
             System.out.println();
             System.out.println("============================");
@@ -90,6 +90,7 @@ public class GestorCapitales {
         System.out.println("Nombre del pais: ");
         String pais = sc.nextLine();
         listaCapitales.add(new Capital(nombre, pais, numeroHabitantes));
+        ordenarLista();
 
     }
 

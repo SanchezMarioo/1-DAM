@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Libro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Titulo" type="xs:string"/>
+        <xs:element ref="Contenido"/>
+        <xs:element name="Copyright" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Contenido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Capitulo" maxOccurs="unbounded"/>
+        <xs:element ref="Separacion" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Capitulo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Tema" type="xs:string"/>
+        <xs:element name="Seccion" type="xs:string" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="materia" type="xs:string" default="Java">
+        <xs:simpleType>
+          <xs:restricion base="xs:string">
+            <xs:enumeration value="XML"/>
+            <xs:enumeration value="Java"/>
+          </xs:restricion>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Separacion">
+    <xs:complexType/>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Libro>
+  <Titulo>Pepe</Titulo>
+  <Contenido>
+    <Capitulo materia="XML">
+      <Tema>Ficcion</Tema>
+      <Seccion apartados="si">Secion II</Seccion>
+    </Capitulo>
+        <Capitulo>
+        <Tema>Otro tema</Tema>
+        <Seccion apartados="no">Seccion III</Seccion>
+      </Capitulo>
+    <Separacion></Separacion>
+  </Contenido>
+  <Copyright>ASVDS</Copyright>
+</Libro>

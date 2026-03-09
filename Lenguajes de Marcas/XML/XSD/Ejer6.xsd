@@ -18,29 +18,22 @@
         <xs:element ref="domicilios"/>
       </xs:sequence>
     </xs:complexType>
-    </xs:element>
-    
-    
-    <xs:element name="domicilios">
-    
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element ref="domicilio" maxOccurs="unbounded"/>
-        </xs:sequence>
-        
-      </xs:complexType>
-    </xs:element>
-    
-    
-    <xs:element name="domicilio">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="nombre" type="xs:string"/>
-        </xs:sequence>
-        <xs:attribute name="tipo" type="xs:string" use="required"/>
-      </xs:complexType>
-    </xs:element>
-
+  </xs:element>
+  <xs:element name="domicilios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="domicilio" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="domicilio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="tipo" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="pago">
     <xs:complexType>
       <xs:sequence>
@@ -48,5 +41,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
 </xs:schema>

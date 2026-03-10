@@ -23,8 +23,4 @@ public enum Zona {
         return numZona;
     }
 
-    public void setNumZona(int numZona) {
-        this.numZona = numZona;
-    }
-
 }

@@ -16,7 +16,6 @@ public class Control {
     private ArrayList<Farola> farolas;
     private Random random = new Random();
     private final int NUM_FAROLAS = 5;
-    private Zona zona;
     private final int FILTRO_CONSUMO = 15;
     private final int MIN_ZONA = 0;
     private final int MAX_ZONA = 4;
@@ -74,7 +73,7 @@ public class Control {
     }
 
     private Farola getMayorConsumo() {
-        Farola mayorConsumo = farolas.get(1);
+        Farola mayorConsumo = farolas.get(0);
         for (Farola farola : farolas) {
             if (farola.getConsumo() > mayorConsumo.getConsumo()) {
                 mayorConsumo = farola;

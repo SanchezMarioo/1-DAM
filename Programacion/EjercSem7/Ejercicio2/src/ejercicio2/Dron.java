@@ -20,6 +20,28 @@ public class Dron {
         this.horasVuelo = horasVuelo;
         this.estadoDron = estadoDron;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public static int getContador() {
+        return contador;
+    }
+
+    public int getHorasVuelo() {
+        return horasVuelo;
+    }
+
+    public Estado getEstadoDron() {
+        return estadoDron;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + ", horasVuelo:" + horasVuelo + ", estadoDron: " + estadoDron;
+    }
+    
     
     
 }

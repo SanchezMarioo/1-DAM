@@ -6,7 +6,7 @@ package ejercicio3;
 
 /**
  *
- * @author albert
+ * @author mario
  */
 public class Ejercicio3 {
 
@@ -15,6 +15,9 @@ public class Ejercicio3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        GestionEsculturas gestor = new GestionEsculturas();
+        gestor.cargarEsculturasPorDefecto();
+        gestor.menu();
     }
-    
+
 }

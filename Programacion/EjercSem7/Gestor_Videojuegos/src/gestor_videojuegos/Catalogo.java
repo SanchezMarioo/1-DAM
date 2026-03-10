@@ -201,7 +201,7 @@ public class Catalogo {
                 }
             } else {
                 System.out.println("Debes introducir un número válido.");
-                sc.nextLine(); // limpiar la entrada incorrecta
+                sc.nextLine();
             }
         }
     }

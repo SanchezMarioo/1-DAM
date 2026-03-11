@@ -9,6 +9,7 @@ package ejercicio4;
  * @author mario.sanper.2
  */
 public class Sensor {
+
     private String codigo;
     private double nivelCO2;
     private double temperatura;
@@ -36,11 +37,11 @@ public class Sensor {
     public Ciudad getUbicacion() {
         return ubicacion;
     }
-    
+
     @Override
     public String toString() {
-        return "Sensor{" + "codigo=" + codigo + ", nivelCO2=" + nivelCO2 + ", temperatura=" + temperatura + ", ubicacion=" + ubicacion + '}';
+        return String.format("Sensor [Código=%s, CO2=%,.2f, Temp=%.2f°C, Ubicación=%s]",
+                codigo, nivelCO2, temperatura, ubicacion);
     }
-        
 
 }

@@ -76,30 +76,44 @@ public class GestorSensores {
     }
 
     public void getSensoresUbicacion(Ciudad ubicacion) {
+        boolean encontrado = false;
         for (Sensor sensor : sensores) {
             if (sensor.getUbicacion() == ubicacion) {
                 System.out.println(sensor);
+                encontrado = true;
             }
+        }
 
+        if (!encontrado) {
+            System.out.println("No se han encontrado sensores en la ubicación: " + ubicacion);
         }
     }
 
     public void mostrarMenu() {
-        sc = new Scanner(System.in);
-        System.out.println("1. Mostrar sensores mayores al CO2 indicado");
-        System.out.println("2. Calcular temperatura media");
-        System.out.println("3. Obtener sensor con mayor C02");
-        System.out.println("4. Verificar sensores en una ubicacion concreta");
-        int opcion = sc.nextInt();
+        int opcion = -1;
+        do {
+            sc = new Scanner(System.in);
+            System.out.println("1. Mostrar sensores mayores al CO2 indicado");
+            System.out.println("2. Calcular temperatura media");
+            System.out.println("3. Obtener sensor con mayor C02");
+            System.out.println("4. Verificar sensores en una ubicacion concreta");
+            System.out.println("0. Salir");
+            System.out.print("Opcion: ");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            funcionalidadMenu(opcion, sc);
+        } while (opcion != 0);
+
     }
-    private void mostrarCiudades(){
+
+    private void mostrarCiudades() {
         Ciudad ciudades[] = Ciudad.values();
         for (Ciudad ciudad : ciudades) {
-            System.out.println(ciudad.valueOf(name));
+            System.out.println(ciudad.toString());
         }
     }
 
-    public void funcionalidadMenu(int opcion, Scanner sc) {
+    private void funcionalidadMenu(int opcion, Scanner sc) {
         switch (opcion) {
             case 1 -> {
                 System.out.println("Dime los sensores con mayor CO2");
@@ -114,11 +128,21 @@ public class GestorSensores {
                 System.out.println(getMayorCO2());
             }
             case 4 -> {
-                System.out.println("Dime la ubicacion donde se encuentra el sensor: ");
-                System.out.println("=========================");
-                
-                String ubicacion = sc.nextLine().toUpperCase();
-                getSensoresUbicacion((Ciudad.valueOf(ubicacion)));
+                System.out.println("Dime la ubicación donde se encuentra el sensor: ");
+                String ubicacionInput = sc.nextLine().toUpperCase().trim();
+                Ciudad ciudadEncontrada = null;
+
+                for (Ciudad c : Ciudad.values()) {
+                    if (c.name().equals(ubicacionInput)) {
+                        ciudadEncontrada = c;
+                        break;
+                    }
+                }
+                if (ciudadEncontrada != null) {
+                    getSensoresUbicacion(ciudadEncontrada);
+                } else {
+                    System.out.println("La ciudad '" + ubicacionInput + "' no es válida o no existe.");
+                }
             }
         }
     }

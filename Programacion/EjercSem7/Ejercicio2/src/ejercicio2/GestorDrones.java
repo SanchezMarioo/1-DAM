@@ -38,21 +38,20 @@ public class GestorDrones {
         System.out.println("=================");
         for (Dron dron : drones) {
             if (dron.getEstadoDron() == EN_REVISION) {
-                System.out.println(dron.toString());
+                System.out.println(dron);
                 System.out.println("");
             }
 
         }
     }
 
-    public void mostrarDronesMayoresHora() {
+    public void mostrarDronesMayoresHora(int horas) {
         System.out.println("================");
         System.out.println("DRONES CON MAYORES A 200 HORAS ");
         System.out.println("=================");
         for (Dron dron : drones) {
-            if (dron.getHorasVuelo() > 200) {
-                System.out.println(dron.toString());
-                System.out.println("");
+            if (dron.getHorasVuelo() > horas) {
+                System.out.println(dron);
             }
 
         }
@@ -64,7 +63,7 @@ public class GestorDrones {
         System.out.println("=================");
         for (Dron dron : drones) {
             if (dron.getId() == id) {
-                System.out.println(dron.toString());
+                System.out.println(dron);
             }
         }
     }

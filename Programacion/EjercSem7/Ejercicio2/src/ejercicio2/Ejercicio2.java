@@ -17,7 +17,7 @@ public class Ejercicio2 {
         // TODO code application logic here
         GestorDrones dron = new GestorDrones();
         dron.filtrarDronPorID(2);
-        dron.mostrarDronesMayoresHora();
+        dron.mostrarDronesMayoresHora(200);
         dron.mostrarDronesRevision();
     }
     

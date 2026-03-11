@@ -56,7 +56,6 @@ public class Control {
     }
 
     public void farolasFiltroConsumo() {
-
         System.out.println("Farolas mayores a " + FILTRO_CONSUMO);
         for (Farola farola : farolas) {
             if (farola.getConsumo() > FILTRO_CONSUMO) {

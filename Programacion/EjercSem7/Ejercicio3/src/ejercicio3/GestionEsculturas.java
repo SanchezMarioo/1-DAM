@@ -17,9 +17,10 @@ public class GestionEsculturas {
 
     public GestionEsculturas() {
         esculturas = new ArrayList<>();
+        cargarEsculturasPorDefecto();
     }
 
-    // Método de prueba: añade 10 esculturas por defecto
+    
     public void cargarEsculturasPorDefecto() {
         esculturas.add(new Escultura("El Ángel Caído", "Ricardo Bellver", 1878, "bronce"));
         esculturas.add(new Escultura("La Piedad", "Miguel Ángel", 1499, "mármol"));

@@ -39,7 +39,7 @@ public class Dron {
 
     @Override
     public String toString() {
-        return "id: " + id + ", horasVuelo:" + horasVuelo + ", estadoDron: " + estadoDron;
+        return "id: " + id + ", horasVuelo: " + horasVuelo + " ,estadoDron: " + estadoDron;
     }
     
     

@@ -90,7 +90,6 @@ public class GestionSatelital {
 
             satelites.add(new Satelite(id, altura, velocidad, activo, bateria));
         }
-        System.out.println("7 satélites generados aleatoriamente.");
     }
 
     private int randomEntre(int min, int max) {

@@ -8,7 +8,7 @@ package ejercicio5;
  *
  * @author Mario
  */
-public class Estacion {
+public class EstacionMeteorologica {
 
     private String id;
     private double altitud;           // metros sobre el nivel del mar
@@ -22,7 +22,7 @@ public class Estacion {
      * @param velocidadMaxViento
      * @param precipitacion
      */
-    public Estacion(String id, double altitud, double velocidadMaxViento, double precipitacion) {
+    public EstacionMeteorologica(String id, double altitud, double velocidadMaxViento, double precipitacion) {
         this.id = id;
         this.altitud = altitud;
         this.velocidadMaxViento = velocidadMaxViento;
@@ -53,3 +53,4 @@ public class Estacion {
         );
 
     }
+}

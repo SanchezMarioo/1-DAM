@@ -12,15 +12,15 @@ import java.util.ArrayList;
  */
 public class Servicio {
 
-    private ArrayList<Estacion> estaciones;
+    private ArrayList<EstacionMeteorologica> estaciones;
 
-    public Servicio(ArrayList<Estacion> estaciones) {
+    public Servicio(ArrayList<EstacionMeteorologica> estaciones) {
         this.estaciones = estaciones;
     }
 
-    public ArrayList<Estacion> estacionesAlturaMayorde(double altura) {
-        ArrayList<Estacion> estacionesAltitud = new ArrayList<>();
-        for (Estacion estacion : estaciones) {
+    public ArrayList<EstacionMeteorologica> estacionesAlturaMayorde(double altura) {
+        ArrayList<EstacionMeteorologica> estacionesAltitud = new ArrayList<>();
+        for (EstacionMeteorologica estacion : estaciones) {
             if (estacion.getAltitud() > altura) {
                 estacionesAltitud.add(estacion);
             }
@@ -30,16 +30,16 @@ public class Servicio {
 
     public double velocidadMediaEstaciones() {
         double suma = 0;
-        for (Estacion estacion : estaciones) {
+        for (EstacionMeteorologica estacion : estaciones) {
             suma += estacion.getVelocidadMaxViento();
         }
         return suma / estaciones.size();
     }
 
-    public Estacion estacionMayorPrecipitacion() {
-        Estacion mayorEstacion = estaciones.get(0);
-        for (Estacion estacion : estaciones) {
-            if (mayorEstacion.getPrecipitacion() > estacion.getPrecipitacion()) {
+    public EstacionMeteorologica estacionMayorPrecipitacion() {
+        EstacionMeteorologica mayorEstacion = estaciones.get(0);
+        for (EstacionMeteorologica estacion : estaciones) {
+            if ( estacion.getPrecipitacion() > mayorEstacion.getPrecipitacion() ) {
                 mayorEstacion = estacion;
             }
         }
@@ -47,13 +47,12 @@ public class Servicio {
     }
 
     public boolean estacionesPeligrosas() {
-        boolean esPeligrosa = false;
-        for (Estacion estacion : estaciones) {
+        for (EstacionMeteorologica estacion : estaciones) {
             if (estacion.getVelocidadMaxViento() > 100) {
-                esPeligrosa = true;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 }

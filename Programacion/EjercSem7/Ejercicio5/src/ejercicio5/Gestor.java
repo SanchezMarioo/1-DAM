@@ -14,9 +14,10 @@ import java.util.Scanner;
  */
 public class Gestor {
 
-    Servicio servicio;
-    ArrayList<EstacionMeteorologica> estaciones;
-    Random random = new Random();
+    private Servicio servicio;
+    private ArrayList<EstacionMeteorologica> estaciones;
+    private Random random = new Random();
+    private Scanner sc;
 
     // Atributos para generar las estaciones random
     private final int MIN_ALTURA = 200;
@@ -25,21 +26,22 @@ public class Gestor {
     private final int MAX_VIENTO = 180;
     private final int MIN_PRECIPITACION = 0;
     private final int MAX_PRECIPITACION = 45;
-    private final int MAX_ESTACIONES = 6;
+    private final int MAX_ESTACIONES_INCIALES = 6;
 
     public Gestor() {
         estaciones = new ArrayList<>();
+        sc = new Scanner(System.in);
         crearEstaciones();
         servicio = new Servicio(estaciones);
     }
 
     public void init() {
         int opcion = -1;
-        Scanner sc = new Scanner(System.in);
+        
         do {
             mostrarMenu();
             opcion = sc.nextInt();
-            funcionalidadMenu(opcion, sc);
+            funcionalidadMenu(opcion);
         } while (opcion != 5);
         sc.close();
     }
@@ -54,12 +56,12 @@ public class Gestor {
         System.out.println("Opcion: ");
     }
 
-    private void funcionalidadMenu(int opcion, Scanner scanner) {
+    private void funcionalidadMenu(int opcion) {
         switch (opcion) {
             case 1:
                 System.out.print("Introduce la altitud mínima (m): ");
-                int umbral = scanner.nextInt();
-                scanner.nextLine();
+                int umbral = sc.nextInt();
+                sc.nextLine();
                 ArrayList<EstacionMeteorologica> filtradas = servicio.estacionesAlturaMayorde(umbral);
                 if (filtradas.isEmpty()) {
                     System.out.println("No hay estaciones por encima de " + umbral + " m.");
@@ -103,11 +105,12 @@ public class Gestor {
             default:
                 System.out.println("Opción no reconocida. Introduce un número del 1 al 5.");
         }
+        sc.close();
     }
 
     private void crearEstaciones() {
-        for (int i = 0; i < MAX_ESTACIONES; i++) {
-            estaciones.add(new EstacionMeteorologica("E" + i, altura(), velocidadMaximaViento(), precipitacion()));
+        for (int i = 0; i < MAX_ESTACIONES_INCIALES; i++) {
+            estaciones.add(new EstacionMeteorologica("EST" + i, altura(), velocidadMaximaViento(), precipitacion()));
         }
 
     }

@@ -14,14 +14,14 @@ import java.util.Scanner;
  */
 public class GestorSensores {
 
-    ArrayList<Sensor> sensores;
+    private ArrayList<Sensor> sensores;
     private final double MIN_CO2 = 100.0;
     private final double MAX_CO2 = 2000.0;
     private final double MIN_TEMP = 10.0;
     private final double MAX_TEMP = 60.0;
     private final int SENSORES_DEFECTO = 7;
     private Random random = new Random();
-    Scanner sc;
+    private Scanner sc;
 
     public GestorSensores() {
         sensores = new ArrayList<>();

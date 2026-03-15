@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<fact:facturas
+    xmlns:fact="facturas"
+    xmlns="facturas"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="facturas Ejer12.xsd">
+
+    <fact:factura>
+
+        <datos_cliente ident="C001">
+            <nombre>Maria</nombre>
+            <apellido>Garcia</apellido>
+            <apellido>Lopez</apellido>
+            <dni>12345678A</dni>
+            <tfno>612345678</tfno>
+        </datos_cliente>
+
+        <datos_factura>
+            <resguardo>
+                <forma_pago>Tarjeta</forma_pago>
+                <importe_total>7.50</importe_total>
+            </resguardo>
+
+            <alquileres>
+                <fecha>2024-03-10</fecha>
+                <peliculas>
+                    <pelicula id_pelicula="P001" valoracion="buena">
+                        <titulo>El Padrino</titulo>
+                        <genero>Drama</genero>
+                        <duracion>175</duracion>
+                        <actores>
+                            <actor>
+                                <nombre>Marlon</nombre>
+                                <apellido>Brando</apellido>
+                                <apellido>Junior</apellido>
+                            </actor>
+                            <actor>
+                                <nombre>Al</nombre>
+                                <apellido>Pacino</apellido>
+                                <apellido>Martino</apellido>
+                            </actor>
+                            <actor>
+                                <nombre>James</nombre>
+                                <apellido>Caan</apellido>
+                                <apellido>Arthur</apellido>
+                            </actor>
+                        </actores>
+                    </pelicula>
+                </peliculas>
+            </alquileres>
+        </datos_factura>
+
+    </fact:factura>
+
+</fact:facturas>

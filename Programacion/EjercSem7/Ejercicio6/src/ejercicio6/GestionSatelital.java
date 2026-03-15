@@ -11,6 +11,7 @@ public class GestionSatelital {
 
     private Scanner sc = new Scanner(System.in);
     private ArrayList<Satelite> satelites;
+    private final int NUM_SATELITES_DEFECTO = 7; 
 
     public GestionSatelital() {
         satelites = new ArrayList<>();
@@ -81,12 +82,12 @@ public class GestionSatelital {
         Random random = new Random();
         String[] prefijos = {"SAT", "ORB", "GEO", "LEO", "MEO", "POL", "SUN"};
 
-        for (int i = 0; i < 7; i++) {
-            String id = prefijos[i] + "-" + randomEntre(100, 999);   // ej: SAT-342
-            int altura = randomEntre(200, 35700);                      // 200 ? 35700 km
-            double velocidad = randomEntre(1000, 30000);                    // 1000 ? 30000 m/s
+        for (int i = 0; i < NUM_SATELITES_DEFECTO; i++) {
+            String id = prefijos[i] + "-" + randomEntre(100, 999);   
+            int altura = randomEntre(200, 35700);                      
+            double velocidad = randomEntre(1000, 30000);                    
             boolean activo = random.nextBoolean();
-            int bateria = randomEntre(0, 100);                              // 0 ? 100 %
+            int bateria = randomEntre(0, 100);                              
 
             satelites.add(new Satelite(id, altura, velocidad, activo, bateria));
         }

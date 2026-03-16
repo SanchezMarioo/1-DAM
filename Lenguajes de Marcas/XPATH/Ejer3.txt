@@ -1,1 +1,3 @@
-/AAA/BBB[last()]ç
+/AAA/BBB[last()]
+/AAA/BBB[@name]
+/AAA/BBB[@id='b1']

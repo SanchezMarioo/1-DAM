@@ -47,8 +47,14 @@ public class Satelite {
 
     @Override
     public String toString() {
-        return String.format("Satelite [%s] | Altura [%,d] | Velocidad Orbital [%.2f] | Esta activo [%b] | Porcentaje de la bateria [%,d] ", 
-               id, altura, velocidadOrbital, estaActivo, porcentajeEnergia);
+        String estado;
+        if(estaActivo){
+            estado = "ACTIVO";
+        } else{
+            estado = "INACTIVO";
+        }
+        return String.format("Satelite [%s] | Altura [%,d] | Velocidad Orbital [%.2f] | Esta activo [%s] | Porcentaje de la bateria [%,d] ", 
+               id, altura, velocidadOrbital, estado, porcentajeEnergia);
     }
     
 

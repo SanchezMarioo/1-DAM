@@ -11,7 +11,7 @@ public class GestionSatelital {
 
     private Scanner sc = new Scanner(System.in);
     private ArrayList<Satelite> satelites;
-    private final int NUM_SATELITES_DEFECTO = 7; 
+    private final int NUM_SATELITES_DEFECTO = 7;
 
     public GestionSatelital() {
         satelites = new ArrayList<>();
@@ -33,6 +33,7 @@ public class GestionSatelital {
             System.out.println("7. Eliminar satelite");
             System.out.println("8. Buscar satelite");
             System.out.println("9. Informe global");
+            System.out.println("10. Ver todos los satelites");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -68,6 +69,8 @@ public class GestionSatelital {
 
                 case 9 ->
                     informeGlobal();
+                case 10 -> 
+                    verSatelites();
 
                 case 0 ->
                     System.out.println("Saliendo del módulo de gestión...");
@@ -83,11 +86,11 @@ public class GestionSatelital {
         String[] prefijos = {"SAT", "ORB", "GEO", "LEO", "MEO", "POL", "SUN"};
 
         for (int i = 0; i < NUM_SATELITES_DEFECTO; i++) {
-            String id = prefijos[i] + "-" + randomEntre(100, 999);   
-            int altura = randomEntre(200, 35700);                      
-            double velocidad = randomEntre(1000, 30000);                    
+            String id = prefijos[i] + "-" + randomEntre(100, 999);
+            int altura = random.nextInt(300, 35000);
+            double velocidad = randomEntre(1000, 30000);
             boolean activo = random.nextBoolean();
-            int bateria = randomEntre(0, 100);                              
+            int bateria = randomEntre(0, 100);
 
             satelites.add(new Satelite(id, altura, velocidad, activo, bateria));
         }
@@ -154,14 +157,20 @@ public class GestionSatelital {
 
     private void eliminarSateliteId() {
         String id = sc.nextLine();
+        boolean encontrado = false;
         for (int i = 0; i < satelites.size(); i++) {
-            if (satelites.get(i).getId().equals(id)) {
+            if (satelites.get(i).getId().equalsIgnoreCase(id)) {
                 satelites.remove(i);
-                return;
+                encontrado = true;
+                break;
             }
-
         }
-        System.out.println("No se ha encontrado ningun satelite con la " + id);
+        if(!encontrado){
+            System.out.println("No se ha encontrado ningun satelite con la " + id);
+        } else {
+            System.out.println("Se ha borrado correctamente.");
+        }
+        
     }
 
     private void buscarSateliteConcreto() {
@@ -179,7 +188,7 @@ public class GestionSatelital {
         System.out.println("Numero de satelites activos: " + contarSatelitesActivos());
         System.out.println("Energia media disponible: " + calcularEnergiaMedia());
         System.out.println("Satelite mas rapido: " + sateliteMasRapido().getVelocidadOrbital());
-        System.out.println("Satelite mas cercano a la Tierra: " + sateliteMenosOrbita().getVelocidadOrbital());
+        System.out.println("Satelite mas cercano a la Tierra: " + sateliteMenosOrbita().getAltura());
     }
 
     private int contarSatelitesActivos() {
@@ -215,7 +224,7 @@ public class GestionSatelital {
         Satelite menosOrbita = satelites.get(0);
 
         for (Satelite satelite : satelites) {
-            if (satelite.getVelocidadOrbital() < menosOrbita.getVelocidadOrbital()) {
+            if (menosOrbita.getAltura() > satelite.getAltura()) {
                 menosOrbita = satelite;
             }
         }
@@ -230,6 +239,12 @@ public class GestionSatelital {
             }
         }
         return estaPorDebajo;
+    }
+
+    private void verSatelites() {
+        for (Satelite satelite : satelites) {
+            System.out.println(satelite);
+        }
     }
 
 }

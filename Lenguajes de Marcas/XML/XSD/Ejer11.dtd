@@ -4,8 +4,8 @@
 <!ELEMENT numero (#PCDATA)>
 <!ELEMENT tomador (#PCDATA)>
 <!ELEMENT asegurado (garantia*)>
-<!ATTLIST asegurado nombre  CDATA #REQUIRED>
-<!ATTLIST asegurado apellidos  CDATA #REQUIRED>
+<!ATTLIST asegurado nombre CDATA #REQUIRED>
+<!ATTLIST asegurado apellidos CDATA #REQUIRED>
 <!ELEMENT garantia (tipo,capital)>
 <!ATTLIST garantia vigor  (S|N) "N">
 <!ELEMENT tipo (#PCDATA )>

@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-
-<Libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/XML/XSD/Ejer10.xsd">
+<Libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejer10.xsd">
   <Titulo>Pepe</Titulo>
   <Contenido>
     <Capitulo materia="XML">
       <Tema>Ficcion</Tema>
       <Seccion apartados="si">Secion II</Seccion>
     </Capitulo>
-        <Capitulo>
-        <Tema>Otro tema</Tema>
-        <Seccion apartados="no">Seccion III</Seccion>
-      </Capitulo>
-    <Separacion></Separacion>
+    <Capitulo>
+      <Tema>Otro tema</Tema>
+      <Seccion apartados="no">Seccion III</Seccion>
+    </Capitulo>
+    <Separacion/>
   </Contenido>
   <Copyright>ASVDS</Copyright>
 </Libro>

@@ -46,7 +46,7 @@ public class GestorRepositorio {
         System.out.println("Total: " + repoDocumentos.numeroGenericos());
 
         System.out.println("\n--- PRODUCTOS TRAS ELIMINAR ---");
-        repoElectronicos.mostrarGenericos();  // ? falta esto
+        repoElectronicos.mostrarGenericos(); 
         System.out.println("Total: " + repoElectronicos.numeroGenericos());
     }
 }

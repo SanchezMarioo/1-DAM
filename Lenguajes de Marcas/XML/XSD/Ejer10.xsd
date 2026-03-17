@@ -12,10 +12,8 @@
   <xs:element name="Contenido">
     <xs:complexType>
       <xs:sequence maxOccurs="unbounded">
-        <xs:sequence>
           <xs:element ref="Capitulo" maxOccurs="unbounded"/>
           <xs:element ref="Separacion" minOccurs="0"/>
-        </xs:sequence>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

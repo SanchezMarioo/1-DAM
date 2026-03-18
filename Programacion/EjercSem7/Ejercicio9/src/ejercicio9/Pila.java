@@ -25,30 +25,28 @@ public class Pila<T> {
     public T pop() {
         if (estaVacio()) {
             return null;
-        }
-
-        T element = elementos.get(elementos.size() - 1);
-        elementos.remove(elementos.size() - 1);
-        return element;
+        }  
+        return elementos.remove(elementos.size() - 1);
     }
 
     public T peek() {
         if (estaVacio()) {
             return null;
         }
-
-        T element = elementos.get(elementos.size() - 1);
-        return element;
+        return elementos.get(elementos.size() - 1);
     }
 
     public boolean estaVacio() {
-        if (elementos.isEmpty()) {
-            return true;
-        }
-        return false;
+        return elementos.isEmpty();
     }
 
     public int numElementos() {
         return elementos.size();
     }
+
+    @Override
+    public String toString() {
+        return "Pila{" + "elementos=" + elementos + '}';
+    }
+    
 }

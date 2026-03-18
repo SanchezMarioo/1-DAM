@@ -42,7 +42,7 @@ public class Ejercicio9 {
         System.out.println("¿Está vacía después de vaciar?: " + numeros.estaVacio());
         System.out.println("Intento de pop en vacía: " + numeros.pop()); 
         System.out.println();
-
+        
 
         
         System.out.println("--- PRUEBA: PILA DE OBJETOS PUNTO ---");
@@ -50,6 +50,7 @@ public class Ejercicio9 {
         coordenadas.push(new Punto(0, 0));
         coordenadas.push(new Punto(5, 10));
         coordenadas.push(new Punto(100, 200));
+        System.out.println(coordenadas);
         System.out.println("Extrayendo último punto: " + coordenadas.pop());
         System.out.println("Punto que queda en el tope: " + coordenadas.peek());
         System.out.println("Tamaño final: " + coordenadas.numElementos());

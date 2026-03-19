@@ -1,0 +1,26 @@
+
+-- Ejercicio 5
+//*[self::*][string-length(name()) = 3]
+
+//*[string-length(name()) = 1  or string-length(name()) = 2]
+//*[string-length(name()) >3]
+
+-- Ejercicio 6
+
+//*
+//CCC/*
+//DDD/parent::*
+
+-- Ejercicio 7
+
+<EEE><DDD> <XXX> <AAA>
+
+<GGG> <FFF> <DDD> <XXX> <AAA>
+
+-- Ejercicio 8
+
+//Libro[Precio > 34.9]/Titulo
+
+//Libro[count(Autores/Autor) > 2]
+
+//Libro[Paginas > 500]/Paginas

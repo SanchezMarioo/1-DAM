@@ -1,3 +1,4 @@
 /AAA/BBB[last()]
-/AAA/BBB[@name]
-/AAA/BBB[@id='b1']
+(//BBB)[last()]
+//*[@name]
+//BBB[@id='b1']

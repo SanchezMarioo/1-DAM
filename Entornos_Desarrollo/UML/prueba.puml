@@ -1,0 +1,34 @@
+@startuml Vehiculo
+
+class Vehiculo {
+ -marca: String
+ -modelo: String
+ -anio:int
+ -velocidadMaxima : int
+ +getMarca() : String
+ +getModelo() : String
+ +getAnio() : int
+ +getVelocidadMaxima() : int
+ +Vehiculo(marca: String,modelo: String, anio: int ,velocidadMaxima : int)
+ +setMarca(marca: String)
+ +setModelo(modelo: String)
+ +setAnio(anio : String)
+ +setVelocidadMaxima(velocidadMaxima : int)
+ +arrancar()
+}
+class Auto{
+    - numPlazas: int
+    + Auto(numPlazas:int)
+    +setNumPlazas(numPlazas : int)
+    + getNumPlazas() : int
+}
+class Camioneta{
+    - cargaMaxima: int
+    + Auto(cargaMaxima: int)
+    + setCargaMaxima(cargaMaxima : int)
+    + getCargaMaxima() : int
+}
+
+Vehiculo <|-- Auto
+Vehiculo <|-- Camioneta
+@enduml

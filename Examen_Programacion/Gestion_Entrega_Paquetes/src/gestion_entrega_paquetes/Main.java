@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package campeonato_carreras;
+package gestion_entrega_paquetes;
 
 /**
  *
- * @author Mario
+ * @author MARIO
  */
 public class Main {
 
@@ -15,8 +15,14 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        GestorCarreras g = new GestorCarreras();
-        g.init();
+        String regex = "PKG-\\d{4}-[A-Z]{2}"; // Doble barra aquí
+        String input = "PKG-1234-AB";
+
+        if (input.matches(regex)) {
+            System.out.println("¡Formato válido!");
+        } else {
+            System.out.println("Formato inválido.");
+        }
     }
-    
+
 }

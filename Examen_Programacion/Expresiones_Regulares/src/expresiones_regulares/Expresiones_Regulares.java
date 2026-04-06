@@ -2,21 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package campeonato_carreras;
+package expresiones_regulares;
 
 /**
  *
- * @author Mario
+ * @author MARIO
  */
-public class Main {
+public class Expresiones_Regulares {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        GestorCarreras g = new GestorCarreras();
-        g.init();
+        Gestion gestion = new Gestion();
+        gestion.init();
     }
     
 }

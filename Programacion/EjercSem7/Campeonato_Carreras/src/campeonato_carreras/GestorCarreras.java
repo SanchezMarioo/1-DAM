@@ -5,10 +5,9 @@ import java.util.Scanner;
 /**
  * Gestiona la interaccion por consola del campeonato.
  *
- * <p>Se encarga de leer entradas, mostrar el menu y delegar operaciones al
- * objeto {@link Campeonato}.</p>
  */
 public class GestorCarreras {
+
     private Scanner sc;
     Campeonato campeonato;
 
@@ -30,15 +29,24 @@ public class GestorCarreras {
             mostrarMenu();
             opcion = leerEntero("Elige la opcion: ");
             switch (opcion) {
-                case 1 -> crearPiloto();
-                case 2 -> crearCoche();
-                case 3 -> asignarCocheAPiloto();
-                case 4 -> crearCarrera();
-                case 5 -> inscribirEnCarrera();
-                case 6 -> disputarCarrera();
-                case 7 -> campeonato.mostrarRanking();
-                case 8 -> System.out.println("Saliendo del sistema...");
-                default -> System.out.println("Opción no válida.");
+                case 1 ->
+                    crearPiloto();
+                case 2 ->
+                    crearCoche();
+                case 3 ->
+                    asignarCocheAPiloto();
+                case 4 ->
+                    crearCarrera();
+                case 5 ->
+                    inscribirEnCarrera();
+                case 6 ->
+                    disputarCarrera();
+                case 7 ->
+                    campeonato.mostrarRanking();
+                case 8 ->
+                    System.out.println("Saliendo del sistema...");
+                default ->
+                    System.out.println("Opción no válida.");
             }
 
         } while (opcion != 8);
@@ -83,7 +91,6 @@ public class GestorCarreras {
         return n;
     }
 
-
     private void disputarCarrera() {
         if (!campeonato.hayCarrerasDisponibles()) {
             System.out.println("No hay carreras creadas aun.");
@@ -105,7 +112,9 @@ public class GestorCarreras {
     private void crearCarrera() {
         String nombre = leerString("Nombre del Gran Premio: ");
         double dist = leerDouble("Distancia total (metros): ");
-        Carrera c = new Carrera(nombre, dist);
+        double vueltas = leerDouble("�Cuantas vueltas tiene la carrera?: ");
+        double distanciaPorVuelta = leerDouble("�Cuantos metros tendra la vuelta?: ");
+        Carrera c = new Carrera(nombre, dist,vueltas,distanciaPorVuelta);
         campeonato.agregarCarrera(c);
     }
 
@@ -151,7 +160,6 @@ public class GestorCarreras {
         System.out.println("El piloto " + piloto.getNombre() + " ha sido asignado a " + coche.getMatricula());
     }
 
-
     private void crearPiloto() {
         String nombre = leerString("Nombre del piloto: ");
         int dorsal = leerEntero("Dorsal: ");
@@ -195,7 +203,6 @@ public class GestorCarreras {
 
     }
 
-
     /**
      * Carga un conjunto minimo de datos de ejemplo para pruebas manuales.
      */
@@ -208,8 +215,8 @@ public class GestorCarreras {
         Coche c2 = new Coche("5678-DEF", "Ferrari", 330, 78, 6.2, 0);
         Coche c3 = new Coche("9012-GHI", "Mercedes", 325, 79, 6.4, 0);
 
-        Carrera gpMonaco = new Carrera("Monaco", 305000);
-        Carrera gpMonza = new Carrera("Monza", 306000);
+        Carrera gpMonaco = new Carrera("Monaco", 305000,100,305);
+        Carrera gpMonza = new Carrera("Monza", 306000,100,306);
 
         campeonato.agregarPiloto(p1);
         campeonato.agregarPiloto(p2);

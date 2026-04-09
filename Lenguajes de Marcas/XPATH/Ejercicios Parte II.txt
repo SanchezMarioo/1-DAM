@@ -1,6 +1,6 @@
 
 -- Ejercicio 5
-//*[self::*][string-length(name()) = 3]
+//*[string-length(name()) = 3]
 
 //*[string-length(name()) = 1  or string-length(name()) = 2]
 //*[string-length(name()) >3]
@@ -8,7 +8,8 @@
 -- Ejercicio 6
 
 //*
-//CCC/*
+//CCC/descendant::*
+//*[ancestor::CCC]
 //DDD/parent::*
 
 -- Ejercicio 7
@@ -19,8 +20,8 @@
 
 -- Ejercicio 8
 
-//Libro[Precio > 34.9]/Titulo
+//Libro[Precio[@moneda = 'pesos argentinos'] >= 34.9]/Titulo
 
-//Libro[count(Autores/Autor) > 2]
+//Libro[count(Autores/Autor) > 1]/Titulo
 
-//Libro[Paginas > 500]/Paginas
+sum(//Libro[Paginas > 500]/Paginas)

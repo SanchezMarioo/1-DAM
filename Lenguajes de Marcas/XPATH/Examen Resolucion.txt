@@ -1,0 +1,16 @@
+P1:Obtener todos los nombres de los empleados. (1 punto)
+//empleado/nombre
+P2:Obtener todos los salarios que estén en euros. (1,5 puntos)
+//salario[@moneda='€']
+P3: Obtener los empleados cuyo salario sea mayor de 40000 (1,5 puntos)
+//empleado[salario > 40000]
+P4: Obtener el nombre del empleado con id=”E003”. (1,5 puntos)
+//empleado[@id='E003']/nombre
+P5: Obtener los proyectos que no estén finalizados (1,5 puntos)
+//proyecto[finalizado='true']/nombre
+P6: Ontener el nombre y salario de los empleados que ganen más de 38000. (1 punto)
+//empleado[salario > 38000]/nombre | //empleado[salario > 38000]/salario
+P7: Selecciona el proyecto al que pertenece un presupuesto mayor de 100000. (1 punto)
+//presupuesto[presupuesto > 100000]/parent::proyecto
+P8: Obtener todos los elementos que estén dentro de los proyectos de la empresa (1 punto)
+//proyecto/descendant::*

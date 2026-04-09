@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tribunaltesis SYSTEM "Ejer4.dtd">
+<tribunaltesis>
+  <tesis titulo="Doctoral" nota="7.0" id="KLF-123" >
+    <ponente dni="0797853W">
+      <nombre>Luis Perez</nombre>
+      <titulacion grado="Informatica">Doctor en &ing; informatica</titulacion>
+      <temas>
+        <tema anexos="II">
+          <titulo>Data Science</titulo>
+        </tema>
+      </temas>
+    </ponente>
+  </tesis>
+    <tesis titulo="Doctoral" nota="7.0" id="KLF-123" >
+    <ponente dni="0797853W">
+      <nombre>Luis Perez</nombre>
+      <titulacion grado="Informatica">Doctor en informatica</titulacion>
+      <temas>
+        <tema anexos="23">
+          <titulo>Data Science</titulo>
+          <titulo>Data Science</titulo>
+          <anexo multimedia="CD" bibliográfico="Libros"  material="Libro"/>
+        </tema>
+      </temas>
+    </ponente>
+  </tesis>
+</tribunaltesis>

@@ -1,0 +1,9 @@
+<!ELEMENT biblioteca (libro+)>
+<!ELEMENT libro (titulo,autor+,editorial?)>
+<!ATTLIST libro 
+  id CDATA #REQUIRED 
+  genero CDATA #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT editorial (#PCDATA)>
+<!ATTLIST autor pais CDATA #IMPLIED>

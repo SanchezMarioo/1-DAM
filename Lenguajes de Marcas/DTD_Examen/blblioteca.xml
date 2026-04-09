@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">
+<biblioteca>
+    <libro id="L_001" genero="ficcion">
+        <titulo>El ingenioso hidalgo Don Quijote de la Mancha</titulo>
+        <autor pais="España">Miguel de Cervantes Saavedra</autor>
+        <editorial>Imprenta de Juan de la Cuesta</editorial>
+    </libro>
+
+    <libro id="L_002" genero="ficcion">
+        <titulo>Rayuela</titulo>
+        <autor pais="Argentina">Julio Cortázar</autor>
+        <editorial>Editorial Sudamericana</editorial>
+    </libro>
+
+    <libro id="L_003" genero="tecnico">
+        <titulo>Patrones de Diseño: Elementos de software orientado a objetos</titulo>
+        <autor pais="USA">Erich Gamma</autor>
+        <autor pais="USA">Richard Helm</autor>
+        <autor pais="USA">Ralph Johnson</autor>
+        <autor pais="USA">John Vlissides</autor>
+        <editorial>Addison-Wesley</editorial>
+    </libro>
+
+    <libro id="L_004" genero="tecnico">
+        <titulo>Compiladores: Principios, Técnicas y Herramientas</titulo>
+        <autor>Alfred V. Aho</autor>
+        <autor>Monica S. Lam</autor>
+        <autor>Ravi Sethi</autor>
+        <autor>Jeffrey D. Ullman</autor>
+    </libro>
+
+    <libro id="L_005" genero="ensayo">
+        <titulo>El Mito de Sísifo</titulo>
+        <autor pais="Argelia">Albert Camus</autor>
+        <editorial>Gallimard</editorial>
+    </libro>
+
+    <libro id="L_006" genero="ensayo">
+        <titulo>Crítica de la Razón Pura</titulo>
+        <autor pais="Prusia">Immanuel Kant</autor>
+        </libro>
+
+    <libro id="L_007" genero="ficcion">
+        <titulo>Fundación</titulo>
+        <autor pais="Rusia">Isaac Asimov</autor>
+        <editorial>Gnome Press</editorial>
+    </libro>
+
+    <libro id="L_008" genero="ficcion">
+        <titulo>Crónicas Marcianas</titulo>
+        <autor pais="USA">Ray Bradbury</autor>
+        <editorial>Doubleday</editorial>
+    </libro>
+
+    <libro id="L_009" genero="tecnico">
+        <titulo>Eloquent JavaScript</titulo>
+        <autor pais="Países Bajos">Marijn Haverbeke</autor>
+        <editorial>No Starch Press</editorial>
+    </libro>
+
+    <libro id="L_010" genero="tecnico">
+        <titulo>Structure and Interpretation of Computer Programs</titulo>
+        <autor>Harold Abelson</autor>
+        <autor>Gerald Jay Sussman</autor>
+        <autor>Julie Sussman</autor>
+    </libro>
+</biblioteca>

@@ -31,6 +31,7 @@ public class Gestor {
             }
             funcionalidadMenu(opcion);
         } while (opcion != 7);
+        sc.close();
     }
 
     private void mostrarMenu() {

@@ -1,6 +1,5 @@
 /**
  * Clase encargada de administrar la colección de empleados.
- * 
  * @version 1.0
  * @author mario.sanper.2
  */

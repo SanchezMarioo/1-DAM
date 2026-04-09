@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicio10;
+package problema_710;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author mario.sanper.2
  */
-public class Ejercicio10 {
+public class Problema_710 {
 
     /**
      * @param args the command line arguments
@@ -18,13 +18,19 @@ public class Ejercicio10 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        String codigo = sc.nextLine().trim();
-        while (!ValidarTexto.comprobarTexto(codigo)) {
-            System.out.println("Codigo invalido");
-            codigo = sc.nextLine().trim();
+        int casosPrueba = sc.nextInt();
+        for (int i = 0; i < casosPrueba; i++) {
+            int max = sc.nextInt();
+            int sum = 0;
+            for (int j = 0; j < 6; j++) {
+                int num = sc.nextInt();
+                sum+=num;
+            }
+            int numero = max - sum;
+            System.out.println(numero);
+           
         }
-        sc.close();
-        System.out.println("Código válido. Registro aceptado");
+        
     }
-
+    
 }

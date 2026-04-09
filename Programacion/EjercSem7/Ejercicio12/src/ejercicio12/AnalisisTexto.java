@@ -143,7 +143,7 @@ public class AnalisisTexto {
     }
 
     public void palabrasClaves() {
-        patron = Pattern.compile("(exploit|EXPLOIT)|(bypass|BYPASS)|(payload|PAYLOAD)|(inject|INJECT)|(backdoor|BACKDOOR)");
+        patron = Pattern.compile("(exploit|EXPLOIT)|(bypass|BYPASS)|(payload|PAYLOAD)|(inject|INJECT)|(backdoor|BACKDOOR)", Pattern.CASE_INSENSITIVE);
         matcher = patron.matcher(textoAnalizar);
         while (matcher.find()) {
             System.out.println(matcher.group());

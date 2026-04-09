@@ -1,0 +1,19 @@
+
+-- Ejercicio 1
+/AAA/BBB
+
+-- Ejercicio 2
+
+//AAA/CCC/*
+/AAA/*/*/BBB
+
+-- Ejercicio 3
+
+/AAA/BBB[last()]
+/AAA/BBB[@name]
+/AAA/BBB[@id='b1']
+
+-- Ejercicio 4
+
+/AAA/BBB[@id]/following-sibling::*
+//XXX/descendant::*

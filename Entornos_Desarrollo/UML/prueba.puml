@@ -1,34 +1,23 @@
 @startuml Vehiculo
-
 class Vehiculo {
- -marca: String
- -modelo: String
- -anio:int
- -velocidadMaxima : int
- +getMarca() : String
- +getModelo() : String
- +getAnio() : int
- +getVelocidadMaxima() : int
- +Vehiculo(marca: String,modelo: String, anio: int ,velocidadMaxima : int)
- +setMarca(marca: String)
- +setModelo(modelo: String)
- +setAnio(anio : String)
- +setVelocidadMaxima(velocidadMaxima : int)
- +arrancar()
+    -marca : String
+    +arrancar() : void
 }
-class Auto{
-    - numPlazas: int
-    + Auto(numPlazas:int)
-    +setNumPlazas(numPlazas : int)
-    + getNumPlazas() : int
+class Coche {
+    -numPuertas : int
+    +conducir() : void
 }
-class Camioneta{
-    - cargaMaxima: int
-    + Auto(cargaMaxima: int)
-    + setCargaMaxima(cargaMaxima : int)
-    + getCargaMaxima() : int
+class Motor {
+    -cilindrada : int
 }
-
-Vehiculo <|-- Auto
-Vehiculo <|-- Camioneta
+class Rueda {
+    -presion : float
+}
+class Conductor {
+    -nombre : String
+}
+Vehiculo <|-- Coche
+Coche "1" *-- "1" Motor : tiene
+Coche "1" o-- "4" Rueda : usa
+Conductor "1" -- "0..*" Coche : conduce
 @enduml

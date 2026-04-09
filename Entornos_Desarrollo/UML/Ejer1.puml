@@ -1,31 +1,32 @@
-@startuml
+@startuml Vehiculo
 
 class Vehiculo {
-    -marca: String
-    -modelo: String
-    -anio:int
-    -velocidadMaxima : int
-    +getMarca() : String
-    +getModelo() : String
-    +getAnio() : int
-    +getVelocidadMaxima() : int
-    +Vehiculo(marca: String, modelo: String, anio: int, velocidadMaxima : int)
-    +setMarca(marca: String)
-    +setModelo(modelo: String)
-    +setAnio(anio : String)
-    +setVelocidadMaxima(velocidadMaxima : int)
-    +arrancar()
+    - marca: String
+    - modelo: String
+    - anio: int
+    - velocidadMaxima : int
+    + getMarca() : String
+    + getModelo() : String
+    + getAnio() : int
+    + getVelocidadMaxima() : int
+    + Vehiculo(marca: String, modelo: String, anio: int, velocidadMaxima: int)
+    + setMarca(marca: String) : void
+    + setModelo(modelo: String) : void
+    + setAnio(anio: String) : void
+    + setVelocidadMaxima(velocidadMaxima : int) : void
+    + arrancar() : void
+    + acelerar() : void
 }
 class Auto{
     - numPlazas: int
-    + Auto(numPlazas:int)
-    +setNumPlazas(numPlazas : int)
+    + Auto(super(marca : String , modelo : String, anio:int, velocidadMaxima: int), numPlazas: int)
+    + setNumPlazas(numPlazas : int) : void
     + getNumPlazas() : int
 }
 class Camioneta{
     - cargaMaxima: int
-    + Auto(cargaMaxima: int)
-    + setCargaMaxima(cargaMaxima : int)
+    + Camioneta (super(marca : String , modelo : String, anio:int, velocidadMaxima: int),cargaMaxima: int)
+    + setCargaMaxima(cargaMaxima: int) : void
     + getCargaMaxima() : int
 }
 

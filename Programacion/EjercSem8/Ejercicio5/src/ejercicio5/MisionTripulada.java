@@ -16,6 +16,17 @@ public class MisionTripulada extends Mision {
         super(nombre, duracionEstimada, presupuestoAsignado);
         this.numeroAstronautas = numeroAstronautas;
     }
+
+    @Override
+    public void mostrarInformacion() {
+        super.mostrarInformacion();
+        System.out.println("Numero de astronautas: " + numeroAstronautas);
+    }
+
+    @Override
+    public String toString() {
+        return "MisionTripulada{" + "numeroAstronautas=" + numeroAstronautas + '}';
+    }
     
 
 }

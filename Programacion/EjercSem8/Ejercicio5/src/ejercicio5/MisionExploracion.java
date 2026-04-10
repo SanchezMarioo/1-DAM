@@ -11,12 +11,19 @@ package ejercicio5;
 public class MisionExploracion extends Mision{
     private String destino;
 
-    public MisionExploracion(String destino, String nombre, int duracionEstimada, int presupuestoAsignado) {
-        super(nombre, duracionEstimada, presupuestoAsignado);
+    public MisionExploracion(String destino, String nombre, int duracionEstimada, double par1) {
+        super(nombre, duracionEstimada, duracionEstimada);
         this.destino = destino;
     }
+    @Override
     public void mostrarInformacion(){
         super.mostrarInformacion();
-        System.out.println("");
+        System.out.println("Destino: " + destino);
     }
+
+    @Override
+    public String toString() {
+        return "MisionExploracion{" + "destino=" + destino + '}';
+    }
+    
 }

@@ -9,6 +9,7 @@ package ejercicio5;
  * @author mario.sanper.2
  */
 public class MisionSatelite extends Mision {
+
     private String tipoOrbita;
 
     public MisionSatelite(String tipoOrbita, String nombre, int duracionEstimada, int presupuestoAsignado) {
@@ -16,7 +17,19 @@ public class MisionSatelite extends Mision {
         this.tipoOrbita = tipoOrbita;
     }
 
+    @Override
+    public void mostrarInformacion(){
+        super.mostrarInformacion();
+        System.out.println("Tipo de orbita " + tipoOrbita);
+    }
+
+    @Override
+    public String toString() {
+        return "MisionSatelite{" + "tipoOrbita=" + tipoOrbita + '}';
+    }
+
     
     
     
+
 }

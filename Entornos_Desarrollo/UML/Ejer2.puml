@@ -1,5 +1,34 @@
-@startuml
+@startuml PracticaEntornos
 
-class A
+class Alumno{
+    - idAlumno : String
+    - nombre : String
+    - apellido : String
+    - curso : String
+    + Alumno (idAlumno : String, nombre: String, apellido: String, curso : String)
+    + realizarPractica(p: Practica) : boolean
+}
+
+
+
+class Practica{
+    - titulo : String
+    - descripcion : String
+    - fechaLimite : String
+    + Practica(titulo, descripcion, fechaLimite)
+    + asignarAlumno(Alumno a) : boolean
+    + asignarLugar (Lugar l) : boolean
+
+}
+
+class Lugar{
+    - id : String
+    - titulo : String
+    + Lugar(id: String, titulo: String)
+}
+
+Alumno "0..*" -- "1..*" Practica : Hace 
+Lugar "1" --  "0..*" Practica : Realiza 
+
 
 @enduml

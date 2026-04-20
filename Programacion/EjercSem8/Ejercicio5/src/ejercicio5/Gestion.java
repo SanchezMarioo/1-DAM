@@ -204,7 +204,6 @@ public class Gestion {
         System.out.println("No se encontro ninguna mision con el nombre: " + nombre);
     }
 
-    // ── Inserción interactiva ─────────────────────────────────────────────────
     private void insertarNuevaMision() {
         System.out.println("Tipos: 1-Exploracion  2-Satelite  3-Tripulada");
         System.out.print("Tipo: ");

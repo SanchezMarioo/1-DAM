@@ -1,0 +1,87 @@
+@startuml Alquiler_Coches
+
+Class Cliente {
+    - codigoCliente : int
+    - dni : String
+    - nombre : String
+    - direccion : String
+    - telefono : int
+    + getIdCliente(): int
+    + getDni(): String
+    + getNombre(): String
+    + getDireccion(): String
+    + getTelefono(): String
+    + setDni(dni: String): void
+    + setNombre(nombre: String): void
+    + setDireccion(direccion: String): void
+    + setTelefono(telefono: String): void
+}
+
+class Reserva{
+    - fechaIncio : String
+    - fechaFinal : String
+    - precioAlquiler : double
+    - estaEntregado : boolean
+    + calcularPrecioTotal() : double
+    + getIdReserva(): int
+    + getFechaInicio(): Date
+    + getFechaFin(): Date
+    + getLitrosGasolina(): double
+    + getPrecioTotal(): double
+    + isEntregado(): boolean
+    + setFechaInicio(fecha: Date): void
+    + setFechaFin(fecha: Date): void
+    + setPrecioTotal(precio: double): void
+    + setEntregado(entregado: boolean): void
+
+}
+class DetallesReserva{
+    - precioAlquilerCoche: Double
+    - litrosGasolina: Double
+    + getLitrosGasolina(): double
+    + getPrecioCoche(): double
+    + setLitrosGasolina(litros: double): void
+    + setPrecioCoche(precio: double): void
+}
+
+class Coche{
+    - matricula : String
+    - modelo : String
+    - color : String
+    - marca : String
+    + getIdCoche(): int
+    + getMatricula(): String
+    + getMarca(): String
+    + getModelo(): String
+    + getColor(): String
+    + setMatricula(matricula: String): void
+    + setMarca(marca: String): void
+    + setModelo(modelo: String): void
+    + setColor(color: String): void
+}
+class Garaje {
+    - idGaraje: int
+    - nombre: String
+    + getIdGaraje(): int
+    + getNombre(): String
+    + setNombre(nombre: String): void
+}
+
+class Agencia {
+    - idAgencia: int
+    - nombre: String
+    - direccion: String
+    + getIdAgencia(): int
+    + getNombre(): String
+    + getDireccion(): String
+    + setNombre(nombre: String): void
+    + setDireccion(direccion: String): void
+}
+
+
+Cliente "1" -- "0..*" Reserva : Reserva
+Coche "1" -- "1" Garaje : Asigna
+Coche "1" -- "0..*" DetallesReserva : esta
+Reserva "1" -- "1..*" DetallesReserva : Involucra
+Agencia "1" -- "0..*" Reserva : gestiona
+@enduml

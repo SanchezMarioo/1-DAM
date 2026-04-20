@@ -10,37 +10,41 @@ import java.util.ArrayList;
  *
  * @author mario.sanper.2
  */
-public class ReproductorMusical implements ColaCanciones{
-    private ArrayList <String> canciones;
+public class ReproductorMusical implements ColaCanciones {
+
+    private ArrayList<String> canciones;
 
     public ReproductorMusical() {
         canciones = new ArrayList<>();
     }
 
     @Override
-    public void añadirCola() {
-        
+    public void añadirCola(String nombre) {
+        canciones.add(nombre);
     }
 
     @Override
-    public void obtenerCancion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void eliminarCola() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String siguenteCancion(String cancion) {
+        if (tamanoCola() < 0) {
+            return null;
+        }
+        return canciones.remove(0);
     }
 
     @Override
     public void mostrarCola() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (tamanoCola() < 0) {
+            return;
+        }
+        for (String cancion : canciones) {
+            System.out.println(cancion);
+        }
+
     }
 
     @Override
-    public void tamanoCola() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int tamanoCola() {
+        return canciones.size();
     }
-    
-    
+
 }

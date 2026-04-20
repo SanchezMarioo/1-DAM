@@ -11,8 +11,7 @@ package ejercicio13;
  */
 public interface ColaCanciones {
     void añadirCola(String nombre);
-    void obtenerCancion(String cancion);
-    void eliminarCola(String cancion);
+    String siguenteCancion(String cancion);
     void mostrarCola();
     int tamanoCola();
 }

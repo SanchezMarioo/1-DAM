@@ -14,10 +14,11 @@ public class Ropa extends Tienda implements Descuento {
     private String tipoPrenda;
     private String color;
 
-    public Ropa(String nombre, String talla, String tipoPrenda, double precioBase) {
+    public Ropa(String nombre, double precioBase, String talla, String tipoPrenda, String color) {
         super(nombre, precioBase);
         this.talla = talla;
         this.tipoPrenda = tipoPrenda;
+        this.color = color;
     }
 
     public Ropa(String nombre, String talla, double precioBase, String color) {
@@ -28,7 +29,16 @@ public class Ropa extends Tienda implements Descuento {
 
     @Override
     public double calcularPrecioFinal(int descuento) {
-        return getPrecioBase() * (descuento / 100);
+        return getPrecioBase() * (1 - (descuento / 100));
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Precio base: " + getPrecioBase());
+        System.out.println("Tipo prenda: " + tipoPrenda);
+        System.out.println("Talla: " + talla);
+        System.out.println("Color : " + color);
     }
 
 }

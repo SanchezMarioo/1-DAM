@@ -8,7 +8,8 @@ package ejercicio14;
  *
  * @author mario.sanper.2
  */
-public class Tienda {
+public abstract class Tienda {
+
     private String nombre;
     private double precioBase;
 
@@ -20,5 +21,11 @@ public class Tienda {
     public double getPrecioBase() {
         return precioBase;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public abstract void mostrarInfo();
+
 }

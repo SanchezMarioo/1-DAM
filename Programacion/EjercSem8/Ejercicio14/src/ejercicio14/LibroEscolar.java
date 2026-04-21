@@ -13,15 +13,23 @@ public class LibroEscolar extends Tienda {
     private String curso;
     private String asignatura;
 
-    public LibroEscolar(String curso, String nombre, double precioBase) {
+    public LibroEscolar(String nombre, double precioBase, String curso, String asignatura) {
         super(nombre, precioBase);
         this.curso = curso;
+        this.asignatura = asignatura;
     }
 
-    public LibroEscolar( String nombre, double precioBase,String asignatura) {
+    public LibroEscolar(String nombre, double precioBase, String asignatura) {
         super(nombre, precioBase);
         this.asignatura = asignatura;
     }
-    
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Precio base: " + getPrecioBase() + " ?");
+        System.out.println("Curso: " + curso);
+        System.out.println("Asignatura: " + asignatura);
+    }
 
 }

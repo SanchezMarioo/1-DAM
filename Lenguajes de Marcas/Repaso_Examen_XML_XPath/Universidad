@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<universidad>
+  <alumno id="A1">
+    <nombre>Laura</nombre>
+    <edad>21</edad>
+    <nota media="10">8.75</nota>
+  </alumno>
+  <alumno id="A2">
+    <nombre>Carlos</nombre>
+    <edad>19</edad>
+    <nota media="20">6.50</nota>
+  </alumno>
+</universidad>

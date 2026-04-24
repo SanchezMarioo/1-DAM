@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="nombre" type="xs:string"/>
+  <xs:element name="edad" type="xs:int">
+    <xs:complexType>
+      <xs:simpleType>
+        <xs:extension type="xs:int">
+          <xs:restriction>
+            <xs:minInclusive value="18"/>
+            <xs:maxInclusive value="65"/>
+          </xs:restriction>
+        </xs:extension>
+      </xs:simpleType>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="salario" type="xs:decimal">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension type="xs:decimal">
+          <xs:simpleType>
+            <xs:fractionDigits value="2"/>
+          </xs:simpleType>
+        </xs:extension>
+        <xs:attribute name="moneda" type="xs:string" use="required">
+          <xs:simpleType>
+            <xs:extension type="xs:string">
+              <xs:restriction>
+                <xs:enumeration value="EUR"/>
+                <xs:enumeration value="USD"/>
+              </xs:restriction>
+            </xs:extension>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="departamento" type="xs:string">
+    <xs:simpleType>
+      <xs:extension type="xs:string">
+        <xs:restriction>
+          <xs:enumeration value="IT"/>
+          <xs:enumeration value="RRHH"/>
+          <xs:enumeration value="Ventas"/>
+        </xs:restriction>
+      </xs:extension>
+    </xs:simpleType>
+  </xs:element> 
+  <xs:element name="empresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="trabajador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trabajador">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="nombre" />
+      <xs:element ref="edad" />
+      <xs:element ref="salario" />
+      <xs:element ref="departamento" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+  </xs:complexType>
+  </xs:element>
+</xs:schema>

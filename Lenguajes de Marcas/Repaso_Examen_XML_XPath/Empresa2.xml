@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empresa>
+  <trabajador id="T1">
+    <nombre>Ana López</nombre>
+    <edad>28</edad>
+    <salario moneda="EUR">1800.50</salario>
+    <departamento>IT</departamento>
+  </trabajador>
+  <trabajador id="T2">
+    <nombre>Juan Pérez</nombre>
+    <edad>35</edad>
+    <salario moneda="USD">2100.00</salario>
+    <departamento>RRHH</departamento>
+  </trabajador>
+</empresa>

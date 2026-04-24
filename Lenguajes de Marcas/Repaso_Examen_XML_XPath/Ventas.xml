@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ventas>
+  <venta id="V1">
+    <producto>Teclado</producto>
+    <precio moneda="EUR">49.99</precio>
+  </venta>
+  <venta id="V2">
+    <producto>Ratón</producto>
+    <precio moneda="USD">19.50</precio>
+  </venta>
+</ventas>

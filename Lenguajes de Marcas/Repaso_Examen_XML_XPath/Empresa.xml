@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Matricula.xsd">
+  <empleado id="1">
+    <nombre>Ana</nombre>
+    <edad>30</edad>
+    <departamento>Ventas</departamento>
+    <salario moneda="EUR">1500.50</salario>
+  </empleado>
+  <empleado id="2">
+    <nombre>Juan</nombre>
+    <edad>40</edad>
+    <departamento>IT</departamento>
+    <salario moneda="USD">2000.00</salario>
+  </empleado>
+</empresa>

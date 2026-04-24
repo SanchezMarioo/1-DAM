@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="nombre" type="xs:string"/>
+  <xs:element name="edad" type="xs:int" />
+  <xs:element name="nota" type="TipoNota" >
+  
+  
+    <xs:complexType name="TipoNota">
+      <xs:simpleContent>
+        <xs:extension>
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:fractionDecimal value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:attribute name="media" type="xs:int" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:int">
+                <xs:minInclusive value="10"/>
+                <xs:maxInclusive value="20" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="universidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="alumno" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" />
+        <xs:element ref="edad" />
+        <xs:element ref="nota" />
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>  
+  
+</xs:schema>

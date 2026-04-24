@@ -54,5 +54,4 @@
       <xs:attribute name="codigo" type="xs:string" use="required"/>
     </xs:complexType>
     
-  </xs:element>
 </xs:schema>

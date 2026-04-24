@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/Repaso_Examen_XML_XPath/Tienda.xsd">
+  <producto id="P1">
+    <nombre>Teclado</nombre>
+    <categoria>Informatica</categoria>
+    <precio moneda="EUR">49.99</precio>
+    <stock>10</stock>
+  </producto>
+  <producto id="P2">
+    <nombre>Ratón</nombre>
+    <categoria>Informatica</categoria>
+    <precio moneda="USD">19.50</precio>
+    <stock>25</stock>
+  </producto>
+</tienda>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<universidad xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/Repaso_Examen_XML_XPath/Universidad2.xsd">
+  <facultad codigo="F01">
+    <nombre>Ingeniería</nombre>
+    <curso codigo="CS01" activo="S">
+      <nombre>Programación</nombre>
+      <creditos>6</creditos>
+      <profesor id="P01">
+        <nombre>Laura Gómez</nombre>
+        <departamento>Informática</departamento>
+      </profesor>
+      <alumno dni="12345678A">
+        <nombre>Juan García</nombre>
+        <nota>8</nota>
+      </alumno>
+      <alumno dni="87654321B">
+        <nombre>Ana López</nombre>
+        <nota>6</nota>
+      </alumno>
+    </curso>
+    <curso codigo="CS02" activo="N">
+      <nombre>Bases de Datos</nombre>
+      <creditos>5</creditos>
+      <profesor id="P02">
+        <nombre>Carlos Ruiz</nombre>
+        <departamento>Datos</departamento>
+      </profesor>
+      <alumno dni="11223344C">
+        <nombre>Pedro Martín</nombre>
+        <nota>9</nota>
+      </alumno>
+    </curso>
+  </facultad>
+  <facultad codigo="F02">
+    <nombre>Humanidades</nombre>
+    <curso codigo="CS03">
+      <nombre>Historia</nombre>
+      <creditos>4</creditos>
+      <profesor id="P03">
+        <nombre>María López</nombre>
+        <departamento>Historia</departamento>
+      </profesor>
+      <alumno dni="99887766D">
+        <nombre>Lucía Fernández</nombre>
+        <nota>7</nota>
+      </alumno>
+    </curso>
+  </facultad>
+</universidad>

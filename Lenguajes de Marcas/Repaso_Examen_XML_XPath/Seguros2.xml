@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<seguros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/1-DAM/Lenguajes%20de%20Marcas/Repaso_Examen_XML_XPath/Seguro2.xsd">
+  <contrato codigo="C001">
+    <cliente>
+      <nombre>Ana Torres</nombre>
+      <dni>12345678A</dni>
+    </cliente>
+
+    <beneficiario nombre="Luis" apellidos="Torres">
+      <cobertura activa="S">
+        <tipo>Salud</tipo>
+        <importe>15000</importe>
+      </cobertura>
+      <cobertura activa="N">
+        <tipo>Hogar</tipo>
+        <importe>30000</importe>
+      </cobertura>
+    </beneficiario>
+  </contrato>
+
+  <contrato codigo="C002" externo="S">
+    <cliente>
+      <nombre>Carlos Ruiz</nombre>
+      <dni>87654321B</dni>
+    </cliente>
+
+    <beneficiario nombre="Marta" apellidos="Ruiz">
+      <cobertura activa="S">
+        <tipo>Vida</tipo>
+        <importe>50000</importe>
+      </cobertura>
+    </beneficiario>
+  </contrato>
+
+  <contrato codigo="C003">
+    <cliente>
+      <nombre>Lucía Gómez</nombre>
+      <dni>11223344C</dni>
+    </cliente>
+
+    <beneficiario nombre="Pedro" apellidos="Gómez"/>
+  </contrato>
+</seguros>

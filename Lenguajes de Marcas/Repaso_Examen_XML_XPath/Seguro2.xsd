@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:element name="seguros">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="contrato" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>  
+  <xs:element name="contrato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cliente" />
+        <xs:element ref="beneficiario"/>
+      </xs:sequence>
+      <xs:attribute ref="codigo"/>
+      <xs:attribute ref="externo"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attribute name="codigo">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="C[0-9]{3}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+    <xs:attribute name="externo">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="S" />
+        <xs:enumeration value="N" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>  
+  
+  
+  
+  <xs:element name="cliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element ref="dni"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dni">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{8}[A-Z]{1}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  
+  <xs:element name="beneficiario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cobertura" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="nombre" type="xs:string" use="required"/>
+      <xs:attribute name="apellidos" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cobertura">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tipo"/>
+        <xs:element ref="importe" />
+      </xs:sequence>
+      <xs:attribute name="activa" default="S">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="S"/>
+          <xs:enumeration value="N"/>
+        </xs:restriction>
+      </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="tipo">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Vida"/>
+        <xs:enumeration value="Hogar"/>
+        <xs:enumeration value="Salud"/>
+        <xs:enumeration value="Accidentes"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="importe">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0" />
+        <xs:maxInclusive value="100000" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

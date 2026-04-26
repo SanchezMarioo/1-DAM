@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="numero">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[9]{1}[0-9]{7,8}"/>
+      </xs:restriction>
+    </xs:simpleType>
+    
+    
+  </xs:element>
+  <xs:element name="poliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numero" />
+        <xs:element name="tomador" type="xs:string"/>
+        <xs:element name="asegurado" type="TipoAsegurado" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="externa" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:complexType name="TipoAsegurado">
+    <xs:sequence>
+      <xs:element name="garantia" type="TipoGarantia" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="nombre" type="xs:string" use="required" />
+    <xs:attribute name="apellidos" type="xs:string" use="required" />
+  </xs:complexType>
+  
+  
+  <xs:complexType name="TipoGarantia">
+    <xs:sequence>
+      <xs:element ref="tipo" />
+      <xs:element name="capital" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="vigor" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:element name="capital" type="xs:int" >
+    <xs:simpleType>
+      <xs:restriction>
+        
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="envio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="poliza"  maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tipo">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Vida" />
+        <xs:enumeration value="Accidentes" />
+        <xs:enumeration value="Dental" />
+        <xs:enumeration value="Viaje" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

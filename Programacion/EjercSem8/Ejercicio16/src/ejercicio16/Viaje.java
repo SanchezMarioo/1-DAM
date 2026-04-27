@@ -10,10 +10,10 @@ package ejercicio16;
  */
 public class Viaje {
 
-    private double importeTotal;
+    private int importeTotal;
     private int numeroPersonas;
 
-    public Viaje(double importeTotal, int numeroPersonas) {
+    public Viaje(int importeTotal, int numeroPersonas) {
         this.importeTotal = importeTotal;
         this.numeroPersonas = numeroPersonas;
     }
@@ -21,11 +21,8 @@ public class Viaje {
     public void calcularImportePersona() {
 
         try {
-            double importe = importeTotal / numeroPersonas;
-            if (Double.isInfinite(importe)) {
-                throw new ArithmeticException(" / by zero");
-            }
-            System.out.println("El importe por persona es " + importe);
+            int importe = importeTotal / numeroPersonas;
+            System.out.println("El importe por persona es " + importe + " €");
         } catch (ArithmeticException e) {
             System.out.println("El viaje no puede ir con 0 personas ");
             System.err.println(e.getMessage());

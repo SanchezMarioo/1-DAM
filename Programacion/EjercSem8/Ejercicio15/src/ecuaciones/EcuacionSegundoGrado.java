@@ -27,7 +27,7 @@ public class EcuacionSegundoGrado extends Ecuacion {
         if (calcularDiscriminante() == 0) {
             double x = (-getB()) / (2 * getA());
             return "La solucion es: " + x;
-        } else if (calcularDiscriminante() > 0) {
+        } else if (esDiscriminantePositivo()) {
             double x1 = (-getB() + Math.sqrt(calcularDiscriminante())) / (2 * getA());
             double x2 = (-getB() - Math.sqrt(calcularDiscriminante())) / (2 * getA());
             return "Soluciones: " + x1 + " y " + x2;

@@ -15,6 +15,8 @@ public class Ejercicio18 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Gestor g = new Gestor();
+        g.init();
     }
     
 }

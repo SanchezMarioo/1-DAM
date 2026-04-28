@@ -29,11 +29,8 @@ public class Gestor {
                 break;
             }
             try {
-                if (validador.esValida(ip)) {
-                    System.out.println("Es valida la IP");
-                } else {
-                    throw new ExceptionInvalidIP();
-                }
+                validador.esValida(ip);
+                System.out.println("IP valida");
             } catch (ExceptionInvalidIP e ) {
                 System.err.println(e);
             }

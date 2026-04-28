@@ -9,9 +9,25 @@ package ejercicio19;
  * @author mario.sanper.2
  */
 public class ValidadorIP {
+
     private String validarIP = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";
-    
-    public boolean esValida(String direccion){
-        return direccion.matches(validarIP);
+
+    public void esValida(String direccion) throws ExceptionInvalidIP {
+        if (direccion.matches(direccion)) {
+            try {
+                String[] obtetos = direccion.split("\\.");
+                for (String obteto : obtetos) {
+                    int obtetoIP = Integer.parseInt(obteto);
+                    if (obtetoIP < 0 || obtetoIP > 255) {
+                        throw new ExceptionInvalidIP();
+                    }
+                }
+            } catch (NumberFormatException e) {
+                throw new ExceptionInvalidIP();
+            }
+        } else {
+            throw new ExceptionInvalidIP();
+        }
+
     }
 }

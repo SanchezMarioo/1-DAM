@@ -16,13 +16,14 @@ public class Gestor {
     private Scanner sc;
     private final int MAX_PRODUCTOS = 5;
     private Producto productos[] = new Producto[MAX_PRODUCTOS];
+    private int contador = 0;
 
     public Gestor() {
         sc = new Scanner(System.in);
+        cargarDatos();
     }
 
     private void añadirProducto(Producto producto) {
-        int contador = 0;
         productos[contador] = producto;
         contador++;
     }
@@ -37,7 +38,7 @@ public class Gestor {
     public void init() {
         try {
             System.out.println("Dime la posicion del array: ");
-            int posicion = sc.nextInt(); // La excepción de tipo salta aquí
+            int posicion = sc.nextInt();
 
             Producto p = consultarProducto(posicion);
 
@@ -52,10 +53,8 @@ public class Gestor {
 
     private Producto consultarProducto(int posicion) {
         try {
-            Producto productoPosicion = productos[posicion];
-            return productoPosicion;
-
-        } catch (ArrayIndexOutOfBoundsException e) {
+            return productos[posicion];
+        } catch (ArrayIndexOutOfBoundsException | ArrayStoreException e) {
             System.out.println(e.getMessage());
             return null;
         }

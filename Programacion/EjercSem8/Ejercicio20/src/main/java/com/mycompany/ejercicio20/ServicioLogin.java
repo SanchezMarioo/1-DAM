@@ -12,11 +12,11 @@ import java.util.ArrayList;
  */
 public class ServicioLogin {
 
-    public void comprobarUsuario(ArrayList<Usuario> usuarios,String nombreUsuario, String contraseña) throws LoginException {
+    public Usuario comprobarUsuario(ArrayList<Usuario> usuarios,String nombreUsuario, String contraseña) throws LoginException {
 
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(nombreUsuario) && usuario.getContraseña().equals(contraseña)) {
-                return;
+                return usuario;
             }
         }
         throw new LoginException("Usuario o contraseña incorrectos ");

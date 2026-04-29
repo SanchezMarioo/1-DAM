@@ -29,10 +29,10 @@ public class Gestor {
         String nombreUsuario = sc.nextLine();
         System.out.println("Introduce contraseña : ");
         String contraseña = sc.nextLine();
-        try{
-            login.comprobarUsuario(usuarios,nombreUsuario, contraseña);
+        try {
+            Usuario usuario = login.comprobarUsuario(usuarios, nombreUsuario, contraseña);
             System.out.println("Acceso concedido. Bienvenido/a! " + nombreUsuario);
-        } catch(LoginException e){
+        } catch (LoginException e) {
             System.err.println(e.getMessage());
         }
 
@@ -43,7 +43,5 @@ public class Gestor {
         usuarios.add(new Usuario("Pepe", "12"));
         usuarios.add(new Usuario("Alberto", "1212"));
     }
-
-
 
 }

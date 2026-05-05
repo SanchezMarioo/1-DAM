@@ -8,7 +8,7 @@ package ejercicio10;
  *
  * @author MARIO
  */
-public abstract class CuerpoCelestial {
+public abstract class Astro {
     private String nombre;
     private double masa;
     private double diametroMedio;
@@ -18,7 +18,7 @@ public abstract class CuerpoCelestial {
     
     public abstract void mostrarInformacion();
 
-    public CuerpoCelestial(String nombre, double masa, double diametroMedio, double periodoRotacionEje, double periodoTranslacion, double distanciaMedia) {
+    public Astro(String nombre, double masa, double diametroMedio, double periodoRotacionEje, double periodoTranslacion, double distanciaMedia) {
         this.nombre = nombre;
         this.masa = masa;
         this.diametroMedio = diametroMedio;

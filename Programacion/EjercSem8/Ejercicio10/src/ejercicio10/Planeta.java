@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author MARIO
  */
-public class Planeta extends CuerpoCelestial {
+public class Planeta extends Astro {
 
     private ArrayList<Satelite> listaSatelites = new ArrayList<>();
 
@@ -33,8 +33,6 @@ public class Planeta extends CuerpoCelestial {
             System.out.println("  - No tiene satélites registrados.");
         } else {
             for (Satelite s : listaSatelites) {
-                // Se llama a un método reducido para no saturar la pantalla, 
-                // o se puede llamar al mostrarInformacion del satélite.
                 System.out.println("  - " + s.getNombre());
             }
         }

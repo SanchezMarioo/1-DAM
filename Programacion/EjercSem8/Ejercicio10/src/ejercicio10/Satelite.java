@@ -8,7 +8,7 @@ package ejercicio10;
  *
  * @author MARIO
  */
-class Satelite extends CuerpoCelestial {
+class Satelite extends Astro {
 
     private Planeta planeta;
 

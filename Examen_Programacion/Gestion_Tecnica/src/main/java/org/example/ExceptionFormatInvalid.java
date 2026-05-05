@@ -1,7 +1,7 @@
 package org.example;
 
-public class ExceptionIDInvalid extends RuntimeException {
-    public ExceptionIDInvalid(String message) {
+public class ExceptionFormatInvalid extends RuntimeException {
+    public ExceptionFormatInvalid(String message) {
         super(message);
     }
 }

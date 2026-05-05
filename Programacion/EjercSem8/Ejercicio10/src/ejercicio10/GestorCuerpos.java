@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class GestorCuerpos {
 
-    private List<Astro> catalogo;
+    private ArrayList<Astro> catalogo;
     private Scanner scanner;
 
     public GestorAgencia() {
@@ -24,8 +24,8 @@ public class GestorCuerpos {
     }
 
     private void inicializarDatos() {
-        Planeta tierra = new Planeta("Tierra", 5.972e24, 12742, 1, 365.25, 149600000);
-        Satelite luna = new Satelite("Luna", 7.342e22, 3474, 27.3, 27.3, 384400, tierra);
+        Planeta tierra = new Planeta("Tierra", 5.97224, 12742, 1, 365.25, 149600000);
+        Satelite luna = new Satelite("Luna", 7.3422, 3474, 27.3, 27.3, 384400, tierra);
         tierra.agregarSatelite(luna);
 
         Planeta marte = new Planeta("Marte", 6.39e23, 6779, 1.03, 687, 227900000);

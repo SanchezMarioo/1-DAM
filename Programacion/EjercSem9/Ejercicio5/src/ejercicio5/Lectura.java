@@ -16,26 +16,25 @@ import java.util.logging.Logger;
  * @author mario.sanper.2
  */
 public class Lectura {
+
     private FileReader fr;
     private BufferedReader br;
-    private String texto;
+    private String texto = "";
     private String ruta;
 
     public Lectura(String ruta) {
         this.ruta = ruta;
     }
-    
+
     public String leerArchivo() throws IOException {
-        try(BufferedReader br = new BufferedReader(new FileReader(ruta))){
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linea = "";
-            while(linea != null){
-                linea = br.readLine();
-                texto+=linea;
+            while ((linea = br.readLine()) != null) {
+                texto += linea + "\n";
             }
-            return linea;
-        } 
-        
-        
+            return texto;
+        }
+
     }
-    
+
 }

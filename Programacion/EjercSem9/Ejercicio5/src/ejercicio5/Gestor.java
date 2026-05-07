@@ -11,6 +11,7 @@ import java.io.IOException;
  * @author mario.sanper.2
  */
 public class Gestor {
+
     private Escritura escritura;
     private Lectura lectura;
     private VistaControlador vista;
@@ -20,17 +21,20 @@ public class Gestor {
         this.lectura = lectura;
         this.vista = vista;
     }
-    
-    public void copiar(){
-        
-       
-        try{
-             String texto = lectura.leerArchivo();
-             
-        } catch(IOException e){
+
+    public void copiar() {
+
+        try {
+            String texto = lectura.leerArchivo();
+            
+            escritura.escribirArchivo(texto);
+
+            
+            vista.mostrarMensaje("Se ha copiado correctamente el archivo");
+
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        
-        
+
     }
 }

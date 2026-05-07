@@ -15,6 +15,31 @@ public class Ejercicio5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        VistaControlador vista = new VistaControlador();
+
+        String rutaOrigen = vista.pedirMensaje("Introduce el nombre del fichero de origen:");
+        String rutaDestino = null;
+        if (rutaOrigen.contains(".")) {
+            String ruta[] = rutaOrigen.split("\\.");
+            if (ruta.length == 2) {
+                rutaDestino = ruta[0] += "_copia.";
+                rutaDestino += ruta[1];
+            } else{
+                vista.mostrarMensaje("Error: No se puede tener archivos con mas de un punto");
+                return;
+            }
+
+        } else {
+            rutaDestino = rutaOrigen + "_copia";
+        }
+
+        // 3. Configurar MVC
+        Lectura modeloLectura = new Lectura(rutaOrigen);
+        Escritura modeloEscritura = new Escritura(rutaDestino);
+        Gestor controlador = new Gestor(modeloEscritura, modeloLectura, vista);
+
+        // 4. Ejecutar
+        controlador.copiar();
     }
-    
+
 }

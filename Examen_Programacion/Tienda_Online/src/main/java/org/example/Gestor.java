@@ -30,7 +30,7 @@ public class Gestor {
     }
     private void aplicarDescuento (Producto producto ){
         if(producto instanceof Descuento){
-            System.out.println(((Descuento) producto).aplicarDescuento(10));
+            System.out.println("Precio con descuento: " + ((Descuento) producto).aplicarDescuento(10)); // 10% descuento
         } else{
             System.out.println("No tiene descuento");
         }

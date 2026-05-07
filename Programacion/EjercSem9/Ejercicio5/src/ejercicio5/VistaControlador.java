@@ -20,7 +20,8 @@ public class VistaControlador {
     public void mostrarMensaje(String mensaje){
         System.out.println(mensaje);
     }
-    public void pedirMensaje(String frase){
+    public String pedirMensaje(String frase){
         System.out.println(frase);
+        return sc.nextLine();
     }
 }

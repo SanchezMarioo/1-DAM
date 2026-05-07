@@ -14,12 +14,10 @@ import java.io.IOException;
  */
 public class Escritura {
     private String texto;
-    private FileWriter fr;
     private BufferedWriter bf;
     private final String rutaEscrita;
 
-    public Escritura(String texto, String rutaEscritura) {
-        this.texto = texto;
+    public Escritura(String rutaEscritura) {
         this.rutaEscrita = rutaEscritura;
     }
 
@@ -27,14 +25,9 @@ public class Escritura {
     public String getRutaEscrita() {
         return rutaEscrita;
     }
-    
-
-    
-    
-    public void escribirArchivo() throws IOException{
-        try(BufferedWriter bf = new BufferedWriter(new FileWriter(rutaEscrita + "_copia")){
-           bf.write(texto);
-           
+    public void escribirArchivo(String texto) throws IOException{
+        try(BufferedWriter bf = new BufferedWriter(new FileWriter(rutaEscrita))){
+            bf.write(texto);
         }
     }
     

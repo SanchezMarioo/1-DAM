@@ -1,0 +1,90 @@
+@startuml
+
+
+class Cliente{
+    - codigo: int
+    - nombre : String
+    - apellidoFamilia : String
+    - numCuenta : String
+    - direccion : String
+    - telefono : String
+    - dni : String
+    + getCodigo() : int
+    + getNombre() : String
+    + getApellidoFamilia() : String
+    + getNumCuenta() : String
+    + getDireccion() : String
+    + getTelefono() : String
+    + getDni() : String
+    + setCodigo(codigo: int) : void
+    + setNombre(nombre: String) : void
+    + setApellidoFamilia(apellidoFamilia: String) : void
+    + setNumCuenta(numCuenta: String) : void
+    + setDireccion(direccion: String) : void
+    + setTelefono(telefono: String) : void
+    + setDni(dni: String) : void
+}
+class Mascota{
+    - codigo: int
+    - alias : String
+    - especie : String
+    - raza : String
+    - color : String
+    - fechaNacimiento : Date
+    - pesoMedio : float
+    - peso : float
+    + getCodigo() : int
+    + getAlias() : String
+    + getEspecie() : String
+    + getRaza() : String
+    + getColor() : String
+    + getFechaNacimiento() : Date
+    + getPesoMedio() : float
+    + getPeso() : float
+    + setCodigo(codigo: int) : void
+    + setAlias(alias: String) : void
+    + setEspecie(especie: String) : void
+    + setRaza(raza: String) : void
+    + setColor(color: String) : void
+    + setFechaNacimiento(fechaNacimiento: Date) : void
+    + setPesoMedio(pesoMedio: float) : void
+    + setPeso(peso: float) : void
+
+}
+class Persona {
+    - dni: String
+    - nombre: String
+    + getDni() : String
+    + getNombre() : String
+    + setDni(dni: String) : void
+    + setNombre(nombre: String) : void
+
+}
+
+class HistorialMedico{
+    - nombreEnfermedad : String
+    - fechaNacimiento : Date
+    + getNombreEnfermedad() : String
+    + getFechaNacimiento() : Date
+    + setNombreEnfermedad(nombreEnfermedad: String) : void
+    + setFechaNacimiento(fechaNacimiento: Date) : void
+
+}
+class CalendarioVacunancion{
+    - fecha : Date
+    - enfermedad : String
+    + getFecha() : Date
+    + getEnfermedad() : String
+    + setFecha(fecha: Date) : void
+    + setEnfermedad(enfermedad: String) : void
+
+}
+
+Cliente "1" --  "1..*" Mascota : Posee
+Mascota "1" -- "0..*" HistorialMedico : tiene
+Mascota "1" -- "0..*" CalendarioVacunancion : Registra
+Cliente "*" -- "*" Persona : Pertenece
+
+
+
+@enduml

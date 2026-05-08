@@ -38,7 +38,8 @@ public class ControladorPersona {
                 case 4 ->
                     mostrarRegistros("NO VALIDO");
                 case 5 -> 
-                    
+                    vista.
+                    contarRegistrosNoValidos(msg);
 
             }
         } while (true);

@@ -39,4 +39,7 @@ public class VistaAcceso {
         System.out.println(mensaje);
         return sc.nextLine();
     }
+    public void mostrarMensaje(String mensaje){
+        System.out.println(mensaje);
+    }
 }

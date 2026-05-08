@@ -4,22 +4,46 @@
  */
 package Modelo;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author mario.sanper.2
  */
 public class Acceso {
-    private String nombre;
+
+    private String usuario;
     private String contraseña;
+    private LocalDateTime fecha;
+    private boolean esValido;
+    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    public Acceso(String nombre, String contraseña) {
-        this.nombre = nombre;
+    public Acceso(String usuario, String contraseña) {
+        this.usuario = usuario;
         this.contraseña = contraseña;
+        this.fecha = LocalDateTime.now();
+        this.esValido = true;
     }
 
-    public void registrarIntentoAcceso() {
-        
+    public boolean registrarIntentoAcceso() {
+        String contraseñaVuelta = "";
+        for (int i = usuario.length(); i > 0; i--) {
+            contraseñaVuelta += contraseña.charAt(i);
+        }
+        if (usuario.equals(contraseñaVuelta)) {
+            return true;
+        }
+        return false;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Usuario: " + usuario + "\n" + "Fecha: " + fecha.format(FORMATO) + "\n " + "Acceso: " + (esValido ? "VALIDO" : "NO VALIDO");
+    }
+
+    public String toFile() {
+        return usuario + ";" + fecha.format(FORMATO) + ";" + (esValido ? "VALIDO" : "NO VALIDO");
+    }
+
 }

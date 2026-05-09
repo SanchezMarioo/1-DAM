@@ -17,29 +17,35 @@ public class VistaAcceso {
     public VistaAcceso() {
         sc = new Scanner(System.in);
     }
-    
+
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
+    }
+
     public int pedirOpcion() {
-        System.out.println("1. Registrar un nuevo intento de acceso");
-        System.out.println("2. Mostrar todos los accesos registrados");
-        System.out.println("3. Mostrar únicamente los accesos válidos");
-        System.out.println("4. Mostrar únicamente los accesos no válidos");
-        System.out.println("5. Mostrar cuántos intentos de acceso ha realizado un usuario concreto");
-        System.out.println("6. Salir del programa");
-        System.out.println("Elige una opcion: ");
-        while(!sc.hasNextInt()){
-            System.out.println("Introduce un numero");
+        mostrarMensaje("1. Registrar un nuevo intento de acceso");
+        mostrarMensaje("2. Mostrar todos los accesos registrados");
+        mostrarMensaje("3. Mostrar únicamente los accesos válidos");
+        mostrarMensaje("4. Mostrar únicamente los accesos inválidos");
+        mostrarMensaje("5. Mostrar cuántos intentos de acceso ha realizado un usuario concreto");
+        mostrarMensaje("6. Salir del programa");
+        mostrarMensaje("Elige una opcion: ");
+        while (!sc.hasNextInt()) {
+            mostrarMensaje("Introduce un numero");
             sc.nextLine();
-            System.out.println("Elige una opcion: ");
+            mostrarMensaje("Elige una opcion: ");
         }
-        int opcion = sc.nextInt();
+        int opcion = pedirNumero();
         sc.nextLine();
         return opcion;
     }
-    public String pedirMensaje(String mensaje){
-        System.out.println(mensaje);
+
+    public String pedirMensaje(String mensaje) {
+        mostrarMensaje(mensaje);
         return sc.nextLine();
     }
-    public void mostrarMensaje(String mensaje){
-        System.out.println(mensaje);
+    public int pedirNumero(){
+        return sc.nextInt();
     }
+
 }

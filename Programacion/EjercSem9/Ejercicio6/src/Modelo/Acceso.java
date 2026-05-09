@@ -23,12 +23,12 @@ public class Acceso {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.fecha = LocalDateTime.now();
-        this.esValido = true;
+        this.esValido = registrarIntentoAcceso();
     }
 
     public boolean registrarIntentoAcceso() {
         String contraseñaVuelta = "";
-        for (int i = usuario.length(); i > 0; i--) {
+        for (int i = usuario.length() - 1; i >= 0; i--) {
             contraseñaVuelta += contraseña.charAt(i);
         }
         if (usuario.equals(contraseñaVuelta)) {
@@ -37,13 +37,17 @@ public class Acceso {
         return false;
     }
 
+    public boolean isEsValido() {
+        return esValido;
+    }
+
     @Override
     public String toString() {
         return "Usuario: " + usuario + "\n" + "Fecha: " + fecha.format(FORMATO) + "\n " + "Acceso: " + (esValido ? "VALIDO" : "NO VALIDO");
     }
 
     public String toFile() {
-        return usuario + ";" + fecha.format(FORMATO) + ";" + (esValido ? "VALIDO" : "NO VALIDO");
+        return usuario + ";" + fecha.format(FORMATO) + "; " + (esValido ? "VALIDO" : "INVALIDO");
     }
 
 }

@@ -17,32 +17,36 @@ import java.util.ArrayList;
 public class ControladorPersona {
 
     private VistaAcceso vista;
-    private Acceso acceso;
     private AccesoDAO accesoDAO;
 
     public ControladorPersona(VistaAcceso vista, AccesoDAO accesoDAO) {
         this.vista = vista;
         this.accesoDAO = accesoDAO;
+        init();
     }
 
     public void init() {
+        int opcion = -1;
         do {
-            int opcion = vista.pedirOpcion();
+            opcion = vista.pedirOpcion();
             switch (opcion) {
                 case 1 ->
                     comprobarAcceso();
                 case 2 ->
                     mostrarRegistros();
                 case 3 ->
-                    mostrarRegistros("VALIDO");
+                    mostrarRegistrosValidos();
                 case 4 ->
-                    mostrarRegistros("NO VALIDO");
-                case 5 -> 
-                    vista.
-                    contarRegistrosNoValidos(msg);
+                    mostrarRegistrosInvalidos();
+                case 5 -> {
+                    String msg = vista.pedirMensaje("Dime el nombre del usuario a buscar: ");
+                    contarRegistrosUsuario(msg);
+                }
+                case 6 ->
+                    vista.mostrarMensaje("Saliendo del programa");
 
             }
-        } while (true);
+        } while (opcion != 6);
     }
 
     private void comprobarAcceso() {
@@ -50,7 +54,8 @@ public class ControladorPersona {
             String usuario = vista.pedirMensaje("Dime el usuario");
             String contraseña = vista.pedirMensaje("Dime la contraseña: ");
             Acceso acceso = new Acceso(usuario, contraseña);
-            accesoDAO.escribir(acceso.toString());
+            vista.mostrarMensaje(acceso.isEsValido() ? "Acceso valido" : "Acceso no valido");
+            accesoDAO.escribir(acceso.toFile());
         } catch (IOException ex) {
             vista.mostrarMensaje(ex.getMessage());
         }
@@ -69,13 +74,13 @@ public class ControladorPersona {
 
     }
 
-    private void mostrarRegistros(String msg) {
+    private void mostrarRegistrosValidos() {
         ArrayList<String> lineas;
         try {
             lineas = accesoDAO.leer();
             for (String linea : lineas) {
-                if (linea.contains(msg)) {
-                    System.out.println(linea);
+                if (linea.contains("VALIDO") && !linea.contains("INVALIDO")) {
+                    vista.mostrarMensaje(linea);
                 }
             }
         } catch (IOException ex) {
@@ -83,7 +88,21 @@ public class ControladorPersona {
         }
     }
 
-    private void contarRegistrosNoValidos(String msg) {
+    private void mostrarRegistrosInvalidos() {
+        ArrayList<String> lineas;
+        try {
+            lineas = accesoDAO.leer();
+            for (String linea : lineas) {
+                if (linea.contains("INVALIDO")) {
+                    vista.mostrarMensaje(linea);
+                }
+            }
+        } catch (IOException ex) {
+            vista.mostrarMensaje(ex.getMessage());
+        }
+    }
+
+    private void contarRegistrosUsuario(String msg) {
         int contador = 0;
         ArrayList<String> lineas;
         try {
@@ -93,6 +112,7 @@ public class ControladorPersona {
                     contador++;
                 }
             }
+            vista.mostrarMensaje("El usuario ha realizado " + contador + " intentos");
         } catch (IOException ex) {
             vista.mostrarMensaje(ex.getMessage());
         }

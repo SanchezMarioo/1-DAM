@@ -23,17 +23,21 @@ public class AccesoDAO {
     private BufferedReader lector;
 
     public void escribir(String cadena) throws IOException {
-        try (BufferedWriter escritor = new BufferedWriter(new FileWriter(ruta))) {
+        try (BufferedWriter escritor = new BufferedWriter(new FileWriter(ruta, true))) {
             escritor.write(cadena);
+            escritor.newLine(); 
+            escritor.write("-----------------------"); 
+            escritor.newLine();
+
         }
     }
 
     public ArrayList<String> leer() throws FileNotFoundException, IOException {
-        ArrayList <String> contenido = new ArrayList<>();
+        ArrayList<String> contenido = new ArrayList<>();
         String linea;
         try (BufferedReader lector = new BufferedReader(new FileReader(ruta))) {
             while ((linea = lector.readLine()) != null) {
-              contenido.add(linea);
+                contenido.add(linea);
             }
         }
         return contenido;

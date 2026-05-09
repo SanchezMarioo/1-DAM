@@ -1,0 +1,114 @@
+@startuml
+
+class CadenaAgencias {
+  - nombre : String
+  --
+  + getNombre() : String
+  + getSucursales() : List<Sucursal>
+  + getHoteles() : List<Hotel>
+  + getVuelos() : List<Vuelo>
+}
+
+class Sucursal {
+  - codigoSucursal : String
+  - direccion : String
+  - telefono : String
+  --
+  + getCodigoSucursal() : String
+  + getDireccion() : String
+  + getTelefono() : String
+  + setDireccion(direccion : String) : void
+  + setTelefono(telefono : String) : void
+  + getTuristas() : List<Turista>
+}
+
+class Hotel {
+  - codigoHotel : String
+  - nombre : String
+  - direccion : String
+  - ciudad : String
+  - telefono : String
+  - plazasDisponibles : int
+  --
+  + getCodigoHotel() : String
+  + getNombre() : String
+  + getDireccion() : String
+  + getCiudad() : String
+  + getTelefono() : String
+  + getPlazasDisponibles() : int
+  + setPlazasDisponibles(plazas : int) : void
+}
+
+class Vuelo {
+  - numeroVuelo : String
+  - fecha : Date
+  - hora : Time
+  - origen : String
+  - destino : String
+  - plazasTotales : int
+  - plazasTurista : int
+  --
+  + getNumeroVuelo() : String
+  + getFecha() : Date
+  + getHora() : Time
+  + getOrigen() : String
+  + getDestino() : String
+  + getPlazasTotales() : int
+  + getPlazasTurista() : int
+  + getPlazasPrimera() : int
+  + setPlazasTotales(plazas : int) : void
+}
+
+class Turista {
+  - codigoTurista : String
+  - nombre : String
+  - apellidos : String
+  - direccion : String
+  - telefono : String
+
+  + getCodigoTurista() : String
+  + getNombre() : String
+  + getApellidos() : String
+  + getDireccion() : String
+  + getTelefono() : String
+  + setDireccion(direccion : String) : void
+  + setTelefono(telefono : String) : void
+  + getReservaVuelos() : List<ReservaVuelo>
+  + getReservaHoteles() : List<ReservaHotel>
+}
+
+class ReservaVuelo {
+  - clase : String
+  + getClase() : String
+  + setClase(clase : String) : void
+  + getTurista() : Turista
+  + getVuelo() : Vuelo
+}
+
+class ReservaHotel {
+  - regimen : String
+  - fechaLlegada : Date
+  - fechaPartida : Date
+  + getRegimen() : String
+  + getFechaLlegada() : Date
+  + getFechaPartida() : Date
+  + setRegimen(regimen : String) : void
+  + setFechaLlegada(fecha : Date) : void
+  + setFechaPartida(fecha : Date) : void
+  + getTurista() : Turista
+  + getHotel() : Hotel
+}
+
+' Relaciones
+CadenaAgencias "1" -- "1..*" Sucursal : compuesta por
+CadenaAgencias "1" -- "1..*" Hotel : contrata
+CadenaAgencias "1" -- "1..*" Vuelo : contrata
+
+Turista "1..*" --"1" Sucursal : contratada en
+Turista "1" -- "0..*" ReservaVuelo : realiza
+Turista "1" -- "0..*" ReservaHotel : realiza
+
+ReservaVuelo "0..*" -- "1" Vuelo : reserva
+ReservaHotel "0..*" -- "1" Hotel : reserva
+
+@enduml

@@ -17,7 +17,10 @@ public class Alumno {
         this.nota = nota;
     }
 
-    public void setNota(double nota) {
+    public void setNota(double nota) throws NotaNoValidaException {
+        if(nota < 0 || nota > 10){
+            throw new NotaNoValidaException("La nota valida tiene que estar entre 0 y 10");
+        }
         this.nota = nota;
     }
 

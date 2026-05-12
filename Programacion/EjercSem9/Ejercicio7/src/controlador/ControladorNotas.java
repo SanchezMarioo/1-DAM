@@ -27,13 +27,13 @@ public class ControladorNotas {
         this.alumnoDAO = alumno;
         archivo = new File(alumno.getRUTA());
         if(existeArchivo()){
-            leerArchivo();
             pedirDatosAlumno();
             
         } else{
-            
             crearNotas();
             consola.mostrarMsg("Creando alumnos...");
+            pedirDatosAlumno();
+            
         }
     }
     
@@ -98,13 +98,17 @@ public class ControladorNotas {
             }
             return noExiste;
         } catch (IOException ex) {
-            System.getLogger(ControladorNotas.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            consola.mostrarMsg(ex.getMessage());
             return false;
+        } catch (NotaNoValidaException ex) {
+           consola.mostrarMsg(ex.getMessage());
+           return false;
         }
         
     }
 
     private void pedirDatosAlumno(){
+        leerArchivo();
         String nombreAlumno = "";
         do  {
             consola.mostrarMsg("Dime el nombre del alumno (fin para acabar): ");

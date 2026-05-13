@@ -1,0 +1,7 @@
+1;Portatil;Pantalla rota;120.5
+2;Móvil;Cambio batería;45.0
+1;Portatil;Pantalla rota;120.5
+2;Móvil;Cambio batería;45.0
+1;Portatil;Pantalla rota;120.5
+2;Móvil;Cambio batería;45.0
+12;Pantalla;Pantalla;50.0

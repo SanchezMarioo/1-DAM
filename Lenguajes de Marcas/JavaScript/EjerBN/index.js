@@ -1,7 +1,7 @@
 let img = document.getElementById("img");
 console.log(img)
 let msg;
-while (msg !== "BN" && msg !== "color" && msg !== "COLOR") {
+while (true) {
     msg = prompt("Escribe BN o color: ")
     console.log(msg)
     if (msg === "BN") {

@@ -6,7 +6,7 @@ package app;
 
 import Modelo.AccesoDAO;
 import Vista.VistaAcceso;
-import controlador.ControladorPersona;
+import controlador.ControladorAcceso;
 
 /**
  *
@@ -21,7 +21,7 @@ public class Ejercicio6 {
         // TODO code application logic here
         VistaAcceso vista = new VistaAcceso();
         AccesoDAO acceso = new AccesoDAO();
-        ControladorPersona controlador = new ControladorPersona(vista, acceso);
+        ControladorAcceso controlador = new ControladorAcceso(vista, acceso);
     }
     
 }

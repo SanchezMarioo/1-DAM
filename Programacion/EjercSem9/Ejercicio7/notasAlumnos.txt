@@ -1,4 +1,4 @@
-Ana;7.5
+Ana;8.6
 Carlos;4.2
 Lucía;9.0
 Mario;6.3
@@ -6,5 +6,5 @@ Elena;5.0
 Javier;3.8
 Sofía;8.7
 Pablo;6.0
-Laura;6.5
+Laura;9.5
 Diego;2.4

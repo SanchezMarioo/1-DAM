@@ -14,12 +14,12 @@ import java.util.ArrayList;
  *
  * @author mario.sanper.2
  */
-public class ControladorPersona {
+public class ControladorAcceso {
 
     private VistaAcceso vista;
     private AccesoDAO accesoDAO;
 
-    public ControladorPersona(VistaAcceso vista, AccesoDAO accesoDAO) {
+    public ControladorAcceso(VistaAcceso vista, AccesoDAO accesoDAO) {
         this.vista = vista;
         this.accesoDAO = accesoDAO;
         init();

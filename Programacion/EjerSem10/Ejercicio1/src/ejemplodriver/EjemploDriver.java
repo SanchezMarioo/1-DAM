@@ -15,6 +15,9 @@ public class EjemploDriver {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ConexionBD bd = new ConexionBD();
+        VistaConsola vista = new VistaConsola();
+        Gestor g = new Gestor(bd, vista);
+        g.init();
     }
-    
 }

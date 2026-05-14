@@ -6,8 +6,15 @@ package ejemplodriver;
 
 /**
  *
- * @author mario.sanper.2
+ * @author Mario
  */
-public class ConexionBD {
-    
+public class VistaConsola {
+
+    public void mostrarMensaje(String msg) {
+        System.out.println(msg);
+    }
+
+    public void mostrarMensajeError(String msg) {
+        System.err.println(msg);
+    }
 }

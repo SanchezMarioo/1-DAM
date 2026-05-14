@@ -12,9 +12,9 @@ public class Alumno {
     private String nombre;
     private double nota;
 
-    public Alumno(String nombre, double nota) {
+    public Alumno(String nombre, double nota) throws NotaNoValidaException {
         this.nombre = nombre;
-        this.nota = nota;
+        setNota(nota);
     }
 
     public void setNota(double nota) throws NotaNoValidaException {

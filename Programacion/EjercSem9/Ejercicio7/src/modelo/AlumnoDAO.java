@@ -19,7 +19,7 @@ public class AlumnoDAO {
 
     private final static String RUTA = "notasAlumnos.txt";
 
-    public ArrayList<Alumno> lectura() throws IOException {
+    public ArrayList<Alumno> lectura() throws IOException, NotaNoValidaException {
         ArrayList<Alumno> alumnos = new ArrayList<>();
         try (BufferedReader lectura = new BufferedReader(new FileReader(RUTA))) {
             String texto;

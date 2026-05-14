@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de acceso</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e1e2f, #3b1d5f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: all 0.8s ease;
+        }
+
+        .tarjeta {
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+            transition: all 0.8s ease;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background-color: #ff4f70;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background-color: #ff2f58;
+        }
+
+        .modo-valido {
+            background: linear-gradient(135deg, #00b894, #0984e3);
+        }
+
+        .modo-valido .tarjeta {
+            background-color: rgba(255, 255, 255, 0.22);
+            transform: scale(1.05);
+        }
+
+        .modo-valido button {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body id="fondo">
+
+    <div class="tarjeta">
+        <h1 id="mensaje">Sistema bloqueado</h1>
+        <p id="descripcion">Pulsa el botón para validar el acceso al sistema.</p>
+
+        <button id="btn">Validar acceso</button>
+    </div>
+
+    <script>
+        let boton = document.getElementById("btn")
+        let titulo = document.getElementById("mensaje")
+        let texto = document.getElementById("descripcion")
+        boton.addEventListener("click",validar)
+        function validar() {
+            let fondo = document.getElementById("fondo")
+            fondo.classList.add("modo-valido")
+            titulo.innerHTML="Acceso permitido"
+            texto.innerHTML="Bienvenido. El sistema ha sido desbloqueado correctamente"
+        }
+    </script>
+
+</body>
+</html>

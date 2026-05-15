@@ -5,6 +5,7 @@
 package ejemplodriver;
 
 import java.sql.SQLException;
+import java.sql.Connection;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Gestor {
     }
     
     public void init(){
-        try{
+        try(Connection con = bd.connect()){
             bd.connect();
             vista.mostrarMensaje("OK");
         } catch(SQLException e){

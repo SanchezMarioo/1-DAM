@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Controlador;
+
+import Modelo.Alumno;
+import dao.AlumnoDAO;
+import ejercicio2.vista.VistaConsola;
+import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author mario.sanper.2
+ */
+public class ControladorApp {
+
+    private Alumno alumno;
+    private AlumnoDAO dao;
+    private VistaConsola vista;
+    private static final String querySelect = "SELECT * from alumno";
+
+    public ControladorApp(AlumnoDAO dao, VistaConsola vista) {
+        this.dao = dao;
+        this.vista = vista;
+    }
+
+    public void init() {
+        try {
+            ArrayList<Alumno> alumnos = dao.select(querySelect);
+            vista.mostrarAlumnos(alumnos);
+        } catch (SQLException e) {
+            vista.mostrarMensaje(e.getMessage());
+        }
+    }
+
+}

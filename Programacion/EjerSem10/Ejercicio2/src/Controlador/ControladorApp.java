@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class ControladorApp {
 
-    private Alumno alumno;
+
     private AlumnoDAO dao;
     private VistaConsola vista;
     private static final String querySelect = "SELECT * from alumno";

@@ -11,11 +11,11 @@ import java.sql.SQLException;
  * @author mario.sanper.2
  */
 public class ConexionBD {
-    private static final String URL = "jdbc:mysql://localhost:3307/DBEjemplo";
+    private static final String URL = "jdbc:mysql://localhost:3306/DBEjemplo";
     private static final String USER = "root";
     private static final String PASSWORD = "ejemplo1234";
     
-    public Connection connect() throws SQLException{
+    public static Connection connect() throws SQLException{
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

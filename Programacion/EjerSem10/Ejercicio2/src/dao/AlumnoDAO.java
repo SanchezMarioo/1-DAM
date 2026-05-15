@@ -20,7 +20,6 @@ public class AlumnoDAO {
 
     public ArrayList<Alumno> select(String query) throws SQLException {
         ArrayList<Alumno> alumnos = new ArrayList<>();
-        Connection con2 = ConexionBD.getConexion();
         
         try (Connection con = ConexionBD.getConexion(); Statement setencia = con.createStatement(); ResultSet set = setencia.executeQuery(query)) {
 

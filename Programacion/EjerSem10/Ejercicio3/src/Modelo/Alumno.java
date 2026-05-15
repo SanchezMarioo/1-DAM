@@ -20,6 +20,18 @@ public class Alumno {
         this.dni = dni;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+    
     @Override
     public String toString() {
         return "Alumno " + id + "| " + nombre + "|" + dni;

@@ -4,6 +4,10 @@
  */
 package ejercicio3;
 
+import Controlador.ControladorAlumno;
+import Vista.VistaConsola;
+import dao.AlumnoDAO;
+
 /**
  *
  * @author mario.sanper.2
@@ -15,6 +19,10 @@ public class Ejercicio3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        AlumnoDAO dao = new AlumnoDAO();
+        VistaConsola vista = new VistaConsola();
+        ControladorAlumno controlador = new ControladorAlumno(dao, vista);
+        controlador.init();
     }
     
 }

@@ -41,7 +41,7 @@ public class ControladorNotas {
         return archivo.exists();
     }
 
-    private void leerArchivo() {
+    private void leerArchivo() throws NotaNoValidaException {
         try {
             ArrayList<Alumno> alumnos = alumnoDAO.lectura();
             for (Alumno alumno : alumnos) {

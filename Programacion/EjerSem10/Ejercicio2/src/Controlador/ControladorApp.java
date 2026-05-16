@@ -17,10 +17,8 @@ import java.sql.SQLException;
  */
 public class ControladorApp {
 
-
     private AlumnoDAO dao;
     private VistaConsola vista;
-    private static final String querySelect = "SELECT * from alumno";
 
     public ControladorApp(AlumnoDAO dao, VistaConsola vista) {
         this.dao = dao;
@@ -29,7 +27,7 @@ public class ControladorApp {
 
     public void init() {
         try {
-            ArrayList<Alumno> alumnos = dao.select(querySelect);
+            ArrayList<Alumno> alumnos = dao.select();
             vista.mostrarAlumnos(alumnos);
         } catch (SQLException e) {
             vista.mostrarMensaje(e.getMessage());

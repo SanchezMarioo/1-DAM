@@ -18,7 +18,8 @@ import java.util.ArrayList;
  */
 public class AlumnoDAO {
 
-    public ArrayList<Alumno> select(String query) throws SQLException {
+    public ArrayList<Alumno> select() throws SQLException {
+        String query = "SELECT * from alumno";
         ArrayList<Alumno> alumnos = new ArrayList<>();
         
         try (Connection con = ConexionBD.getConexion(); Statement setencia = con.createStatement(); ResultSet set = setencia.executeQuery(query)) {

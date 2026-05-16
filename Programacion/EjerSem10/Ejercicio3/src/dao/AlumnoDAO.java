@@ -39,7 +39,7 @@ public class AlumnoDAO {
     }
 
     public void insert(Alumno alumno) throws SQLException, AlumnoNotValid {
-        String query = "INSERT INTO alumno(id,nombre,dni) VALUES (" + alumno.getId()+ "," + alumno.getNombre() + "," + alumno.getDni() + ");";
+        String query = "INSERT INTO alumno(id,nombre,dni) VALUES (" + alumno.getId() + "," + "\"" + alumno.getNombre() + "\"" + "," + "\"" + alumno.getDni() + "\"" + ");";
         int numero;
         try (Connection conect = ConexionBD.connect(); Statement sentencia = conect.createStatement();) {
             numero = sentencia.executeUpdate(query);

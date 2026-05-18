@@ -21,7 +21,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno " + id + "| " + nombre + "|" + dni;
+        return "Alumno " + id + " | " + nombre + " | " + dni;
     }
     
 }

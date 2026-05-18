@@ -31,7 +31,7 @@ public class Alumno {
     public String getDni() {
         return dni;
     }
-    
+
     @Override
     public String toString() {
         return "Alumno " + id + " | " + nombre + " | " + dni;

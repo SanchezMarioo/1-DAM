@@ -6,7 +6,7 @@ package Controlador;
 
 import Modelo.Alumno;
 import dao.AlumnoDAO;
-import ejercicio2.vista.VistaConsola;
+import Vista.VistaConsola;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;

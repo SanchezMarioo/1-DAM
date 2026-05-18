@@ -4,10 +4,10 @@
  */
 package Controlador;
 
+import Dao.AlumnoDAO;
 import Exceptions.AlumnoNotValid;
 import Modelo.Alumno;
 import Vista.VistaConsola;
-import dao.AlumnoDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,6 +15,7 @@ import java.util.ArrayList;
  *
  * @author Mario
  */
+4
 public class ControladorAlumno {
 
     private AlumnoDAO dao;
@@ -42,7 +43,10 @@ public class ControladorAlumno {
                 insertarAlumno();
             case 3 ->
                 borrarAlumnoPorID();
-            default -> 
+            case 4 -> {
+                mostrarAlumnosAlReves();
+            }
+            default ->
                 vista.mostrarMensaje("No has elegido una opcion valida");
         }
     }
@@ -50,6 +54,15 @@ public class ControladorAlumno {
     private void mostrarAlumnos() {
         try {
             ArrayList<Alumno> alumnos = dao.select();
+            vista.mostrarAlumnos(alumnos);
+        } catch (SQLException ex) {
+            vista.mostrarMensajeError(ex.getMessage());
+        }
+    }
+
+    private void mostrarAlumnosAlReves() {
+        try {
+            ArrayList<Alumno> alumnos = dao.selectReverse();
             vista.mostrarAlumnos(alumnos);
         } catch (SQLException ex) {
             vista.mostrarMensajeError(ex.getMessage());

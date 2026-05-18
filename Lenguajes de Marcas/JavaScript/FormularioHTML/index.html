@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="form-container" id="form-container">
+        <form>
+          <h1>REGISTRATE</h1>
+          <div class="form-div">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Introduzca tu nombre"
+            />
+          </div>
+          <div class="form-div">
+            <label>Correo electronico </label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="Introduzca tu correo electronico"
+            />
+          </div>
+          <div class="form-div">
+            <label>Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              required
+              placeholder="*********"
+            />
+          </div>
+        </form>
+        <div class="form-div">
+          <button id="registro">Validar</button>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

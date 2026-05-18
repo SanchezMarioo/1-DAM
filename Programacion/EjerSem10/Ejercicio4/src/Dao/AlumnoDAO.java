@@ -37,7 +37,8 @@ public class AlumnoDAO {
     public ArrayList<Alumno> selectReverse() throws SQLException {
         try (Connection connect = ConexionBD.connect(); Statement statement = connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY); ResultSet set = statement.executeQuery("SELECT * FROM alumno")) {
             ArrayList<Alumno> alumnos = new ArrayList<>();
-            while (!set.previous()) {
+            set.afterLast();
+            while (set.previous()) {
                 int id = set.getInt("id");
                 String nombre = set.getString("nombre");
                 String dni = set.getString("dni");

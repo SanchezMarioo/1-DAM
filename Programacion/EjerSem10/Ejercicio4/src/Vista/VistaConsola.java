@@ -58,6 +58,7 @@ public class VistaConsola {
         System.out.println("1. Mostrar lista de alumnos");
         System.out.println("2. Insertar usuario");
         System.out.println("3. Borrar alumno mediante su ID");
+        System.out.println("4. Mostrar lista de alumnos al reves");
     }
     public void cerrarScanner(){
         sc.close();

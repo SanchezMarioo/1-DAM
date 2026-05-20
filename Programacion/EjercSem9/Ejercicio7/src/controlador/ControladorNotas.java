@@ -111,7 +111,11 @@ public class ControladorNotas {
     }
 
     private void pedirDatosAlumno() {
-        leerArchivo();
+        try {
+            leerArchivo();
+        } catch (NotaNoValidaException ex) {
+            System.getLogger(ControladorNotas.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
         String nombreAlumno = "";
         do {
             consola.mostrarMsg("Dime el nombre del alumno (fin para acabar): ");

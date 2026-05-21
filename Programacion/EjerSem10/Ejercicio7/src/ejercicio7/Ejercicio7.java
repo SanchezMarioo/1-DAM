@@ -5,6 +5,7 @@
 package ejercicio7;
 
 import Controlador.ControladorApp;
+import Dao.EmailDAO;
 import Dao.FicheroDAO;
 import Vista.VistaConsola;
 
@@ -20,8 +21,10 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         // TODO code application logic her
         FicheroDAO fichero = new FicheroDAO("ejemplo.txt");
+        EmailDAO email = new EmailDAO();
         VistaConsola vista = new VistaConsola();
-        ControladorApp app = new ControladorApp(fichero, vista);
+        
+        ControladorApp app = new ControladorApp(fichero, vista,email);
         app.verCorreos();
         
     }

@@ -27,15 +27,4 @@ public class VistaConsola {
         System.out.println(msg);
         return sc.nextLine();
     }
-
-    public void mostrarCorreos(ArrayList<String> listaCorreos) {
-        System.out.println(listaCorreos.size());
-        if (listaCorreos == null || listaCorreos.isEmpty()) {
-            System.out.println("Lista vacia");
-        } else {
-            for (String correos : listaCorreos) {
-                System.out.println(correos);
-            }
-        }
-    }
 }

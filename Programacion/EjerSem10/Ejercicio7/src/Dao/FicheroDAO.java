@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class FicheroDAO {
 
     private String ruta;
-    private String REGEXP = "[0-9A-Z\\._-]@[0-9A-Z\\._-].[A-Z]{2,5}";
+    private String REGEXP = "[0-9A-Za-z\\._-]+@[0-9A-Za-z\\._-]+\\.[a-zA-Z]{2,}";
     private Pattern pattern;
     private Matcher matcher;
 
@@ -29,12 +29,12 @@ public class FicheroDAO {
 
     public ArrayList<String> read() throws FileNotFoundException, IOException {
         ArrayList<String> correos = new ArrayList<>();
-        pattern = pattern.compile(REGEXP);
+        pattern = Pattern.compile(REGEXP);
         String linea;
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             while ((linea = br.readLine()) != null) {
                 matcher = pattern.matcher(linea);
-                if (matcher.find()) {
+                while (matcher.find()) {
                     correos.add(matcher.group());
                 }
 

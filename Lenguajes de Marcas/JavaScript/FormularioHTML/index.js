@@ -1,6 +1,5 @@
 let esCorrecto;
 let registro = document.getElementById("registro");
-console.log(registro);
 
 registro.addEventListener("click", error);
 function error() {
@@ -20,7 +19,6 @@ function error() {
     email.classList.add("error");
     esCorrecto = false;
   }
-  console.log(contrasena.value);
   if (contrasena.value !== "1234") {
     contrasena.classList.add("error");
     esCorrecto = false;

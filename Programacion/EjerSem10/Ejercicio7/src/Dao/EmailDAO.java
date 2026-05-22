@@ -16,22 +16,22 @@ import java.time.LocalDate;
 public class EmailDAO {
 
     public void insert(ArrayList<String> correos) throws SQLException {
-        String check = "SELECT COUNT(*) FROM registros WHERE email = ?";
+        String queryCount = "SELECT COUNT(*) FROM registros WHERE email = ?";
         String insert = "INSERT INTO registros(email,fecha) VALUES (?,?)";
 
         for (String correo : correos) {
-            try (Connection connection = ConexionBD.connect(); PreparedStatement stmCheck = connection.prepareStatement(check)) {
+            try (Connection connection = ConexionBD.connect(); PreparedStatement statement = connection.prepareStatement(queryCount)) {
 
-                stmCheck.setString(1, correo);
-                ResultSet rs = stmCheck.executeQuery();
+                statement.setString(1, correo);
+                ResultSet rs = statement.executeQuery();
                 rs.next();
                 int count = rs.getInt(1);
 
                 if (count == 0) {
-                    try (PreparedStatement stmInsert = connection.prepareStatement(insert)) {
-                        stmInsert.setString(1, correo);
-                        stmInsert.setDate(2, Date.valueOf(LocalDate.now()));
-                        stmInsert.executeUpdate();
+                    try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
+                        preparedStatement.setString(1, correo);
+                        preparedStatement.setDate(2, Date.valueOf(LocalDate.now()));
+                        preparedStatement.executeUpdate();
                     }
                 }
             }

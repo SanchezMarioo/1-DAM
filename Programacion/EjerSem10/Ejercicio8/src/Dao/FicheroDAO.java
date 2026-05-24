@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class FicheroDAO {
 
     private static final String ruta = "ejemplo.txt";
-    private static final String REGEXP = "[A-Za-z0-9\\._\\-+]+@[A-Za-z0-9\\._\\-+]\\.[A-Za-z]{2,}";
+    private static final String REGEXP = "[A-Za-z0-9\\._\\-+]+@[A-Za-z0-9\\._\\-+]+\\.[A-Za-z]{2,}";
     private Pattern pattern;
     private Matcher matcher;
 
@@ -30,9 +30,9 @@ public class FicheroDAO {
         try (BufferedReader lector = new BufferedReader(new FileReader(ruta))) {
             while ((linea = lector.readLine()) != null) {
                 matcher = pattern.matcher(linea);
-                while(!matcher.find()){
-                    matcher.group();
-                    correos.add(linea);
+                while(matcher.find()){
+                    
+                    correos.add(matcher.group());
                 }
                 
             }

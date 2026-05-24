@@ -4,6 +4,13 @@
  */
 package ejercicio8;
 
+import Controlador.ControladorApp;
+import Dao.EmailDAO;
+import Dao.FicheroDAO;
+import Vista.VistaConsola;
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Mario
@@ -15,6 +22,10 @@ public class Ejercicio8 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        FicheroDAO dao = new FicheroDAO();
+        EmailDAO email = new EmailDAO();
+        VistaConsola vista = new VistaConsola();
+        ControladorApp app = new ControladorApp(email, dao, vista);
+        app.init();
     }
-    
 }

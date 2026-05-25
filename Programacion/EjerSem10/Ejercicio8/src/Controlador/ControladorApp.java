@@ -6,9 +6,11 @@ package Controlador;
 
 import Dao.EmailDAO;
 import Dao.FicheroDAO;
+import Modelo.EmailModel;
 import Vista.VistaConsola;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -58,7 +60,16 @@ public class ControladorApp {
         int correosInsertados = 0;
         try {
             ArrayList<String> correos = fichero.leer();
-            correosInsertados = email.insert(correos);
+            for (String correo : correos) {
+                String nombreCorreo = correo;
+                LocalDateTime fechaHora = LocalDateTime.now();
+                if (!email.existeCorreo(correo)) {
+                    if (email.insert(new EmailModel(correo, fechaHora))) {
+                        correosInsertados++;
+                    }
+
+                }
+            }
             if (correosInsertados == 0) {
                 vista.mostrarMensaje("==============================================");
                 vista.mostrarMensaje("No se han podido insertar correos electronicos nuevos.");
@@ -82,7 +93,7 @@ public class ControladorApp {
             correoEliminado = email.delete(correo);
             if (correoEliminado == 0) {
                 vista.mostrarMensaje("No existe ese correo en la base de datos.");
-            } else{
+            } else {
                 vista.mostrarMensaje("El correo se ha eliminado correctamente. ");
             }
         } catch (SQLException ex) {

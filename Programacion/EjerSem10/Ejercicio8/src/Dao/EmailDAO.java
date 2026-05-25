@@ -5,9 +5,9 @@
 package Dao;
 
 import ConexionBD.ConexionBD;
+import Modelo.EmailModel;
 import java.util.ArrayList;
 import java.sql.*;
-import java.time.LocalDate;
 
 /**
  *
@@ -15,28 +15,28 @@ import java.time.LocalDate;
  */
 public class EmailDAO {
 
-    public int insert(ArrayList<String> correos) throws SQLException {
-        String select = "SELECT COUNT(*) AS cuenta FROM registros WHERE email = ?";
+    public boolean insert(EmailModel correo) throws SQLException {
         String insert = "INSERT INTO registros(email,fecha) VALUES (?,?)";
-        int setInsert = 0;
-        for (String correo : correos) {
-            try (Connection connect = ConexionBD.connect(); PreparedStatement statament = connect.prepareStatement(select)) {
-                statament.setString(1, correo);
-                ResultSet set = statament.executeQuery();
-                set.next();
-                int cuenta = set.getInt("cuenta");
-
-                if (cuenta == 0) {
-                    try (PreparedStatement statementQuery = connect.prepareStatement(insert)) {
-                        statementQuery.setString(1, correo);
-                        statementQuery.setDate(2, Date.valueOf(LocalDate.now()));
-                        setInsert += statementQuery.executeUpdate();
-
-                    }
-                }
-            }
+        try (Connection connect = ConexionBD.connect(); PreparedStatement statament = connect.prepareStatement(insert)) {
+            statament.setString(1, correo.getNombre());
+            statament.setTimestamp(2, Timestamp.valueOf(correo.getFecha()));
+            return statament.executeUpdate() > 0;
         }
-        return setInsert;
+    }
+
+    public boolean existeCorreo(String correo) throws SQLException {
+        String select = "SELECT COUNT(*) AS cuenta FROM registros WHERE email = ?";
+        try (Connection connect = ConexionBD.connect(); PreparedStatement statement = connect.prepareStatement(select); ResultSet set = statement.executeQuery()) {
+            statement.setString(1, correo);
+            if (set.first()) {
+
+                int cuenta = set.getInt("cuenta");
+                return cuenta > 0;
+            }
+
+            return false;
+
+        }
     }
 
     public int delete(String correo) throws SQLException {

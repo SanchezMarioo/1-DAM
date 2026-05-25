@@ -1,7 +1,9 @@
 window.onload = function () {
-  let btnContainer = document.getElementById("btn-container");
-
-  btnContainer.addEventListener("click", targetBoton);
+  let btnContainer = document.getElementsByClassName("boton");
+  for (let i = 0; i < btnContainer.length; i++) {
+    btnContainer[i].addEventListener("click", targetBoton);
+    
+  }
 };
 
 function targetBoton(event) {

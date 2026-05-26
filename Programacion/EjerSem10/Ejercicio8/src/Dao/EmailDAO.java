@@ -26,12 +26,13 @@ public class EmailDAO {
 
     public boolean existeCorreo(String correo) throws SQLException {
         String select = "SELECT COUNT(*) AS cuenta FROM registros WHERE email = ?";
-        try (Connection connect = ConexionBD.connect(); PreparedStatement statement = connect.prepareStatement(select); ResultSet set = statement.executeQuery()) {
+        try (Connection connect = ConexionBD.connect(); PreparedStatement statement = connect.prepareStatement(select)) {
             statement.setString(1, correo);
-            if (set.first()) {
-
-                int cuenta = set.getInt("cuenta");
-                return cuenta > 0;
+            try (ResultSet set = statement.executeQuery()) {
+                if (set.next()) {
+                    int cuenta = set.getInt("cuenta");
+                    return cuenta > 0;
+                }
             }
 
             return false;

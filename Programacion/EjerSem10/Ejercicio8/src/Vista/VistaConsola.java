@@ -46,9 +46,15 @@ public class VistaConsola {
     public String pedirEmail() {
         return sc.nextLine();
     }
-    public void mostrarCorreos(ArrayList <String> correos){
-        for (String correo : correos) {
-            System.out.println(correo);
+
+    public void mostrarCorreos(ArrayList<String> correos) {
+        if (correos == null || correos.size() < 0) {
+            System.out.println("La lista esta vacia");
+        } else {
+            for (String correo : correos) {
+                System.out.println(correo);
+            }
         }
+
     }
 }

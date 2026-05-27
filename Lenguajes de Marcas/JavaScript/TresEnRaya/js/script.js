@@ -10,7 +10,7 @@ window.onload = function () {
 
 };
 
-function jugar(posicion) {
+function jugar() {
   let turnoTitulo = document.getElementById("tituloTurno");
   turno = cambiarTurno(turno);
   turnoTitulo.textContent = "Turno de " + turno
@@ -19,7 +19,6 @@ function jugar(posicion) {
       if (!comprobarGanador() && tablero[i].textContent == "") {
         turnoTitulo.textContent = "Turno de " + turno
         turno = cambiarTurno(turno);
-        console.log(i);
         tablero[i].textContent = turno;
         posiciones[i] = turno;
         comprobarEmpate();

@@ -1,0 +1,35 @@
+@startuml Banco
+left to right direction
+
+actor Cliente as C
+actor Banco as B
+
+rectangle "Aplicación Bancaria Móvil" {
+  usecase "Iniciar sesión" as UC1
+  usecase "Verificar contraseña" as UC2
+  usecase "Mostrar error de login" as UC3
+  usecase "Consultar saldo" as UC4
+  usecase "Transferir fondos" as UC5
+  usecase "Realizar un pago" as UC6
+  usecase "Verificar fondos suficientes" as UC7
+  usecase "Pagar desde cuenta corriente" as UC8
+  usecase "Pagar desde cuenta de ahorros" as UC9
+}
+
+C --> UC1
+C --> UC4
+C --> UC5
+C --> UC6
+
+UC1 .> UC2 : <<include>>
+UC1 .> UC3 : <<extend>>
+UC5 .> UC7 : <<include>>
+UC6 .> UC7 : <<include>>
+UC6 <|-- UC8
+UC6 <|-- UC9
+
+B --> UC4
+B --> UC5
+B --> UC6
+
+@enduml

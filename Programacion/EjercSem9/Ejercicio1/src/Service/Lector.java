@@ -63,9 +63,7 @@ public class Lector {
         } catch (NumberFormatException e) {
             System.out.println("No es un numero");
         }
-        for (int numero : numeros) {
-            
-        }
+      
     }
 
 }

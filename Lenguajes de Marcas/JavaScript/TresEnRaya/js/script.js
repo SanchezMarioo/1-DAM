@@ -58,8 +58,10 @@ function comprobarEmpate() {
   return false;
 }
 function contatenarArray(posiciones, cadena) {
+  console.log(posiciones);
   for (let i = 0; i < posiciones.length; i++) {
     if (tablero[posiciones[i]].textContent !== cadena) {
+      console.log("falso")
       return false;
     }
   }
@@ -108,21 +110,20 @@ function comprobarGanadorDiagonal() {
     [2,4,6]
   ]
   // Diagonales
-  if ((contatenarArray(diagonales[0]),jugador1) || (contatenarArray(diagonales[0]),jugador2)) {
+  if ((contatenarArray(diagonales[0],jugador1) || (contatenarArray(diagonales[0],jugador2)))) {
     esGanador(diagonales[0]);
     return true;
-  } else if ((contatenarArray(diagonales[1]),jugador1) || (contatenarArray(diagonales[1]),jugador2)) {
+  } else if ((contatenarArray(diagonales[1],jugador1) || (contatenarArray(diagonales[1],jugador2)))) {
     esGanador(diagonales[1]);
     return true;
   }
   return false;
 }
 function comprobarGanador() {
-  // Horizontales
   if (
     comprobarGanadorHorizontal() ||
-    comprobarGanadorVertical() 
-    //comprobarGanadorDiagonal()
+    comprobarGanadorVertical() ||
+    comprobarGanadorDiagonal()
    ) {
     return true;
   }
@@ -130,6 +131,7 @@ function comprobarGanador() {
   return false;
 }
 function esGanador(posiciones) {
+  console.log(posiciones)
   for (let i = 0; i < posiciones.length; i++) {
     console.log(tablero[posiciones[i]])
     tablero[posiciones[i]].classList.add("verde");

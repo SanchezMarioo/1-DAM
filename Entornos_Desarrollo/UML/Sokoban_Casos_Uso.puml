@@ -1,0 +1,25 @@
+@startuml Sokoban
+left to right direction
+
+actor Jugador as J
+
+rectangle "Sokoban" {
+  usecase "Mover jugador" as UC1
+  usecase "Empujar caja" as UC2
+  usecase "Verificar casilla libre" as UC3
+  usecase "Completar nivel" as UC4
+  usecase "Reiniciar nivel" as UC5
+  usecase "Perder vida" as UC6
+  usecase "Fin de partida" as UC7
+}
+
+J --> UC1
+J --> UC2
+J --> UC5
+
+UC2 .> UC3 : <<include>>
+UC2 .> UC4 : <<extend>>
+UC5 .> UC6 : <<include>>
+UC6 .> UC7 : <<extend>>
+
+@enduml

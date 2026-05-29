@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+  --bg-page: radial-gradient(ellipse at top, #1a1f4e 0%, #0a0e27 70%);
+  --card-back: linear-gradient(145deg, #1e3a5f, #2d5a8e, #0f2d4d);
+  --card-front: linear-gradient(135deg, #0f4c75, #1b6ca8, #00b4db);
+  --card-match: linear-gradient(135deg, #0a5e3b, #1a9e5c, #00d68f);
+  --card-hover: linear-gradient(145deg, #2a4a7f, #3d6fa8, #2d5a9e);
+  --glow-match: 0 0 20px rgba(0, 214, 143, 0.4);
+  --glow-hover: 0 0 15px rgba(0, 180, 219, 0.3);
+}
+
+.card-back {
+  background: var(--card-back);
+}
+.card-front {
+  background: var(--card-front);
+  box-shadow: var(--glow-hover);
+}
+.card.matched {
+  background: var(--card-match);
+  box-shadow: var(--glow-match);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-page);
+}
+.card{
+    width: 50px;
+}
+.container-main{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
+    gap: 50px 150px;
+}
+.card{
+    width: 100px;
+    height: 150px;
+    background: var(--card-front);
+}

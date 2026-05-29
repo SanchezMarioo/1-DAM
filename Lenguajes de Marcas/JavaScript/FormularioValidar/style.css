@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
 }
 main {
   display: flex;
@@ -69,4 +70,32 @@ button{
     border: none;
     padding: 10px 20px;
 
+}
+
+.error{
+  border: 2px solid red;
+}
+.verde{
+  border: 2px solid rgb(14, 255, 14);
+}
+
+
+.disabled-form{
+  display: none;
+}
+.negro{
+  background: black;
+
+}
+.blanco{
+  background: white;
+}
+.azul{
+  background: lightblue;
+}
+.rojo{
+  background: red;
+}
+.form{
+  display: none;
 }
